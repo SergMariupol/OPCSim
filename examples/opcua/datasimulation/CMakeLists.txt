@@ -18,7 +18,7 @@ qt_standard_project_setup()
 if (EXISTS ../../../../../${Qt6_VERSION}/Src/qtopcua/)
     set(MODULE_SOURCE ../../../../../${Qt6_VERSION}/Src/qtopcua/)
 else()
-    set(MODULE_SOURCE ../../../../)
+    set(MODULE_SOURCE ../../../..)
 endif()
 
 qt_add_executable(datasimulation

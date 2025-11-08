@@ -13,7 +13,7 @@ greaterThan(QT_MAJOR_VERSION, 5) {
 
 !exists($$MODULE_SOURCES):{
   # Build from source tree
-  MODULE_SOURCES=$$PWD/../../../../
+  MODULE_SOURCES=$$PWD/../../../..
 }
 
 INCLUDEPATH += $$MODULE_SOURCES/src/plugins/opcua/open62541
