@@ -37,4 +37,16 @@ HEADERS += \
 
 #install
 target.path = $$[QT_INSTALL_EXAMPLES]/opcua/datasimulation
-INSTALLS += target
+
+example_files.files = \
+    $$PWD/CMakeLists.txt \
+    $$PWD/datasimulation.pro \
+    $$PWD/main.cpp \
+    $$PWD/simulationserver.cpp \
+    $$PWD/simulationserver.h
+example_files.path = $$[QT_INSTALL_EXAMPLES]/opcua/datasimulation
+
+doc_files.files = $$PWD/doc/datasimulation.qdoc
+doc_files.path = $$[QT_INSTALL_EXAMPLES]/opcua/datasimulation/doc
+
+INSTALLS += target example_files doc_files

@@ -100,3 +100,16 @@ install(TARGETS datasimulation
     BUNDLE DESTINATION "${INSTALL_EXAMPLEDIR}"
     LIBRARY DESTINATION "${INSTALL_EXAMPLEDIR}"
 )
+
+install(FILES
+    CMakeLists.txt
+    datasimulation.pro
+    main.cpp
+    simulationserver.cpp
+    simulationserver.h
+    DESTINATION "${INSTALL_EXAMPLEDIR}"
+)
+
+install(FILES doc/datasimulation.qdoc
+    DESTINATION "${INSTALL_EXAMPLEDIR}/doc"
+)
