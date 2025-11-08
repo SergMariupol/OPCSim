@@ -9,5 +9,6 @@ qtConfig(gds) {
 }
 
 qtConfig(open62541) {
+    SUBDIRS += datasimulation
     qtHaveModule(quick): SUBDIRS += waterpump
 }
