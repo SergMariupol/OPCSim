@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(datasimulationserver LANGUAGES CXX C)
+project(datasimulation LANGUAGES CXX C)
 
 if (ANDROID)
     message(FATAL_ERROR "This project cannot be built on Android.")
@@ -21,28 +21,29 @@ else()
     set(MODULE_SOURCE ../../../../)
 endif()
 
-qt_add_executable(datasimulationserver
+qt_add_executable(datasimulation
     main.cpp
     simulationserver.cpp simulationserver.h
 )
 
-set_target_properties(datasimulationserver PROPERTIES
+set_target_properties(datasimulation PROPERTIES
+    OUTPUT_NAME datasimulationserver
     WIN32_EXECUTABLE FALSE
     MACOSX_BUNDLE TRUE
 )
 
-target_link_libraries(datasimulationserver PRIVATE
+target_link_libraries(datasimulation PRIVATE
     Qt6::Core
     Qt6::OpcUa
     Qt6::OpcUaPrivate
 )
 
 if (QT_FEATURE_open62541 AND NOT QT_FEATURE_system_open62541)
-    target_sources(datasimulationserver PRIVATE
+    target_sources(datasimulation PRIVATE
         ${MODULE_SOURCE}/src/3rdparty/open62541/open62541.h
         ${MODULE_SOURCE}/src/3rdparty/open62541/open62541.c
     )
-    target_include_directories(datasimulationserver PRIVATE
+    target_include_directories(datasimulation PRIVATE
         ${MODULE_SOURCE}/src/3rdparty/open62541
     )
 endif()
@@ -51,11 +52,11 @@ qt_opcua_disable_optimizations_in_current_dir()
 
 if (QT_FEATURE_open62541 AND NOT QT_FEATURE_system_open62541)
     if(WIN32 AND (GCC OR CLANG))
-        target_link_libraries(datasimulationserver PRIVATE
+        target_link_libraries(datasimulation PRIVATE
             iphlpapi
         )
     elseif(WIN32 AND MSVC)
-        target_link_libraries(datasimulationserver PRIVATE
+        target_link_libraries(datasimulation PRIVATE
             iphlpapi.lib
         )
     endif()
@@ -81,20 +82,20 @@ if (QT_FEATURE_system_open62541)
     find_package(open62541)
     if (OPEN62541_SYSTEM_ENCRYPTION)
         find_package(WrapOpenSSL)
-        target_link_libraries(datasimulationserver PRIVATE
+        target_link_libraries(datasimulation PRIVATE
             WrapOpenSSL::WrapOpenSSL
         )
     endif()
-    target_compile_definitions(datasimulationserver PRIVATE USE_SYSTEM_OPEN62541)
+    target_compile_definitions(datasimulation PRIVATE USE_SYSTEM_OPEN62541)
 endif()
 
 if(QT_FEATURE_system_open62541 OR NOT QT_FEATURE_open62541)
-    target_link_libraries(datasimulationserver PRIVATE
+    target_link_libraries(datasimulation PRIVATE
         open62541::open62541
     )
 endif()
 
-install(TARGETS datasimulationserver
+install(TARGETS datasimulation
     RUNTIME DESTINATION "${INSTALL_EXAMPLEDIR}"
     BUNDLE DESTINATION "${INSTALL_EXAMPLEDIR}"
     LIBRARY DESTINATION "${INSTALL_EXAMPLEDIR}"

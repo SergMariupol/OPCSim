@@ -57,6 +57,7 @@ examplesinstallpath = opcua
 
 # Add a generic thumbnail to an example that has none
 manifestmeta.thumbnail.names += "QtOpcUa/Qt OPC UA X509 Support" \
+                                "QtOpcUa/Qt OPC UA Data Simulation Server" \
                                 "QtOpcUa/Water Pump Simulation Server"
 
 # Highlighted examples in Data Processing & IO category

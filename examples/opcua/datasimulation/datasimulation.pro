@@ -1,4 +1,5 @@
 TEMPLATE = app
+TARGET = datasimulationserver
 CONFIG += c++11 console
 QT += opcua opcua-private
 QT -= gui

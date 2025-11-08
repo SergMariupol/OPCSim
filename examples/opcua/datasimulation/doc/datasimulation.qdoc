@@ -1,0 +1,27 @@
+// Copyright (C) 2024 The Qt Company Ltd.
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GFDL-1.3-no-invariants-only
+
+/*!
+    \example datasimulation
+    \ingroup qtopcua-examples
+    \title Qt OPC UA Data Simulation Server
+    \examplecategory {Data Processing & I/O}
+    \brief An OPC UA server example that publishes 100 simulated values at a
+    100 ms update interval.
+
+    The \e {Qt OPC UA Data Simulation Server} example implements a small OPC UA
+    server that exposes a folder of 100 numeric variables. Each variable is
+    refreshed periodically with pseudo-random data generated from a combination
+    of a sine wave and noise. The data set demonstrates how to create larger
+    batches of test nodes that can be consumed by OPC UA client applications.
+
+    Every variable resides below the \c {ns=2;s=Simulation/Values} folder and is
+    named \c {Value_000} through \c {Value_099}. Clients can subscribe to these
+    variables to observe value changes, or read individual values on demand.
+
+    The example is based on the \l {Qt OPC UA} module and uses the bundled
+    open62541 backend when one is available. The server refresh interval is set
+    to 100 milliseconds.
+
+    \sa {Qt OPC UA}, {Water Pump Simulation Server}
+*/
