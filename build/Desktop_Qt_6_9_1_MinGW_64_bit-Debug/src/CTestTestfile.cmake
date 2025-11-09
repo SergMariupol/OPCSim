@@ -1,0 +1,9 @@
+# CMake generated Testfile for 
+# Source directory: D:/QT/qtopcua/src
+# Build directory: D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("opcua")
+subdirs("plugins")
+subdirs("declarative_opcua")

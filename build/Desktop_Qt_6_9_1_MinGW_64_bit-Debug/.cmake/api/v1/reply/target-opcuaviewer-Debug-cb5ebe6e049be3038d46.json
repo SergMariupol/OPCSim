@@ -1,0 +1,906 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "examples/opcua/opcuaviewer/opcuaviewer.exe"
+		},
+		{
+			"path" : "examples/opcua/opcuaviewer/opcuaviewer.pdb"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_qt_internal_create_executable",
+			"qt6_add_executable",
+			"qt_add_executable",
+			"install",
+			"target_link_libraries",
+			"qt_internal_extend_target",
+			"qt_internal_add_module",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies",
+			"add_compile_options",
+			"qt_internal_set_compiler_warning_flags",
+			"qt_internal_setup_build_and_global_variables",
+			"qt_build_internals_set_up_private_api",
+			"qt_build_repo_begin",
+			"qt_build_repo",
+			"target_sources",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"qt_add_resources",
+			"_qt_internal_expose_deferred_files_to_ide",
+			"qt6_finalize_target"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"examples/opcua/opcuaviewer/CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtTargetHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtModuleHelpers.cmake",
+			"src/opcua/CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+			"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/maintenance_tool_provider.cmake",
+			"CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
+			"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtCompilerFlags.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtBuildHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtBuild.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtSetup.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtBuildRepoHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:856:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 935,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 639,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 690,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 48,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 8,
+				"parent" : 7
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 621,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 187,
+				"parent" : 9
+			},
+			{
+				"file" : 8
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 14,
+				"parent" : 11
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 297,
+				"parent" : 12
+			},
+			{
+				"file" : 6,
+				"parent" : 13
+			},
+			{
+				"command" : 9,
+				"file" : 6,
+				"line" : 55,
+				"parent" : 14
+			},
+			{
+				"file" : 5,
+				"parent" : 15
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 61,
+				"parent" : 16
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 640,
+				"parent" : 2
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 297,
+				"parent" : 12
+			},
+			{
+				"file" : 10,
+				"parent" : 19
+			},
+			{
+				"command" : 9,
+				"file" : 10,
+				"line" : 57,
+				"parent" : 20
+			},
+			{
+				"file" : 9,
+				"parent" : 21
+			},
+			{
+				"command" : 8,
+				"file" : 9,
+				"line" : 61,
+				"parent" : 22
+			},
+			{
+				"command" : 9,
+				"file" : 10,
+				"line" : 45,
+				"parent" : 20
+			},
+			{
+				"file" : 15,
+				"parent" : 24
+			},
+			{
+				"command" : 12,
+				"file" : 15,
+				"line" : 46,
+				"parent" : 25
+			},
+			{
+				"command" : 11,
+				"file" : 14,
+				"line" : 137,
+				"parent" : 26
+			},
+			{
+				"command" : 10,
+				"file" : 13,
+				"line" : 76,
+				"parent" : 27
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 315,
+				"parent" : 28
+			},
+			{
+				"file" : 12,
+				"parent" : 29
+			},
+			{
+				"command" : 9,
+				"file" : 12,
+				"line" : 55,
+				"parent" : 30
+			},
+			{
+				"file" : 11,
+				"parent" : 31
+			},
+			{
+				"command" : 8,
+				"file" : 11,
+				"line" : 61,
+				"parent" : 32
+			},
+			{
+				"command" : 8,
+				"file" : 11,
+				"line" : 83,
+				"parent" : 32
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 15,
+				"parent" : 11
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 315,
+				"parent" : 35
+			},
+			{
+				"file" : 18,
+				"parent" : 36
+			},
+			{
+				"command" : 10,
+				"file" : 18,
+				"line" : 218,
+				"parent" : 37
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 315,
+				"parent" : 38
+			},
+			{
+				"file" : 17,
+				"parent" : 39
+			},
+			{
+				"command" : 9,
+				"file" : 17,
+				"line" : 55,
+				"parent" : 40
+			},
+			{
+				"file" : 16,
+				"parent" : 41
+			},
+			{
+				"command" : 8,
+				"file" : 16,
+				"line" : 61,
+				"parent" : 42
+			},
+			{
+				"command" : 18,
+				"file" : 8,
+				"line" : 29,
+				"parent" : 11
+			},
+			{
+				"command" : 17,
+				"file" : 23,
+				"line" : 562,
+				"parent" : 44
+			},
+			{
+				"command" : 16,
+				"file" : 23,
+				"line" : 232,
+				"parent" : 45
+			},
+			{
+				"command" : 9,
+				"file" : 23,
+				"line" : 21,
+				"parent" : 46
+			},
+			{
+				"file" : 22,
+				"parent" : 47
+			},
+			{
+				"command" : 9,
+				"file" : 22,
+				"line" : 6,
+				"parent" : 48
+			},
+			{
+				"file" : 21,
+				"parent" : 49
+			},
+			{
+				"command" : 15,
+				"file" : 21,
+				"line" : 4,
+				"parent" : 50
+			},
+			{
+				"command" : 14,
+				"file" : 20,
+				"line" : 482,
+				"parent" : 51
+			},
+			{
+				"command" : 9,
+				"file" : 20,
+				"line" : 83,
+				"parent" : 52
+			},
+			{
+				"file" : 19,
+				"parent" : 53
+			},
+			{
+				"command" : 13,
+				"file" : 19,
+				"line" : 39,
+				"parent" : 54
+			},
+			{
+				"command" : 23,
+				"file" : 1,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 22,
+				"file" : 0,
+				"line" : 453,
+				"parent" : 56
+			},
+			{
+				"command" : 21,
+				"file" : 0,
+				"line" : 401,
+				"parent" : 57
+			},
+			{
+				"command" : 20,
+				"file" : 0,
+				"line" : 2528,
+				"parent" : 58
+			},
+			{
+				"command" : 19,
+				"file" : 0,
+				"line" : 2072,
+				"parent" : 59
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 25,
+				"file" : 24,
+				"line" : 1,
+				"parent" : 61
+			},
+			{
+				"command" : 24,
+				"file" : 0,
+				"line" : 812,
+				"parent" : 62
+			},
+			{
+				"command" : 19,
+				"file" : 0,
+				"line" : 2197,
+				"parent" : 63
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 55,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 55,
+					"fragment" : "-Wextra"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 18,
+					"define" : "MINGW_HAS_SECURE_API=1"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "QT_NEEDS_QMAIN"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_OPCUA_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WIDGETS_LIB"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "WIN32"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "WIN64"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "_ENABLE_EXTENDED_ALIGNED_STORAGE"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "_WIN64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/opcuaviewer_autogen/include"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtOpcUa"
+				},
+				{
+					"backtrace" : 18,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.1/mingw_64/include/QtCore"
+				},
+				{
+					"backtrace" : 18,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.1/mingw_64/include"
+				},
+				{
+					"backtrace" : 18,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.1/mingw_64/include/QtGui"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.1/mingw_64/include/QtNetwork"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.1/mingw_64/include/QtWidgets"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					18,
+					18
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				4,
+				5,
+				8,
+				10,
+				12
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 6,
+			"id" : "OpcUa::@0668d5ccba69686c51e9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "opcuaviewer_autogen::@fe31603ce61b1e33394f"
+		},
+		{
+			"id" : "opcuaviewer_autogen_timestamp_deps::@fe31603ce61b1e33394f"
+		}
+	],
+	"id" : "opcuaviewer::@fe31603ce61b1e33394f",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "."
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/Qt/6.9.1/mingw_64/examples/opcua/opcuaviewer"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-DQT_QML_DEBUG -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-mwindows",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "lib\\libQt6OpcUa.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "C:\\Qt\\6.9.1\\mingw_64\\lib\\libQt6Widgets.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "C:\\Qt\\6.9.1\\mingw_64\\lib\\libQt6Network.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
+				"fragment" : "-lws2_32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "C:\\Qt\\6.9.1\\mingw_64\\lib\\libQt6Gui.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 18,
+				"fragment" : "C:\\Qt\\6.9.1\\mingw_64\\lib\\libQt6Core.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 23,
+				"fragment" : "-lmpr",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 23,
+				"fragment" : "-luserenv",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 33,
+				"fragment" : "-lmingw32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 33,
+				"fragment" : "C:\\Qt\\6.9.1\\mingw_64\\lib\\libQt6EntryPoint.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 34,
+				"fragment" : "-lshell32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "-ld3d11",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "-ldxgi",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "-ldxguid",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "-ld3d12",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "opcuaviewer",
+	"nameOnDisk" : "opcuaviewer.exe",
+	"paths" : 
+	{
+		"build" : "examples/opcua/opcuaviewer",
+		"source" : "examples/opcua/opcuaviewer"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				12,
+				13,
+				20,
+				21,
+				22
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				4,
+				5,
+				8,
+				10
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2,
+				6,
+				9,
+				11
+			]
+		},
+		{
+			"name" : "Forms",
+			"sourceIndexes" : 
+			[
+				3,
+				7
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				14,
+				15,
+				16,
+				17,
+				18,
+				19
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				23,
+				24
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/opcuaviewer_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "examples/opcua/opcuaviewer/certificatedialog.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/opcuaviewer/certificatedialog.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/opcuaviewer/certificatedialog.ui",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "examples/opcua/opcuaviewer/main.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "examples/opcua/opcuaviewer/mainwindow.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/opcuaviewer/mainwindow.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/opcuaviewer/mainwindow.ui",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "examples/opcua/opcuaviewer/opcuamodel.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/opcuaviewer/opcuamodel.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "examples/opcua/opcuaviewer/treeitem.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/opcuaviewer/treeitem.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 60,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/.qt/rcc/qrc_pki.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 64,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/.qt/rcc/pki.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 64,
+			"path" : "examples/opcua/opcuaviewer/pki/own/certs/opcuaviewer.der",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 64,
+			"path" : "examples/opcua/opcuaviewer/pki/own/private/opcuaviewer.pem",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 64,
+			"path" : "examples/opcua/opcuaviewer/pki/trusted/certs/3d8ec65c47524d6ad67bed912c19a895.der",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 64,
+			"path" : "examples/opcua/opcuaviewer/pki/trusted/certs/ca.der",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 64,
+			"path" : "examples/opcua/opcuaviewer/pki/trusted/certs/open62541-testserver.der",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 64,
+			"path" : "examples/opcua/opcuaviewer/pki/trusted/crl/ca.crl.pem",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/opcuaviewer_autogen/include/ui_certificatedialog.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/opcuaviewer_autogen/include/ui_mainwindow.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/opcuaviewer_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/.qt/rcc/qrc_pki.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/opcuaviewer_autogen/timestamp.rule",
+			"sourceGroupIndex" : 5
+		}
+	],
+	"type" : "EXECUTABLE"
+}

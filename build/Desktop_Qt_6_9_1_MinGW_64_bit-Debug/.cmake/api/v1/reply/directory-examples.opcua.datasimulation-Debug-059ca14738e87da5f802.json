@@ -1,0 +1,81 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"examples/opcua/datasimulation/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 159,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 165,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 174,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"examples/opcua/datasimulation/datasimulationserver.exe"
+			],
+			"targetId" : "datasimulation::@3069bef0b6a85c3c149c",
+			"targetIndex" : 34,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"examples/opcua/datasimulation/CMakeLists.txt",
+				"examples/opcua/datasimulation/datasimulation.pro",
+				"examples/opcua/datasimulation/main.cpp",
+				"examples/opcua/datasimulation/simulationserver.cpp",
+				"examples/opcua/datasimulation/simulationserver.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "./doc",
+			"paths" : 
+			[
+				"examples/opcua/datasimulation/doc/datasimulation.qdoc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "examples/opcua/datasimulation",
+		"source" : "examples/opcua/datasimulation"
+	}
+}

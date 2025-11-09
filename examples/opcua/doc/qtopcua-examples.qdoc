@@ -8,4 +8,14 @@
 
     The examples show how to use Qt OPC UA from C++ and QML.
 
+    The following examples are available:
+    \list
+        \li \l{Qt OPC UA Viewer}
+        \li \l{Qt OPC UA Data Simulation Server}
+        \li \l{Water Pump Simulation Server}
+        \li \l{Water Pump}
+        \li \l{Qt Quick Water Pump}
+        \li \l{Qt OPC UA X509 Support}
+    \endlist
+
 */

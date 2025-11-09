@@ -1,0 +1,388 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaClient",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "ClientState",
+                    "values": [
+                        "Disconnected",
+                        "Connecting",
+                        "Connected",
+                        "Closing"
+                    ]
+                },
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "ClientError",
+                    "values": [
+                        "NoError",
+                        "InvalidUrl",
+                        "AccessDenied",
+                        "ConnectionError",
+                        "UnknownError",
+                        "UnsupportedAuthenticationInformation"
+                    ]
+                }
+            ],
+            "lineNumber": 37,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "endpoint",
+                            "type": "QOpcUaEndpointDescription"
+                        }
+                    ],
+                    "index": 18,
+                    "name": "connectToEndpoint",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 19,
+                    "name": "disconnectFromEndpoint",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "state",
+                    "notify": "stateChanged",
+                    "read": "state",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "ClientState",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "error",
+                    "notify": "errorChanged",
+                    "read": "error",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "ClientError",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "QOpcUaClient",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "connected",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "disconnected",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "state",
+                            "type": "QOpcUaClient::ClientState"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "stateChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "error",
+                            "type": "QOpcUaClient::ClientError"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "errorChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "errorState",
+                            "type": "QOpcUaErrorState*"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "connectError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "namespaces",
+                            "type": "QStringList"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "namespaceArrayUpdated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "namespaces",
+                            "type": "QStringList"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "namespaceArrayChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "endpoints",
+                            "type": "QList<QOpcUaEndpointDescription>"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        },
+                        {
+                            "name": "requestUrl",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "endpointsRequestFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "servers",
+                            "type": "QList<QOpcUaApplicationDescription>"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        },
+                        {
+                            "name": "requestUrl",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "findServersFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaReadResult>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "readNodeAttributesFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaWriteResult>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "writeNodeAttributesFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "requestedNodeId",
+                            "type": "QOpcUaExpandedNodeId"
+                        },
+                        {
+                            "name": "assignedNodeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "addNodeFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "deleteNodeFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "sourceNodeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "referenceTypeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "targetNodeId",
+                            "type": "QOpcUaExpandedNodeId"
+                        },
+                        {
+                            "name": "isForwardReference",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "addReferenceFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "sourceNodeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "referenceTypeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "targetNodeId",
+                            "type": "QOpcUaExpandedNodeId"
+                        },
+                        {
+                            "name": "isForwardReference",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "deleteReferenceFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "keyFilePath",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "password",
+                            "type": "QString*"
+                        },
+                        {
+                            "name": "previousTryWasInvalid",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 15,
+                    "name": "passwordForPrivateKeyRequired",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodesToRegister",
+                            "type": "QStringList"
+                        },
+                        {
+                            "name": "registeredNodeIds",
+                            "type": "QStringList"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "registerNodesFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodesToUnregister",
+                            "type": "QStringList"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 17,
+                    "name": "unregisterNodesFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuaclient.h",
+    "outputRevision": 69
+}

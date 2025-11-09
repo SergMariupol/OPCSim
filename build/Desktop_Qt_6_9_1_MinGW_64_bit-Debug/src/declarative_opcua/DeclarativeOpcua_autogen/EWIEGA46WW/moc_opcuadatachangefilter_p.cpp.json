@@ -1,0 +1,140 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "DataChangeFilter"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaDataChangeFilter",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "DataChangeTrigger",
+                    "values": [
+                        "Status",
+                        "StatusOrValue",
+                        "StatusOrValueOrTimestamp"
+                    ]
+                },
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "DeadbandType",
+                    "values": [
+                        "None",
+                        "Absolute",
+                        "Percent"
+                    ]
+                }
+            ],
+            "lineNumber": 24,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "trigger",
+                    "read": "trigger",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "DataChangeTrigger",
+                    "user": false,
+                    "write": "setTrigger"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "deadbandType",
+                    "read": "deadbandType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "DeadbandType",
+                    "user": false,
+                    "write": "setDeadbandType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "deadbandValue",
+                    "read": "deadbandValue",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setDeadbandValue"
+                }
+            ],
+            "qualifiedClassName": "OpcUaDataChangeFilter",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "filterChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "trigger",
+                            "type": "DataChangeTrigger"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "setTrigger",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "deadbandType",
+                            "type": "DeadbandType"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "setDeadbandType",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "deadbandValue",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "setDeadbandValue",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuadatachangefilter_p.h",
+    "outputRevision": 69
+}

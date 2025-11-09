@@ -1,0 +1,90 @@
+{
+    "classes": [
+        {
+            "className": "OpcUaPathResolver",
+            "lineNumber": 34,
+            "object": true,
+            "qualifiedClassName": "OpcUaPathResolver",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodeId",
+                            "type": "UniversalNode"
+                        },
+                        {
+                            "name": "errorMessage",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "resolvedStartNode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "node",
+                            "type": "UniversalNode"
+                        },
+                        {
+                            "name": "errorMessage",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "resolvedNode",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "startNode",
+                            "type": "UniversalNode"
+                        },
+                        {
+                            "name": "errorMessage",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "startNodeResolved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaBrowsePathTarget>"
+                        },
+                        {
+                            "name": "path",
+                            "type": "QList<QOpcUaRelativePathElement>"
+                        },
+                        {
+                            "name": "status",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "browsePathFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuapathresolver_p.h",
+    "outputRevision": 69
+}

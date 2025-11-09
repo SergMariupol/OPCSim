@@ -1,0 +1,58 @@
+{
+    "classes": [
+        {
+            "className": "QOpen62541Client",
+            "lineNumber": 21,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "request",
+                            "type": "QOpcUaHistoryReadRawRequest"
+                        },
+                        {
+                            "name": "continuationPoints",
+                            "type": "QList<QByteArray>"
+                        },
+                        {
+                            "name": "releaseContinuationPoints",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "handle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "handleHistoryReadRawRequested",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "QOpen62541Client",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "handle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "historyReadRequestError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QOpcUaClientImpl"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopen62541client.h",
+    "outputRevision": 69
+}

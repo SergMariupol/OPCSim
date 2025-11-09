@@ -1,0 +1,165 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "MethodNode"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "OpcUaMethodNode",
+            "lineNumber": 29,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "objectNodeId",
+                    "notify": "objectNodeIdChanged",
+                    "read": "objectNodeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaNodeIdType*",
+                    "user": false,
+                    "write": "setObjectNodeId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "inputArguments",
+                    "notify": "inputArgumentsChanged",
+                    "read": "inputArguments",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QQmlListProperty<OpcUaMethodArgument>",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "outputArguments",
+                    "notify": "outputArgumentsChanged",
+                    "read": "outputArguments",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "resultStatus",
+                    "notify": "resultStatusChanged",
+                    "read": "resultStatus",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaStatus",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "OpcUaMethodNode",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "objectNodeIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "inputArgumentsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "outputArgumentsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "status",
+                            "type": "OpcUaStatus"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "resultStatusChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodeId",
+                            "type": "OpcUaNodeIdType*"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "setObjectNodeId",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "callMethod",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 6,
+                    "name": "handleObjectNodeIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "methodNodeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "result",
+                            "type": "QVariant"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "handleMethodCallFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "OpcUaNode"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuamethodnode_p.h",
+    "outputRevision": 69
+}

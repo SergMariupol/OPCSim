@@ -1,0 +1,1 @@
+FINAL_PRL_FILE_PATH = D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/Qt6DeclarativeOpcua.prl

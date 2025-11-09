@@ -1,0 +1,367 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "RegisterEnumClassesUnscoped",
+                    "value": "false"
+                },
+                {
+                    "name": "QML.Element",
+                    "value": "Node"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "OpcUaNode",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "Status",
+                    "values": [
+                        "Valid",
+                        "InvalidNodeId",
+                        "NoConnection",
+                        "InvalidNodeType",
+                        "InvalidClient",
+                        "FailedToResolveNode",
+                        "InvalidObjectNode",
+                        "FailedToReadAttributes",
+                        "FailedToSetupMonitoring",
+                        "FailedToWriteAttribute",
+                        "FailedToModifyMonitoring",
+                        "FailedToDisableMonitoring"
+                    ]
+                }
+            ],
+            "lineNumber": 34,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QOpcUa::NodeAttribute"
+                        }
+                    ],
+                    "index": 17,
+                    "isConst": true,
+                    "name": "getSourceTimestamp",
+                    "returnType": "QDateTime"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QOpcUa::NodeAttribute"
+                        }
+                    ],
+                    "index": 18,
+                    "isConst": true,
+                    "name": "getServerTimestamp",
+                    "returnType": "QDateTime"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "nodeId",
+                    "notify": "nodeIdChanged",
+                    "read": "nodeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaNodeIdType*",
+                    "user": false,
+                    "write": "setNodeId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "connection",
+                    "notify": "connectionChanged",
+                    "read": "connection",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaConnection*",
+                    "user": false,
+                    "write": "setConnection"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "readyToUse",
+                    "notify": "readyToUseChanged",
+                    "read": "readyToUse",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "status",
+                    "notify": "statusChanged",
+                    "read": "status",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaNode::Status",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "errorMessage",
+                    "notify": "errorMessageChanged",
+                    "read": "errorMessage",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "eventFilter",
+                    "notify": "eventFilterChanged",
+                    "read": "eventFilter",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaEventFilter*",
+                    "user": false,
+                    "write": "setEventFilter"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "browseName",
+                    "notify": "browseNameChanged",
+                    "read": "browseName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setBrowseName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "nodeClass",
+                    "notify": "nodeClassChanged",
+                    "read": "nodeClass",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::NodeClass",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "displayName",
+                    "notify": "displayNameChanged",
+                    "read": "displayName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaLocalizedText",
+                    "user": false,
+                    "write": "setDisplayName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "description",
+                    "notify": "descriptionChanged",
+                    "read": "description",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaLocalizedText",
+                    "user": false,
+                    "write": "setDescription"
+                }
+            ],
+            "qualifiedClassName": "OpcUaNode",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodeId",
+                            "type": "OpcUaNodeIdType*"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "nodeIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "OpcUaConnection*"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "connectionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "nodeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "readyToUseChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "browseNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "nodeClassChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "displayNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "name": "descriptionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "statusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "name": "errorMessageChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "name": "eventFilterChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "values",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "eventOccurred",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nodeId",
+                            "type": "OpcUaNodeIdType*"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "setNodeId",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "OpcUaConnection*"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "setConnection",
+                    "returnType": "void"
+                },
+                {
+                    "access": "protected",
+                    "arguments": [
+                        {
+                            "name": "absoluteNodePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "setupNode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "protected",
+                    "index": 15,
+                    "name": "updateNode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "protected",
+                    "index": 16,
+                    "name": "updateEventFilter",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuanode_p.h",
+    "outputRevision": 69
+}

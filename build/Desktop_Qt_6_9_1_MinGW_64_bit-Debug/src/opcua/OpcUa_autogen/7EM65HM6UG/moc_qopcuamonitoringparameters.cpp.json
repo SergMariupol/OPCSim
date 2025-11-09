@@ -1,0 +1,33 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaMonitoringParameters",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "Parameter",
+                    "values": [
+                        "PublishingEnabled",
+                        "PublishingInterval",
+                        "LifetimeCount",
+                        "MaxKeepAliveCount",
+                        "MaxNotificationsPerPublish",
+                        "Priority",
+                        "SamplingInterval",
+                        "Filter",
+                        "QueueSize",
+                        "DiscardOldest",
+                        "MonitoringMode",
+                        "TriggeredItemIds"
+                    ]
+                }
+            ],
+            "gadget": true,
+            "lineNumber": 19,
+            "qualifiedClassName": "QOpcUaMonitoringParameters"
+        }
+    ],
+    "inputFile": "qopcuamonitoringparameters.h",
+    "outputRevision": 69
+}

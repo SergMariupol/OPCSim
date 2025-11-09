@@ -1,0 +1,36 @@
+{
+    "classes": [
+        {
+            "className": "QOpen62541Subscription",
+            "lineNumber": 19,
+            "object": true,
+            "qualifiedClassName": "QOpen62541Subscription",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "sub",
+                            "type": "QOpen62541Subscription*"
+                        },
+                        {
+                            "name": "items",
+                            "type": "QList<std::pair<quint64,QOpcUa::NodeAttribute>>"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "timeout",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopen62541subscription.h",
+    "outputRevision": 69
+}

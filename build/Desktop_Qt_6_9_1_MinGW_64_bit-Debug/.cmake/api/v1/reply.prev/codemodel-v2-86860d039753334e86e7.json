@@ -1,0 +1,1001 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-bcca0baf4c19739713aa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						27,
+						32,
+						33,
+						34,
+						35,
+						37,
+						38,
+						40,
+						43,
+						44,
+						46,
+						47,
+						49,
+						50,
+						52,
+						53,
+						55,
+						57,
+						59,
+						61,
+						63,
+						69,
+						70,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77,
+						78,
+						79,
+						80,
+						81,
+						82,
+						83,
+						84,
+						85,
+						86,
+						88,
+						89
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/opcua",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.opcua-Debug-bedf69181a1bc6db0b7f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/opcua",
+					"targetIndexes" : 
+					[
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						36,
+						39,
+						41,
+						42,
+						45,
+						48,
+						51,
+						54,
+						58,
+						60,
+						62,
+						64,
+						65,
+						87
+					]
+				},
+				{
+					"build" : "src/plugins",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.plugins-Debug-49857304be7f250ff769.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/plugins"
+				},
+				{
+					"build" : "src/plugins/opcua",
+					"childIndexes" : 
+					[
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.plugins.opcua-Debug-21eb9cd3721e4fde79e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "src/plugins/opcua"
+				},
+				{
+					"build" : "src/plugins/opcua/open62541",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.plugins.opcua.open62541-Debug-a90f35acba4bf0dc6f27.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 0,
+					"source" : "src/plugins/opcua/open62541",
+					"targetIndexes" : 
+					[
+						23,
+						24,
+						25,
+						26,
+						56,
+						71
+					]
+				},
+				{
+					"build" : "src/declarative_opcua",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.declarative_opcua-Debug-663aac2fabb6c836faa2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/declarative_opcua",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						28,
+						29,
+						30,
+						31
+					]
+				},
+				{
+					"build" : "tools",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-tools-Debug-510b7838458e622ae347.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tools"
+				},
+				{
+					"build" : "tools/datatypecodegenerator",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-tools.datatypecodegenerator-Debug-d26b29578f683f213817.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "tools/datatypecodegenerator",
+					"targetIndexes" : 
+					[
+						66,
+						67,
+						68
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"name" : "QtOpcUa",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56,
+						57,
+						58,
+						59,
+						60,
+						61,
+						62,
+						63,
+						64,
+						65,
+						66,
+						67,
+						68,
+						69,
+						70,
+						71,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77,
+						78,
+						79,
+						80,
+						81,
+						82,
+						83,
+						84,
+						85,
+						86,
+						87,
+						88,
+						89
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua-Debug-6135fb3602a60028e903.json",
+					"name" : "DeclarativeOpcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_autogen::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_autogen-Debug-6790ae9c720dc74653d8.json",
+					"name" : "DeclarativeOpcua_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_autogen_timestamp_deps::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_autogen_timestamp_deps-Debug-7246a9adc31aad808cb4.json",
+					"name" : "DeclarativeOpcua_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_lib_pri::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_lib_pri-Debug-e2b4e58a3c888bbed2b7.json",
+					"name" : "DeclarativeOpcua_lib_pri",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_other_files::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_other_files-Debug-01481544b4783cce52c4.json",
+					"name" : "DeclarativeOpcua_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_qmllint::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_qmllint-Debug-d7557dbb4fbc06c61d66.json",
+					"name" : "DeclarativeOpcua_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_qmllint_json::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_qmllint_json-Debug-4f6a5c0535998bf7cf6d.json",
+					"name" : "DeclarativeOpcua_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_qmllint_module::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_qmllint_module-Debug-31e4eb350e449de5cdcd.json",
+					"name" : "DeclarativeOpcua_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_qmltyperegistration::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_qmltyperegistration-Debug-8b93063e6bcf95b9f9b6.json",
+					"name" : "DeclarativeOpcua_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_sync_all_public_headers::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_sync_all_public_headers-Debug-0fd1451d7904128cfac1.json",
+					"name" : "DeclarativeOpcua_sync_all_public_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_sync_headers::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_sync_headers-Debug-5ba4751f27bf7968067c.json",
+					"name" : "DeclarativeOpcua_sync_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcua_version_script::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcua_version_script-Debug-d6e8faf943bb12b04ba6.json",
+					"name" : "DeclarativeOpcua_version_script",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcuaplugin::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcuaplugin-Debug-b8675116f4b392b5535d.json",
+					"name" : "DeclarativeOpcuaplugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcuaplugin_autogen::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcuaplugin_autogen-Debug-607da1cf7f749b24d77c.json",
+					"name" : "DeclarativeOpcuaplugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcuaplugin_autogen_timestamp_deps::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcuaplugin_autogen_timestamp_deps-Debug-114b835b8d5edc718320.json",
+					"name" : "DeclarativeOpcuaplugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DeclarativeOpcuaplugin_version_script::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-DeclarativeOpcuaplugin_version_script-Debug-aac3ecfb6b18253b6253.json",
+					"name" : "DeclarativeOpcuaplugin_version_script",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa-Debug-b12af80464f43de9ddfd.json",
+					"name" : "OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa_autogen::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa_autogen-Debug-999688474688587355ee.json",
+					"name" : "OpcUa_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa_autogen_timestamp_deps::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa_autogen_timestamp_deps-Debug-e46a993ba42162217c3e.json",
+					"name" : "OpcUa_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa_lib_pri::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa_lib_pri-Debug-8c9bec06b66c88c31b50.json",
+					"name" : "OpcUa_lib_pri",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa_sync_all_public_headers::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa_sync_all_public_headers-Debug-e2e9abaa87224e17ee4f.json",
+					"name" : "OpcUa_sync_all_public_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa_sync_headers::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa_sync_headers-Debug-751490cadc52f7f8ffc8.json",
+					"name" : "OpcUa_sync_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpcUa_version_script::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-OpcUa_version_script-Debug-655d261a6d7e1b457a5c.json",
+					"name" : "OpcUa_version_script",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "QOpen62541Plugin::@d968a6e61de4eb252b8b",
+					"jsonFile" : "target-QOpen62541Plugin-Debug-8f68bd9352eb80ae4ac7.json",
+					"name" : "QOpen62541Plugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "QOpen62541Plugin_autogen::@d968a6e61de4eb252b8b",
+					"jsonFile" : "target-QOpen62541Plugin_autogen-Debug-cc664e9c5209b6a433df.json",
+					"name" : "QOpen62541Plugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "QOpen62541Plugin_autogen_timestamp_deps::@d968a6e61de4eb252b8b",
+					"jsonFile" : "target-QOpen62541Plugin_autogen_timestamp_deps-Debug-c7f113eee906cd2d7d31.json",
+					"name" : "QOpen62541Plugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "QOpen62541Plugin_version_script::@d968a6e61de4eb252b8b",
+					"jsonFile" : "target-QOpen62541Plugin_version_script-Debug-7121a661c6b70c018c09.json",
+					"name" : "QOpen62541Plugin_version_script",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-eb46bc8776e06840ad01.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "all_qmllint::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-all_qmllint-Debug-3f5aea7540a61744352a.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "all_qmllint_json::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-all_qmllint_json-Debug-301af3e507ee38c139e1.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "all_qmllint_module::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-all_qmllint_module-Debug-40f4de072db4a8c05e53.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "all_qmltyperegistrations::@a9e0a6d91fd30b0c785b",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-00baeacd458584dab19b.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-benchmark-Debug-2b360ab97ee9162e9a72.json",
+					"name" : "benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bootstrap_tools::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bootstrap_tools-Debug-6b7772fd5bfbec213ab2.json",
+					"name" : "bootstrap_tools",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "doc_tools::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-doc_tools-Debug-871319075ba5f5bf5bf0.json",
+					"name" : "doc_tools",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-docs-Debug-02244c8f3f8fbd27877f.json",
+					"name" : "docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-docs_OpcUa-Debug-cb88f4c9fc7339320a3a.json",
+					"name" : "docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-docs_qtopcua-Debug-f62caaaef6c3b8fb4cd2.json",
+					"name" : "docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_docs-Debug-f24105a42bf0d6b8b85c.json",
+					"name" : "generate_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "generate_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-generate_docs_OpcUa-Debug-bc2095be7b361d78453c.json",
+					"name" : "generate_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_docs_qtopcua-Debug-631e5623823adc498818.json",
+					"name" : "generate_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "generate_repo_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-generate_repo_docs_OpcUa-Debug-41a7b6bb18a2e34b2312.json",
+					"name" : "generate_repo_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "generate_top_level_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-generate_top_level_docs_OpcUa-Debug-fde4b581eb2b4fab3d21.json",
+					"name" : "generate_top_level_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "host_tools::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-host_tools-Debug-e5265412882858b90d7f.json",
+					"name" : "host_tools",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "html_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-html_docs-Debug-3e51f7ed6d02f2c03b80.json",
+					"name" : "html_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "html_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-html_docs_OpcUa-Debug-9bc05589095440fa2e20.json",
+					"name" : "html_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "html_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-html_docs_qtopcua-Debug-3ba9a72634ead67f67c6.json",
+					"name" : "html_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install_docs-Debug-341888bfbe10071f7134.json",
+					"name" : "install_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "install_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-install_docs_OpcUa-Debug-9e1905585f735f9f393e.json",
+					"name" : "install_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install_docs_qtopcua-Debug-f03c53a32fd6cdf12c6c.json",
+					"name" : "install_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install_html_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install_html_docs-Debug-eb1041d0835de1caf23f.json",
+					"name" : "install_html_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "install_html_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-install_html_docs_OpcUa-Debug-a3a4ec42205218ca2273.json",
+					"name" : "install_html_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install_html_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install_html_docs_qtopcua-Debug-30fe9a34eb7e94c995a0.json",
+					"name" : "install_html_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install_qch_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install_qch_docs-Debug-beeac00fa57355af990d.json",
+					"name" : "install_qch_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "install_qch_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-install_qch_docs_OpcUa-Debug-b98d794d4e8e6e493b51.json",
+					"name" : "install_qch_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install_qch_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install_qch_docs_qtopcua-Debug-d536704d70c9a5934301.json",
+					"name" : "install_qch_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "open62541_backend::@d968a6e61de4eb252b8b",
+					"jsonFile" : "target-open62541_backend-Debug-fdbcf6e9a7042635ca17.json",
+					"name" : "open62541_backend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "prepare_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-prepare_docs-Debug-5dbb661704c164368995.json",
+					"name" : "prepare_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "prepare_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-prepare_docs_OpcUa-Debug-108f3a6797e06e366de5.json",
+					"name" : "prepare_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "prepare_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-prepare_docs_qtopcua-Debug-7d406712fc780a09833e.json",
+					"name" : "prepare_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qattributionsscanner_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-qattributionsscanner_OpcUa-Debug-ae14bfa28c4af668c036.json",
+					"name" : "qattributionsscanner_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qch_docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qch_docs-Debug-b6fa1e7808b4cdbc3830.json",
+					"name" : "qch_docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qch_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-qch_docs_OpcUa-Debug-68761e292ee314fbfe92.json",
+					"name" : "qch_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qch_docs_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qch_docs_qtopcua-Debug-321e9d384656b55b5458.json",
+					"name" : "qch_docs_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qch_repo_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-qch_repo_docs_OpcUa-Debug-15f6b7bae7a57526f712.json",
+					"name" : "qch_repo_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qch_top_level_docs_OpcUa::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-qch_top_level_docs_OpcUa-Debug-c7e0d55e25710b4931f7.json",
+					"name" : "qch_top_level_docs_OpcUa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "qopcuaxmldatatypes2cpp::@09eea96c54a8e413e26b",
+					"jsonFile" : "target-qopcuaxmldatatypes2cpp-Debug-46152418913037513c07.json",
+					"name" : "qopcuaxmldatatypes2cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "qopcuaxmldatatypes2cpp_autogen::@09eea96c54a8e413e26b",
+					"jsonFile" : "target-qopcuaxmldatatypes2cpp_autogen-Debug-766fa83d4d9dd3536f98.json",
+					"name" : "qopcuaxmldatatypes2cpp_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "qopcuaxmldatatypes2cpp_autogen_timestamp_deps::@09eea96c54a8e413e26b",
+					"jsonFile" : "target-qopcuaxmldatatypes2cpp_autogen_timestamp_deps-Debug-3a648edc4c0f564f3a71.json",
+					"name" : "qopcuaxmldatatypes2cpp_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qpa_default_plugins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qpa_default_plugins-Debug-7a9da586797a83754793.json",
+					"name" : "qpa_default_plugins",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qpa_plugins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qpa_plugins-Debug-cd3b0c4af8df4612661a.json",
+					"name" : "qpa_plugins",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "qt_internal_plugins::@d968a6e61de4eb252b8b",
+					"jsonFile" : "target-qt_internal_plugins-Debug-6656282ab762ffc35739.json",
+					"name" : "qt_internal_plugins",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_plugins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_plugins-Debug-4d27721fdecd6e80194e.json",
+					"name" : "qt_plugins",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_plugins_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_plugins_qtopcua-Debug-7cbbfd049258d60038b2.json",
+					"name" : "qt_plugins_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_plugins_qtopcua_recursive::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_plugins_qtopcua_recursive-Debug-416ddda489b235578e20.json",
+					"name" : "qt_plugins_qtopcua_recursive",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua-Debug-7b5552f3f6fa361ef531.json",
+					"name" : "qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_changelogs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_changelogs-Debug-7fbb39dc9f90da707bc9.json",
+					"name" : "qtopcua_changelogs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_cmake_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_cmake_files-Debug-b070f288671420b8023e.json",
+					"name" : "qtopcua_cmake_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_coin_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_coin_files-Debug-26277314626e286aedfb.json",
+					"name" : "qtopcua_coin_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_config_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_config_tests-Debug-905844dbd8cfdee81058.json",
+					"name" : "qtopcua_config_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_extra_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_extra_files-Debug-a3d997cdcc710bb4937c.json",
+					"name" : "qtopcua_extra_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_licenses::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_licenses-Debug-4d430240235851dcb03e.json",
+					"name" : "qtopcua_licenses",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_src::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_src-Debug-f6444b04a8eb38a20e48.json",
+					"name" : "qtopcua_src",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_src_for_examples::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_src_for_examples-Debug-2e2ce182fe3a5705a0e1.json",
+					"name" : "qtopcua_src_for_examples",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qtopcua_tools::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qtopcua_tools-Debug-8a37e5668a2d7f92c3f0.json",
+					"name" : "qtopcua_tools",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sbom::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sbom-Debug-737e127b997aa485d7c6.json",
+					"name" : "sbom",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sbom_qtopcua::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sbom_qtopcua-Debug-ed7492a33e34feef1d17.json",
+					"name" : "sbom_qtopcua",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "sync_all_public_headers::@0668d5ccba69686c51e9",
+					"jsonFile" : "target-sync_all_public_headers-Debug-1c69350c16b380945384.json",
+					"name" : "sync_all_public_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sync_headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sync_headers-Debug-e026ff617ca5318fffb3.json",
+					"name" : "sync_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "thirdparty_sync_headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-thirdparty_sync_headers-Debug-7da84ba3a8ec1a837cbe.json",
+					"name" : "thirdparty_sync_headers",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "D:/QT/qtopcua"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

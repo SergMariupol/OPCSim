@@ -1,0 +1,223 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "RelativeNodePath"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "OpcUaRelativeNodePath",
+            "lineNumber": 30,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "ns",
+                    "notify": "nodeNamespaceChanged",
+                    "read": "nodeNamespace",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setNodeNamespace"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "browseName",
+                    "notify": "browseNameChanged",
+                    "read": "browseName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setBrowseName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "referenceType",
+                    "notify": "referenceTypeChanged",
+                    "read": "referenceType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "write": "setReferenceType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "includeSubtypes",
+                    "notify": "includeSubtypesChanged",
+                    "read": "includeSubtypes",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIncludeSubtypes"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "isInverse",
+                    "notify": "isInverseChanged",
+                    "read": "isInverse",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIsInverse"
+                }
+            ],
+            "qualifiedClassName": "OpcUaRelativeNodePath",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ns",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "nodeNamespaceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "browseName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "browseNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "referenceTypeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "includeSubtypes",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "includeSubtypesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "isInverse",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "isInverseChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ns",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "setNodeNamespace",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "browseName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "setBrowseName",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "referenceType",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "setReferenceType",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "includeSubtypes",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "setIncludeSubtypes",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "isInverse",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "setIsInverse",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuarelativenodepath_p.h",
+    "outputRevision": 69
+}

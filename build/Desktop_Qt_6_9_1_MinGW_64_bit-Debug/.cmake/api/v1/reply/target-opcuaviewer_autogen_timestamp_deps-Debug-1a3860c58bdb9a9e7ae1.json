@@ -1,0 +1,38 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"examples/opcua/opcuaviewer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "OpcUa::@0668d5ccba69686c51e9"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "opcuaviewer_autogen_timestamp_deps::@fe31603ce61b1e33394f",
+	"isGeneratorProvided" : true,
+	"name" : "opcuaviewer_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "examples/opcua/opcuaviewer",
+		"source" : "examples/opcua/opcuaviewer"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

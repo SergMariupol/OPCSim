@@ -1,0 +1,174 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "ServerDiscovery"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaServerDiscovery",
+            "lineNumber": 28,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 8,
+                    "isConst": true,
+                    "name": "at",
+                    "returnType": "QOpcUaApplicationDescription"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "discoveryUrl",
+                    "notify": "discoveryUrlChanged",
+                    "read": "discoveryUrl",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setDiscoveryUrl"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "count",
+                    "notify": "countChanged",
+                    "read": "count",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "status",
+                    "notify": "statusChanged",
+                    "read": "status",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaStatus",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "connection",
+                    "notify": "connectionChanged",
+                    "read": "connection",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaConnection*",
+                    "user": false,
+                    "write": "setConnection"
+                }
+            ],
+            "qualifiedClassName": "OpcUaServerDiscovery",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "discoveryUrlChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "serversChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "countChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "statusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "OpcUaConnection*"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "connectionChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 5,
+                    "name": "connectSignals",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "servers",
+                            "type": "QList<QOpcUaApplicationDescription>"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        },
+                        {
+                            "name": "requestUrl",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "handleServers",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 7,
+                    "name": "startFindServers",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QStandardItemModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuaserverdiscovery_p.h",
+    "outputRevision": 69
+}

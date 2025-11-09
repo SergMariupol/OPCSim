@@ -1,0 +1,6 @@
+# ninja log v6
+2	78	7843038926233110	CMakeFiles/lib1.dir/lib1.cpp.obj	b8d9f86a9b5fa564
+79	175	7843038927558682	liblib1.dll	86fdea1fd6f26b41
+79	175	7843038927558682	liblib1.dll.a	86fdea1fd6f26b41
+176	227	7843038927967301	CMakeFiles/print_lib_path	26f7099abc3dc401
+176	227	7843038927967301	D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/config.tests/binary_for_strip_built/CMakeFiles/print_lib_path	26f7099abc3dc401

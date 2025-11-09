@@ -1,0 +1,42 @@
+{
+    "classes": [
+        {
+            "className": "OpcUaAttributeCache",
+            "lineNumber": 28,
+            "object": true,
+            "qualifiedClassName": "OpcUaAttributeCache",
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attribute",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "setAttributeValue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "invalidate",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuaattributecache_p.h",
+    "outputRevision": 69
+}

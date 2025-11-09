@@ -1,0 +1,97 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "SimpleAttributeOperand"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaSimpleAttributeOperand",
+            "lineNumber": 30,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "browsePath",
+                    "read": "browsePath",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QQmlListProperty<OpcUaNodeId>",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "indexRange",
+                    "read": "indexRange",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setIndexRange"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "nodeAttribute",
+                    "read": "nodeAttribute",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::NodeAttribute",
+                    "user": false,
+                    "write": "setNodeAttribute"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "typeId",
+                    "read": "typeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setTypeId"
+                }
+            ],
+            "qualifiedClassName": "OpcUaSimpleAttributeOperand",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "dataChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "OpcUaOperandBase"
+                },
+                {
+                    "access": "private",
+                    "name": "QOpcUaSimpleAttributeOperand"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuasimpleattributeoperand_p.h",
+    "outputRevision": 69
+}

@@ -1,0 +1,45 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"examples/opcua/waterpump/waterpump-qmlcpp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 53,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"examples/opcua/waterpump/waterpump-qmlcpp/waterpump-qmlcpp.exe"
+			],
+			"targetId" : "waterpump-qmlcpp::@91227b3af77be9624d9f",
+			"targetIndex" : 103,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "examples/opcua/waterpump/waterpump-qmlcpp",
+		"source" : "examples/opcua/waterpump/waterpump-qmlcpp"
+	}
+}

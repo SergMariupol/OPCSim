@@ -1,0 +1,212 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaNode",
+            "lineNumber": 29,
+            "object": true,
+            "qualifiedClassName": "QOpcUaNode",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attributes",
+                            "type": "QOpcUa::NodeAttributes"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "attributeRead",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attribute",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "attributeWritten",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attr",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "dataChangeOccurred",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attr",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "attributeUpdated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "valueAttributeUpdated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "eventFields",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "eventOccurred",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attr",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "items",
+                            "type": "QOpcUaMonitoringParameters::Parameters"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "monitoringStatusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attr",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "enableMonitoringFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "attr",
+                            "type": "QOpcUa::NodeAttribute"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "disableMonitoringFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "methodNodeId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "result",
+                            "type": "QVariant"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "methodCallFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "children",
+                            "type": "QList<QOpcUaReferenceDescription>"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "browseFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "targets",
+                            "type": "QList<QOpcUaBrowsePathTarget>"
+                        },
+                        {
+                            "name": "path",
+                            "type": "QList<QOpcUaRelativePathElement>"
+                        },
+                        {
+                            "name": "statusCode",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "resolveBrowsePathFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuanode.h",
+    "outputRevision": 69
+}

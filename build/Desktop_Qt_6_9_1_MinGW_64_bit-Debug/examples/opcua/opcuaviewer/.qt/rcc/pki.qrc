@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="pki/own/certs/opcuaviewer.der">D:/QT/qtopcua/examples/opcua/opcuaviewer/pki/own/certs/opcuaviewer.der</file>
+    <file alias="pki/own/private/opcuaviewer.pem">D:/QT/qtopcua/examples/opcua/opcuaviewer/pki/own/private/opcuaviewer.pem</file>
+    <file alias="pki/trusted/certs/3d8ec65c47524d6ad67bed912c19a895.der">D:/QT/qtopcua/examples/opcua/opcuaviewer/pki/trusted/certs/3d8ec65c47524d6ad67bed912c19a895.der</file>
+    <file alias="pki/trusted/certs/ca.der">D:/QT/qtopcua/examples/opcua/opcuaviewer/pki/trusted/certs/ca.der</file>
+    <file alias="pki/trusted/certs/open62541-testserver.der">D:/QT/qtopcua/examples/opcua/opcuaviewer/pki/trusted/certs/open62541-testserver.der</file>
+    <file alias="pki/trusted/crl/ca.crl.pem">D:/QT/qtopcua/examples/opcua/opcuaviewer/pki/trusted/crl/ca.crl.pem</file>
+  </qresource>
+</RCC>
+

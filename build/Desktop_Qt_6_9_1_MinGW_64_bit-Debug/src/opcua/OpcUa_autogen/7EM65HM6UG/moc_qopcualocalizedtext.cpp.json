@@ -1,0 +1,42 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaLocalizedText",
+            "gadget": true,
+            "lineNumber": 15,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "locale",
+                    "read": "locale",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setLocale"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "text",
+                    "read": "text",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setText"
+                }
+            ],
+            "qualifiedClassName": "QOpcUaLocalizedText"
+        }
+    ],
+    "inputFile": "qopcualocalizedtext.h",
+    "outputRevision": 69
+}

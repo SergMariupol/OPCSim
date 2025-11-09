@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaPlugin",
+            "lineNumber": 17,
+            "object": true,
+            "qualifiedClassName": "QOpcUaPlugin",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuaplugin.h",
+    "outputRevision": 69
+}

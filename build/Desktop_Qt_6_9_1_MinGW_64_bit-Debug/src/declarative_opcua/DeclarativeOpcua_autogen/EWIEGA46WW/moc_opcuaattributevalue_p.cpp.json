@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "OpcUaAttributeValue",
+            "lineNumber": 24,
+            "object": true,
+            "qualifiedClassName": "OpcUaAttributeValue",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuaattributevalue_p.h",
+    "outputRevision": 69
+}

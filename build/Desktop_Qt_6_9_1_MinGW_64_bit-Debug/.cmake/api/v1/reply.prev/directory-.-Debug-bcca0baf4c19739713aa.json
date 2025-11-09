@@ -1,0 +1,471 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"qt_install",
+			"qt_internal_create_module_depends_file",
+			"qt_internal_create_depends_files",
+			"include",
+			"qt_build_repo_post_process",
+			"qt_build_repo",
+			"qt_internal_create_plugins_auto_inclusion_files",
+			"qt_internal_create_config_file_for_standalone_tests",
+			"qt_export_tools",
+			"qt_create_tools_config_files",
+			"qt_internal_install_prl_files",
+			"_qt_internal_sbom_end_project_generate",
+			"_qt_internal_sbom_end_project",
+			"_qt_internal_sbom_end_qt_repo_project",
+			"_qt_internal_sbom_auto_end_qt_repo_project",
+			"qt_build_repo_end",
+			"qt_internal_export_additional_targets_file_handler",
+			"qt_internal_export_additional_targets_file_finalizer"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtInstallHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPostProcessHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPostProcess.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtBuildRepoHelpers.cmake",
+			"CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtToolHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtTargetHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtScopeFinalizerHelpers.cmake:24:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 4
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 568,
+				"parent" : 1
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 364,
+				"parent" : 2
+			},
+			{
+				"file" : 2,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 4,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 469,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 321,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 7
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 471,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 321,
+				"parent" : 9
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 10
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 469,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 321,
+				"parent" : 12
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 13
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 471,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 321,
+				"parent" : 15
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 6,
+				"parent" : 4
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 512,
+				"parent" : 18
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 19
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 7,
+				"parent" : 4
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 854,
+				"parent" : 21
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 22
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 10,
+				"parent" : 4
+			},
+			{
+				"command" : 9,
+				"file" : 1,
+				"line" : 799,
+				"parent" : 24
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 468,
+				"parent" : 25
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 26
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 522,
+				"parent" : 25
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 28
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 531,
+				"parent" : 25
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 30
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 548,
+				"parent" : 25
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 32
+			},
+			{
+				"command" : 11,
+				"file" : 2,
+				"line" : 16,
+				"parent" : 4
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 870,
+				"parent" : 34
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 35
+			},
+			{
+				"command" : 16,
+				"file" : 3,
+				"line" : 571,
+				"parent" : 1
+			},
+			{
+				"command" : 15,
+				"file" : 3,
+				"line" : 419,
+				"parent" : 37
+			},
+			{
+				"command" : 14,
+				"file" : 7,
+				"line" : 500,
+				"parent" : 38
+			},
+			{
+				"command" : 13,
+				"file" : 7,
+				"line" : 505,
+				"parent" : 39
+			},
+			{
+				"command" : 12,
+				"file" : 7,
+				"line" : 421,
+				"parent" : 40
+			},
+			{
+				"command" : 0,
+				"file" : 6,
+				"line" : 483,
+				"parent" : 41
+			},
+			{
+				"file" : 4,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 18,
+				"file" : 9,
+				"line" : 1,
+				"parent" : 43
+			},
+			{
+				"command" : 17,
+				"file" : 8,
+				"line" : 875,
+				"parent" : 44
+			},
+			{
+				"command" : 1,
+				"file" : 8,
+				"line" : 1166,
+				"parent" : 45
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 46
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 8,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUa",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaDependencies.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 11,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUaPrivate",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateDependencies.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 14,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6DeclarativeOpcua",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaDependencies.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 17,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6DeclarativeOpcuaPrivate",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateDependencies.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 20,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUa",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaPlugins.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 23,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6BuildInternals/StandaloneTests",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6BuildInternals/StandaloneTests/QtOpcUaTestsConfig.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 27,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUaTools",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsDependencies.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 29,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUaTools",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsConfig.cmake",
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsConfigVersion.cmake",
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsConfigVersionImpl.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 31,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Qt6OpcUaTools",
+			"exportName" : "Qt6OpcUaToolsTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "qopcuaxmldatatypes2cpp::@09eea96c54a8e413e26b",
+					"index" : 66
+				}
+			],
+			"paths" : 
+			[
+				"CMakeFiles/Export/0c1616f72c66605043720c99514da301/Qt6OpcUaToolsTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 33,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUaTools",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsVersionlessTargets.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 36,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				{
+					"from" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 42,
+			"component" : "sbom",
+			"type" : "code"
+		},
+		{
+			"backtrace" : 47,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Qt6OpcUaTools",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsAdditionalTargetInfo.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}
