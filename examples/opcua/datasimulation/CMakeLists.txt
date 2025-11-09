@@ -20,7 +20,7 @@ set(INSTALL_EXAMPLEDIR "${INSTALL_EXAMPLESDIR}/opcua/datasimulation")
 # -----------------------------------------------------------------------------
 # Qt
 # -----------------------------------------------------------------------------
-find_package(Qt6 REQUIRED COMPONENTS Core OpcUa)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets OpcUa)
 qt_standard_project_setup()
 
 # -----------------------------------------------------------------------------
@@ -62,6 +62,8 @@ qt_add_executable(datasimulation
     main.cpp
     simulationserver.cpp
     simulationserver.h
+    controlwindow.cpp
+    controlwindow.h
 )
 
 set_target_properties(datasimulation PROPERTIES
@@ -72,6 +74,7 @@ set_target_properties(datasimulation PROPERTIES
 
 target_link_libraries(datasimulation PRIVATE
     Qt6::Core
+    Qt6::Widgets
     Qt6::OpcUa
     Qt6::OpcUaPrivate
 )

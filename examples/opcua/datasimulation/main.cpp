@@ -1,6 +1,7 @@
+#include "controlwindow.h"
 #include "simulationserver.h"
 
-#include <QtCore/QCoreApplication>
+#include <QtWidgets/QApplication>
 #include <QtCore/QDebug>
 
 #include <csignal>
@@ -11,7 +12,7 @@ int main(int argc, char **argv)
     signal(SIGPIPE, SIG_IGN);
 #endif
 
-    QCoreApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     DataSimulationServer server;
     if (!server.init()) {
@@ -20,6 +21,9 @@ int main(int argc, char **argv)
     }
 
     server.launch();
+
+    ControlWindow window(&server);
+    window.show();
 
     return app.exec();
 }
