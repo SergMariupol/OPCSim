@@ -141,15 +141,24 @@ void DataSimulationServer::launch()
     if (m_running)
         return;
 
+    if (!m_server) {
+        emit errorOccurred(tr("Сервер не инициализирован."));
+        return;
+    }
+
     UA_StatusCode status = UA_Server_run_startup(m_server);
     if (status != UA_STATUSCODE_GOOD) {
         qCWarning(lcDataSimulation) << "Could not start server" << status;
+        emit errorOccurred(tr("Не удалось запустить сервер (код %1)").arg(status));
         return;
     }
 
     m_running = true;
     m_iterateTimer.start();
     m_updateTimer.start();
+
+    emit errorOccurred(QString());
+    emit runningChanged(true);
 }
 
 void DataSimulationServer::processServerEvents()
@@ -218,6 +227,53 @@ void DataSimulationServer::shutdown()
         m_updateTimer.stop();
         UA_Server_run_shutdown(m_server);
         m_running = false;
+        emit runningChanged(false);
+    }
+}
+
+bool DataSimulationServer::isRunning() const
+{
+    return m_running != 0;
+}
+
+int DataSimulationServer::valueCount() const
+{
+    return m_valueNodes.size();
+}
+
+QString DataSimulationServer::displayName(int index) const
+{
+    if (index < 0 || index >= m_displayNames.size())
+        return QString();
+    return m_displayNames.at(index);
+}
+
+DataSimulationServer::SimulationType DataSimulationServer::simulationType(int index) const
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return SimulationType::Sine;
+    return m_simulationConfigs.at(index).type;
+}
+
+void DataSimulationServer::setSimulationType(int index, SimulationType type)
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return;
+
+    SimulationConfig &config = m_simulationConfigs[index];
+    config.type = type;
+
+    // Reset default values for each simulation type to keep behaviour predictable.
+    if (type == SimulationType::Sine) {
+        config.amplitude = 1.0;
+        config.frequency = kFrequencyBase;
+        config.noiseAmplitude = 0.05;
+    } else if (type == SimulationType::Peaks) {
+        config.peakInterval = 60 + (index % 10) * 5;
+        config.peakHeight = 1.2;
+        config.peakBase = 0.05;
+        config.peakWidthRatio = 0.08;
+        config.noiseAmplitude = 0.02;
     }
 }
 

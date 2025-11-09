@@ -9,6 +9,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTableWidgetItem>
@@ -37,6 +38,14 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     resize(640, 480);
 
     auto *layout = new QVBoxLayout(this);
+    auto *statusLayout = new QHBoxLayout();
+    auto *statusCaption = new QLabel(tr("Статус:"), this);
+    m_statusLabel = new QLabel(this);
+    statusLayout->addWidget(statusCaption);
+    statusLayout->addWidget(m_statusLabel);
+    statusLayout->addStretch();
+    layout->addLayout(statusLayout);
+
     m_table = new QTableWidget(this);
     m_table->setColumnCount(2);
     m_table->setHorizontalHeaderLabels({tr("Тег"), tr("Тип симуляции")});
@@ -61,6 +70,8 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
 
     populateTable();
     setupConnections();
+
+    updateStatusIndicator(m_server && m_server->isRunning() ? ServerState::Running : ServerState::Stopped);
 }
 
 void ControlWindow::closeEvent(QCloseEvent *event)
@@ -114,6 +125,17 @@ void ControlWindow::setupConnections()
             m_server->shutdown();
         close();
     });
+
+    connect(m_server, &DataSimulationServer::runningChanged, this, [this](bool running) {
+        updateStatusIndicator(running ? ServerState::Running : ServerState::Stopped);
+    });
+    connect(m_server, &DataSimulationServer::errorOccurred, this, [this](const QString &message) {
+        if (message.isEmpty()) {
+            updateStatusIndicator(m_server && m_server->isRunning() ? ServerState::Running : ServerState::Stopped);
+        } else {
+            updateStatusIndicator(ServerState::Error, message);
+        }
+    });
 }
 
 void ControlWindow::handleTypeChange(int row, int comboIndex)
@@ -131,6 +153,37 @@ void ControlWindow::handleTypeChange(int row, int comboIndex)
 
     const auto type = static_cast<DataSimulationServer::SimulationType>(data.toInt());
     m_server->setSimulationType(row, type);
+}
+
+void ControlWindow::updateStatusIndicator(ControlWindow::ServerState state, const QString &message)
+{
+    if (!m_statusLabel)
+        return;
+
+    QString text;
+    QString color;
+    QString toolTip;
+
+    switch (state) {
+    case ServerState::Running:
+        text = tr("Работает");
+        color = QStringLiteral("#2e7d32");
+        break;
+    case ServerState::Stopped:
+        text = tr("Остановлен");
+        color = QStringLiteral("#616161");
+        break;
+    case ServerState::Error:
+        text = message.isEmpty() ? tr("Ошибка") : tr("Ошибка: %1").arg(message);
+        color = QStringLiteral("#c62828");
+        toolTip = message;
+        break;
+    }
+
+    m_statusLabel->setText(text);
+    m_statusLabel->setToolTip(toolTip);
+    const QString style = QStringLiteral("QLabel { font-weight: bold; color: %1; }");
+    m_statusLabel->setStyleSheet(style.arg(color));
 }
 
 QT_END_NAMESPACE

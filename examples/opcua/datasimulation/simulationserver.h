@@ -44,6 +44,15 @@ public:
 
     bool init();
     void launch();
+    bool isRunning() const;
+
+    int valueCount() const;
+    QString displayName(int index) const;
+    SimulationType simulationType(int index) const;
+
+signals:
+    void runningChanged(bool running);
+    void errorOccurred(const QString &message);
 
     int valueCount() const;
     QString displayName(int index) const;
