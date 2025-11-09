@@ -11,6 +11,8 @@
 
 #include <QtCore/QAtomicInt>
 #include <QtCore/QObject>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
 #include <QtCore/QTimer>
 #include <QtCore/QVector>
 
@@ -20,16 +22,38 @@ class DataSimulationServer : public QObject
 {
     Q_OBJECT
 public:
+    enum class SimulationType {
+        Sine,
+        Peaks
+    };
+    Q_ENUM(SimulationType)
+
+    struct SimulationConfig {
+        SimulationType type = SimulationType::Sine;
+        double amplitude = 1.0;
+        double frequency = 0.1;
+        double noiseAmplitude = 0.05;
+        int peakInterval = 60;
+        double peakBase = 0.1;
+        double peakHeight = 1.0;
+        double peakWidthRatio = 0.1;
+    };
+
     explicit DataSimulationServer(QObject *parent = nullptr);
     ~DataSimulationServer();
 
     bool init();
     void launch();
 
+    int valueCount() const;
+    QString displayName(int index) const;
+    SimulationType simulationType(int index) const;
+
 public slots:
     void processServerEvents();
     void updateSimulation();
     void shutdown();
+    void setSimulationType(int index, SimulationType type);
 
 private:
     bool setupAddressSpace();
@@ -40,6 +64,8 @@ private:
     QTimer m_updateTimer;
     QVector<UA_NodeId> m_valueNodes;
     QVector<double> m_currentValues;
+    QVector<SimulationConfig> m_simulationConfigs;
+    QStringList m_displayNames;
     quint16 m_namespaceIndex = 0;
     UA_NodeId m_folderNode;
     quint64 m_stepCounter = 0;

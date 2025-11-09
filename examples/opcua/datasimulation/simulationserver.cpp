@@ -4,6 +4,7 @@
 #include <QtCore/QLoggingCategory>
 #include <QtCore/QRandomGenerator>
 
+#include <algorithm>
 #include <cmath>
 
 QT_BEGIN_NAMESPACE
@@ -84,15 +85,27 @@ bool DataSimulationServer::setupAddressSpace()
 
     m_valueNodes.reserve(kValueCount);
     m_currentValues.resize(kValueCount);
+    m_simulationConfigs.resize(kValueCount);
+    m_displayNames.reserve(kValueCount);
 
     for (quint16 i = 0; i < kValueCount; ++i) {
-        const double initialValue = std::sin((i + 1) * kFrequencyBase);
+        SimulationConfig &config = m_simulationConfigs[i];
+        config.frequency = kFrequencyBase;
+        config.peakInterval = 60 + (i % 10) * 5;
+        config.peakHeight = 1.0 + (i % 5) * 0.1;
+        config.peakBase = 0.1;
+        config.peakWidthRatio = 0.08;
+
+        const QString displayName = QStringLiteral("Value %1").arg(i + 1);
+        m_displayNames.append(displayName);
+
+        const double initialValue = std::sin((i + 1) * config.frequency);
         m_currentValues[i] = initialValue;
 
         UA_VariableAttributes attr = UA_VariableAttributes_default;
         UA_Variant_setScalarCopy(&attr.value, &m_currentValues[i], &UA_TYPES[UA_TYPES_DOUBLE]);
-        const QByteArray displayName = QByteArray("Value ") + QByteArray::number(i + 1);
-        attr.displayName = UA_LOCALIZEDTEXT_ALLOC("en-US", displayName.constData());
+        const QByteArray displayNameUtf8 = displayName.toUtf8();
+        attr.displayName = UA_LOCALIZEDTEXT_ALLOC("en-US", displayNameUtf8.constData());
         attr.dataType = UA_TYPES[UA_TYPES_DOUBLE].typeId;
         attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
 
@@ -152,12 +165,28 @@ void DataSimulationServer::updateSimulation()
 
     ++m_stepCounter;
 
-
-
     for (int i = 0; i < m_valueNodes.size(); ++i) {
-        const double noise   = QRandomGenerator::global()->generateDouble() * 0.05;
-        const double signal  = std::sin((m_stepCounter * kFrequencyBase) + (i * 0.05));
-        m_currentValues[i]   = signal + noise;
+        const SimulationConfig &config = m_simulationConfigs.at(i);
+
+        const double noise = (QRandomGenerator::global()->generateDouble() - 0.5)
+                * 2.0 * config.noiseAmplitude;
+
+        double signal = 0.0;
+        switch (config.type) {
+        case SimulationType::Sine:
+            signal = config.amplitude
+                    * std::sin((m_stepCounter * config.frequency) + (i * 0.05));
+            break;
+        case SimulationType::Peaks: {
+            const double interval = std::max(1, config.peakInterval);
+            const double position = std::fmod((m_stepCounter + i), interval) / interval;
+            const double width = std::clamp(config.peakWidthRatio, 0.01, 0.5);
+            signal = position < width ? config.peakHeight : config.peakBase;
+            break;
+        }
+        }
+
+        m_currentValues[i] = signal + noise;
 
         UA_DataValue dv;
         UA_DataValue_init(&dv);
@@ -189,6 +218,47 @@ void DataSimulationServer::shutdown()
         m_updateTimer.stop();
         UA_Server_run_shutdown(m_server);
         m_running = false;
+    }
+}
+
+int DataSimulationServer::valueCount() const
+{
+    return m_valueNodes.size();
+}
+
+QString DataSimulationServer::displayName(int index) const
+{
+    if (index < 0 || index >= m_displayNames.size())
+        return QString();
+    return m_displayNames.at(index);
+}
+
+DataSimulationServer::SimulationType DataSimulationServer::simulationType(int index) const
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return SimulationType::Sine;
+    return m_simulationConfigs.at(index).type;
+}
+
+void DataSimulationServer::setSimulationType(int index, SimulationType type)
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return;
+
+    SimulationConfig &config = m_simulationConfigs[index];
+    config.type = type;
+
+    // Reset default values for each simulation type to keep behaviour predictable.
+    if (type == SimulationType::Sine) {
+        config.amplitude = 1.0;
+        config.frequency = kFrequencyBase;
+        config.noiseAmplitude = 0.05;
+    } else if (type == SimulationType::Peaks) {
+        config.peakInterval = 60 + (index % 10) * 5;
+        config.peakHeight = 1.2;
+        config.peakBase = 0.05;
+        config.peakWidthRatio = 0.08;
+        config.noiseAmplitude = 0.02;
     }
 }
 
