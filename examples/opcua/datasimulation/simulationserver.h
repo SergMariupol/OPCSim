@@ -54,6 +54,10 @@ signals:
     void runningChanged(bool running);
     void errorOccurred(const QString &message);
 
+    int valueCount() const;
+    QString displayName(int index) const;
+    SimulationType simulationType(int index) const;
+
 public slots:
     void processServerEvents();
     void updateSimulation();
