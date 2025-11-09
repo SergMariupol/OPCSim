@@ -5,7 +5,8 @@
 #include <open62541/server.h>
 #include <open62541/server_config_default.h>
 #else
-#include <qopen62541.h>
+// подключаем амальгамацию напрямую из 3rdparty
+#include "open62541.h"
 #endif
 
 #include <QtCore/QAtomicInt>

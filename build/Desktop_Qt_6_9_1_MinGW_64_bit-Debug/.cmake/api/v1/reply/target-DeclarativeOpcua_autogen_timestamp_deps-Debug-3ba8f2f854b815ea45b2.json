@@ -1,0 +1,50 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"src/declarative_opcua/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "OpcUa::@0668d5ccba69686c51e9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "DeclarativeOpcua_lib_pri::@a9e0a6d91fd30b0c785b"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "DeclarativeOpcua_version_script::@a9e0a6d91fd30b0c785b"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "DeclarativeOpcua_sync_headers::@a9e0a6d91fd30b0c785b"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "DeclarativeOpcua_autogen_timestamp_deps::@a9e0a6d91fd30b0c785b",
+	"isGeneratorProvided" : true,
+	"name" : "DeclarativeOpcua_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "src/declarative_opcua",
+		"source" : "src/declarative_opcua"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

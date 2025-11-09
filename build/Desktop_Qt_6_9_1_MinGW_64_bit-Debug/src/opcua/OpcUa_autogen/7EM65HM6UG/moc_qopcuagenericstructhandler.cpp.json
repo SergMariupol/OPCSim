@@ -1,0 +1,45 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaGenericStructHandler",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "DataTypeKind",
+                    "values": [
+                        "Unknown",
+                        "Struct",
+                        "Enum",
+                        "Other"
+                    ]
+                }
+            ],
+            "lineNumber": 25,
+            "object": true,
+            "qualifiedClassName": "QOpcUaGenericStructHandler",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "initialized",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "initializedChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuagenericstructhandler.h",
+    "outputRevision": 69
+}

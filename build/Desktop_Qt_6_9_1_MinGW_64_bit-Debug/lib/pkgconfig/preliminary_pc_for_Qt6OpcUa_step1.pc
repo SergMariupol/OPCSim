@@ -1,0 +1,14 @@
+prefix=/Qt/6.9.1/mingw_64
+exec_prefix=${prefix}
+bindir=${prefix}/bin
+libexecdir=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include
+$<$<BOOL:>:mkspecsdir=${prefix}/mkspecs>
+$<1: >
+Name: Qt6 OpcUa
+Description: Qt OpcUa module
+Version: 6.9.1
+Libs: -L${libdir} -lQt6OpcUa $<$<BOOL:loose_link_options-NOTFOUND>:$<JOIN:$<REMOVE_DUPLICATES:loose_link_options-NOTFOUND>, >> $<JOIN:$<REMOVE_DUPLICATES:>, >
+Cflags: $<$<BOOL:${includedir}/QtOpcUa;${includedir}>:-I$<JOIN:$<REMOVE_DUPLICATES:${includedir}/QtOpcUa;${includedir}>, -I>> $<$<BOOL:QT_OPCUA_LIB>:-D$<JOIN:$<REMOVE_DUPLICATES:QT_OPCUA_LIB>, -D>>
+Requires: $<JOIN:$<REMOVE_DUPLICATES:Qt6Core;Qt6Network>, >

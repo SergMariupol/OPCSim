@@ -1,0 +1,77 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_dependencies",
+			"qt_internal_target_sync_headers",
+			"qt_finalize_module"
+		],
+		"files" : 
+		[
+			"examples/opcua/datasimulation/CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtSyncQtHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtModuleHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtScopeFinalizerHelpers.cmake:24:EVAL",
+			"src/opcua/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"file" : 4
+			},
+			{
+				"file" : 4,
+				"line" : -1,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 1,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 1137,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 281,
+				"parent" : 4
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "OpcUa::@0668d5ccba69686c51e9"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "OpcUa_sync_headers::@0668d5ccba69686c51e9"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "datasimulation_autogen_timestamp_deps::@3069bef0b6a85c3c149c",
+	"isGeneratorProvided" : true,
+	"name" : "datasimulation_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "examples/opcua/datasimulation",
+		"source" : "examples/opcua/datasimulation"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

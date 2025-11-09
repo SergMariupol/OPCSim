@@ -1,0 +1,174 @@
+{
+    "classes": [
+        {
+            "className": "OpcUaWriteItem",
+            "gadget": true,
+            "lineNumber": 31,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "nodeId",
+                    "read": "nodeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setNodeId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "ns",
+                    "read": "namespaceIdentifier",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "write": "setNamespaceIdentifier"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "attribute",
+                    "read": "attribute",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::NodeAttribute",
+                    "user": false,
+                    "write": "setAttribute"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "indexRange",
+                    "read": "indexRange",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setIndexRange"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "value",
+                    "read": "value",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "write": "setValue"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "valueType",
+                    "read": "valueType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::Types",
+                    "user": false,
+                    "write": "setValueType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "sourceTimestamp",
+                    "read": "sourceTimestamp",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QDateTime",
+                    "user": false,
+                    "write": "setSourceTimestamp"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "serverTimestamp",
+                    "read": "serverTimestamp",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QDateTime",
+                    "user": false,
+                    "write": "setServerTimestamp"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "statusCode",
+                    "read": "statusCode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaStatus::Status",
+                    "user": false,
+                    "write": "setStatusCode"
+                }
+            ],
+            "qualifiedClassName": "OpcUaWriteItem"
+        },
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "WriteItem"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaWriteItemFactory",
+            "lineNumber": 82,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "create",
+                    "returnType": "OpcUaWriteItem"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "OpcUaWriteItemFactory",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuawriteitem_p.h",
+    "outputRevision": 69
+}

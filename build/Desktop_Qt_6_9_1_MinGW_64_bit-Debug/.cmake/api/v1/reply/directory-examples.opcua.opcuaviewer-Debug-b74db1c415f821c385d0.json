@@ -1,0 +1,45 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"examples/opcua/opcuaviewer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"examples/opcua/opcuaviewer/opcuaviewer.exe"
+			],
+			"targetId" : "opcuaviewer::@fe31603ce61b1e33394f",
+			"targetIndex" : 59,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "examples/opcua/opcuaviewer",
+		"source" : "examples/opcua/opcuaviewer"
+	}
+}

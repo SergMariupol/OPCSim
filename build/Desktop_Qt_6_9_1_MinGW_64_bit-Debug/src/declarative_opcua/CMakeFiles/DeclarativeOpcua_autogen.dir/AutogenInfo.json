@@ -1,0 +1,440 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QT/qtopcua/src/declarative_opcua",
+	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/QT/qtopcua/src/declarative_opcua/CMakeLists.txt",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtModuleConfig.cmake.in",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtModuleConfigPrivate.cmake.in",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtVersionlessTargets.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtVersionlessAliasTargets.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtVersionlessTargets.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtVersionlessAliasTargets.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/ModuleDescription.json.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPluginConfig.cmake.in",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/PkgConfigLibrary.pc.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcuaplugin_QtOpcUaPlugin_in.cpp",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/pkgconfig/preliminary_pc_for_Qt6DeclarativeOpcua_step1.pc"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/QT/qtopcua",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "DeclarativeOpcua_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaattributecache_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaattributecache_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaattributeoperand_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaattributeoperand_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaattributevalue_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaattributevalue_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaconnection_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaconnection_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuadatachangefilter_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuadatachangefilter_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaelementoperand_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaelementoperand_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaendpointdiscovery_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaendpointdiscovery_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaeventfilter_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaeventfilter_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuafilterelement_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuafilterelement_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaforeign_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaforeign_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcualiteraloperand_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcualiteraloperand_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuamethodargument_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuamethodargument_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuamethodnode_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuamethodnode_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuanode_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuanode_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuanodeid_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuanodeid_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuanodeidtype_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuanodeidtype_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaoperandbase_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaoperandbase_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuapathresolver_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuapathresolver_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuareaditem_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuareaditem_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuareadresult_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuareadresult_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuarelativenodeid_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuarelativenodeid_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuarelativenodepath_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuarelativenodepath_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaserverdiscovery_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuaserverdiscovery_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuasimpleattributeoperand_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuasimpleattributeoperand_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuastatus_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuastatus_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuavaluenode_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuavaluenode_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuawriteitem_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuawriteitem_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuawriteresult_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_opcuawriteresult_p.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/universalnode_p.h",
+			"Mu",
+			"EWIEGA46WW/moc_universalnode_p.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"DeclarativeOpcua_EXPORTS",
+		"MINGW_HAS_SECURE_API=1",
+		"NOMINMAX",
+		"QT_ASCII_CAST_WARNINGS",
+		"QT_BUILDING_QT",
+		"QT_BUILD_DECLARATIVEOPCUA_LIB",
+		"QT_CORE_LIB",
+		"QT_DEPRECATED_WARNINGS",
+		"QT_EXPLICIT_QFILE_CONSTRUCTION_FROM_PATH",
+		"QT_GUI_LIB",
+		"QT_LEAN_HEADERS=1",
+		"QT_MOC_COMPAT",
+		"QT_NETWORK_LIB",
+		"QT_NO_AS_CONST=1",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_CONTEXTLESS_CONNECT=1",
+		"QT_NO_EXCEPTIONS",
+		"QT_NO_FOREACH",
+		"QT_NO_FOREACH=1",
+		"QT_NO_JAVA_STYLE_ITERATORS",
+		"QT_NO_NARROWING_CONVERSIONS_IN_CONNECT",
+		"QT_NO_QASCONST",
+		"QT_NO_QEXCHANGE",
+		"QT_NO_QSNPRINTF",
+		"QT_NO_STD_FORMAT_SUPPORT",
+		"QT_OPCUA_LIB",
+		"QT_OPENGL_LIB",
+		"QT_QMLINTEGRATION_LIB",
+		"QT_QMLMETA_LIB",
+		"QT_QMLMODELS_LIB",
+		"QT_QMLWORKERSCRIPT_LIB",
+		"QT_QML_LIB",
+		"QT_QUICK_LIB",
+		"QT_USE_QSTRINGBUILDER",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_GLIBCXX_ASSERTIONS",
+		"_UNICODE",
+		"_USE_MATH_DEFINES",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtDeclarativeOpcua",
+		"D:/QT/qtopcua/src/declarative_opcua",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtDeclarativeOpcua/6.9.1",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtDeclarativeOpcua/6.9.1/QtDeclarativeOpcua",
+		"C:/Qt/6.9.1/mingw_64/include/QtQml/6.9.1",
+		"C:/Qt/6.9.1/mingw_64/include/QtQml/6.9.1/QtQml",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtOpcUa",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore/6.9.1",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore/6.9.1/QtCore",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore",
+		"C:/Qt/6.9.1/mingw_64/include",
+		"C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
+		"C:/Qt/6.9.1/mingw_64/include/QtQml",
+		"C:/Qt/6.9.1/mingw_64/include/QtQmlIntegration",
+		"C:/Qt/6.9.1/mingw_64/include/QtNetwork",
+		"C:/Qt/6.9.1/mingw_64/include/QtGui",
+		"C:/Qt/6.9.1/mingw_64/include/QtQuick",
+		"C:/Qt/6.9.1/mingw_64/include/QtQmlMeta",
+		"C:/Qt/6.9.1/mingw_64/include/QtQmlModels",
+		"C:/Qt/6.9.1/mingw_64/include/QtQmlWorkerScript",
+		"C:/Qt/6.9.1/mingw_64/include/QtOpenGL",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/.qt/rcc/qrc_qmake_QtOpcUa.cpp",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/declarativeopcua_qmltyperegistrations.cpp",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/qtdeclarativeopcua-config.h",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/qtdeclarativeopcua-config_p.h",
+		"D:/QT/qtopcua/src/declarative_opcua/opcuaconnection.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/DeclarativeOpcua_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Qt/6.9.1/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/DeclarativeOpcua_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaattributecache.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaattributeoperand.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaattributevalue.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuadatachangefilter.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaelementoperand.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaendpointdiscovery.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaeventfilter.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuafilterelement.cpp",
+			"Mu",
+			null
+		],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuaforeign.cpp", "Mu", null ],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcualiteraloperand.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuamethodargument.cpp",
+			"Mu",
+			null
+		],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuamethodnode.cpp", "Mu", null ],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuanode.cpp", "Mu", null ],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuanodeid.cpp", "Mu", null ],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuanodeidtype.cpp", "Mu", null ],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaoperandbase.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuapathresolver.cpp",
+			"Mu",
+			null
+		],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuareaditem.cpp", "Mu", null ],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuareadresult.cpp", "Mu", null ],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuarelativenodeid.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuarelativenodepath.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuaserverdiscovery.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuasimpleattributeoperand.cpp",
+			"Mu",
+			null
+		],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuastatus.cpp", "Mu", null ],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuavaluenode.cpp", "Mu", null ],
+		[ "D:/QT/qtopcua/src/declarative_opcua/opcuawriteitem.cpp", "Mu", null ],
+		[
+			"D:/QT/qtopcua/src/declarative_opcua/opcuawriteresult.cpp",
+			"Mu",
+			null
+		],
+		[ "D:/QT/qtopcua/src/declarative_opcua/universalnode.cpp", "Mu", null ]
+	],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

@@ -1,0 +1,978 @@
+[
+    {
+        "classes": [
+            {
+                "className": "Open62541AsyncBackend",
+                "lineNumber": 17,
+                "object": true,
+                "qualifiedClassName": "Open62541AsyncBackend",
+                "slots": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "endpoint",
+                                "type": "QOpcUaEndpointDescription"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "connectToEndpoint",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "disconnectFromEndpoint",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "url",
+                                "type": "QUrl"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "requestEndpoints",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "settings",
+                                "type": "QOpcUaConnectionSettings"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "handleConnectionSettingsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "id",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "request",
+                                "type": "QOpcUaBrowseRequest"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "browse",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "id",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "attr",
+                                "type": "QOpcUa::NodeAttributes"
+                            },
+                            {
+                                "name": "indexRange",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "readAttributes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "id",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "attrId",
+                                "type": "QOpcUa::NodeAttribute"
+                            },
+                            {
+                                "name": "value",
+                                "type": "QVariant"
+                            },
+                            {
+                                "name": "type",
+                                "type": "QOpcUa::Types"
+                            },
+                            {
+                                "name": "indexRange",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "writeAttribute",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "id",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "toWrite",
+                                "type": "QOpcUaNode::AttributeMap"
+                            },
+                            {
+                                "name": "valueAttributeType",
+                                "type": "QOpcUa::Types"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "writeAttributes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "id",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "attr",
+                                "type": "QOpcUa::NodeAttributes"
+                            },
+                            {
+                                "name": "settings",
+                                "type": "QOpcUaMonitoringParameters"
+                            }
+                        ],
+                        "index": 8,
+                        "name": "enableMonitoring",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "attr",
+                                "type": "QOpcUa::NodeAttributes"
+                            }
+                        ],
+                        "index": 9,
+                        "name": "disableMonitoring",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "attr",
+                                "type": "QOpcUa::NodeAttribute"
+                            },
+                            {
+                                "name": "item",
+                                "type": "QOpcUaMonitoringParameters::Parameter"
+                            },
+                            {
+                                "name": "value",
+                                "type": "QVariant"
+                            }
+                        ],
+                        "index": 10,
+                        "name": "modifyMonitoring",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "objectId",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "methodId",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "args",
+                                "type": "QList<QOpcUa::TypedVariant>"
+                            }
+                        ],
+                        "index": 11,
+                        "name": "callMethod",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            },
+                            {
+                                "name": "startNode",
+                                "type": "UA_NodeId"
+                            },
+                            {
+                                "name": "path",
+                                "type": "QList<QOpcUaRelativePathElement>"
+                            }
+                        ],
+                        "index": 12,
+                        "name": "resolveBrowsePath",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "url",
+                                "type": "QUrl"
+                            },
+                            {
+                                "name": "localeIds",
+                                "type": "QStringList"
+                            },
+                            {
+                                "name": "serverUris",
+                                "type": "QStringList"
+                            }
+                        ],
+                        "index": 13,
+                        "name": "findServers",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nodesToRead",
+                                "type": "QList<QOpcUaReadItem>"
+                            }
+                        ],
+                        "index": 14,
+                        "name": "readNodeAttributes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nodesToWrite",
+                                "type": "QList<QOpcUaWriteItem>"
+                            }
+                        ],
+                        "index": 15,
+                        "name": "writeNodeAttributes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "request",
+                                "type": "QOpcUaHistoryReadRawRequest"
+                            },
+                            {
+                                "name": "continuationPoints",
+                                "type": "QList<QByteArray>"
+                            },
+                            {
+                                "name": "releaseContinuationPoints",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            }
+                        ],
+                        "index": 16,
+                        "name": "readHistoryRaw",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "request",
+                                "type": "QOpcUaHistoryReadEventRequest"
+                            },
+                            {
+                                "name": "continuationPoints",
+                                "type": "QList<QByteArray>"
+                            },
+                            {
+                                "name": "releaseContinuationPoints",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            }
+                        ],
+                        "index": 17,
+                        "name": "readHistoryEvents",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nodeToAdd",
+                                "type": "QOpcUaAddNodeItem"
+                            }
+                        ],
+                        "index": 18,
+                        "name": "addNode",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nodeId",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "deleteTargetReferences",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 19,
+                        "name": "deleteNode",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "referenceToAdd",
+                                "type": "QOpcUaAddReferenceItem"
+                            }
+                        ],
+                        "index": 20,
+                        "name": "addReference",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "referenceToDelete",
+                                "type": "QOpcUaDeleteReferenceItem"
+                            }
+                        ],
+                        "index": 21,
+                        "name": "deleteReference",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "settings",
+                                "type": "QOpcUaMonitoringParameters"
+                            }
+                        ],
+                        "index": 22,
+                        "name": "getSubscription",
+                        "returnType": "QOpen62541Subscription*"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "subscriptionId",
+                                "type": "UA_UInt32"
+                            }
+                        ],
+                        "index": 23,
+                        "name": "removeSubscription",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 24,
+                        "name": "iterateClient",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 25,
+                        "name": "triggerIterateClient",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "sub",
+                                "type": "QOpen62541Subscription*"
+                            },
+                            {
+                                "name": "items",
+                                "type": "QList<std::pair<quint64,QOpcUa::NodeAttribute>>"
+                            }
+                        ],
+                        "index": 26,
+                        "name": "handleSubscriptionTimeout",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 27,
+                        "name": "cleanupSubscriptions",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nodesToRegister",
+                                "type": "QStringList"
+                            }
+                        ],
+                        "index": 28,
+                        "name": "registerNodes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nodesToUnregister",
+                                "type": "QStringList"
+                            }
+                        ],
+                        "index": 29,
+                        "name": "unregisterNodes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 30,
+                        "name": "asyncMethodCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 31,
+                        "name": "asyncTranslateBrowsePathCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 32,
+                        "name": "asyncAddNodeCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 33,
+                        "name": "asyncDeleteNodeCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 34,
+                        "name": "asyncAddReferenceCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 35,
+                        "name": "asyncDeleteReferenceCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 36,
+                        "name": "asyncReadCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 37,
+                        "name": "asyncWriteAttributesCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 38,
+                        "name": "asyncBrowseCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 39,
+                        "name": "asyncBatchReadCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 40,
+                        "name": "asyncBatchWriteCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 41,
+                        "name": "asyncReadHistoryDataCallBack",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 42,
+                        "name": "asyncRegisterNodesCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 43,
+                        "name": "asyncUnregisterNodesCallback",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "client",
+                                "type": "UA_Client*"
+                            },
+                            {
+                                "name": "userdata",
+                                "type": "void*"
+                            },
+                            {
+                                "name": "requestId",
+                                "type": "UA_UInt32"
+                            },
+                            {
+                                "name": "response",
+                                "type": "void*"
+                            }
+                        ],
+                        "index": 44,
+                        "name": "asyncReadHistoryEventsCallback",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QOpcUaBackend"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qopen62541backend.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "QOpen62541Client",
+                "lineNumber": 21,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "request",
+                                "type": "QOpcUaHistoryReadRawRequest"
+                            },
+                            {
+                                "name": "continuationPoints",
+                                "type": "QList<QByteArray>"
+                            },
+                            {
+                                "name": "releaseContinuationPoints",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "handleHistoryReadRawRequested",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "QOpen62541Client",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "handle",
+                                "type": "quint64"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "historyReadRequestError",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QOpcUaClientImpl"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qopen62541client.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "QOpen62541Plugin",
+                "interfaces": [
+                    [
+                        {
+                            "className": "QOpcUaPlugin",
+                            "id": "\"org.qt-project.qt.opcua.providerfactory/1.0\""
+                        }
+                    ]
+                ],
+                "lineNumber": 11,
+                "object": true,
+                "qualifiedClassName": "QOpen62541Plugin",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QOpcUaPlugin"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qopen62541plugin.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "QOpen62541Subscription",
+                "lineNumber": 19,
+                "object": true,
+                "qualifiedClassName": "QOpen62541Subscription",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "sub",
+                                "type": "QOpen62541Subscription*"
+                            },
+                            {
+                                "name": "items",
+                                "type": "QList<std::pair<quint64,QOpcUa::NodeAttribute>>"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "timeout",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qopen62541subscription.h",
+        "outputRevision": 69
+    }
+]

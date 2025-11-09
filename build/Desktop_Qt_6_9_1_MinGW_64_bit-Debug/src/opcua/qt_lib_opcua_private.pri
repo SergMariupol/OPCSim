@@ -1,0 +1,11 @@
+QT.opcua_private.VERSION = 6.9.1
+QT.opcua_private.name = QtOpcUa
+QT.opcua_private.module =
+QT.opcua_private.libs = $$QT_MODULE_LIB_BASE
+QT.opcua_private.includes = $$QT_MODULE_INCLUDE_BASE/QtOpcUa/6.9.1 $$QT_MODULE_INCLUDE_BASE/QtOpcUa/6.9.1/QtOpcUa
+QT.opcua_private.frameworks = 
+QT.opcua_private.depends = core_private network_private opcua
+QT.opcua_private.uses = 
+QT.opcua_private.module_config = v2 internal_module
+QT.opcua_private.enabled_features = open62541 ns0idnames datatypecodegenerator
+QT.opcua_private.disabled_features = system-open62541 internalgenerator gds open62541-security

@@ -1,0 +1,82 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Foreign",
+                    "value": "QOpcUa"
+                },
+                {
+                    "name": "QML.ForeignIsNamespace",
+                    "value": "true"
+                },
+                {
+                    "name": "QML.Extended",
+                    "value": "QOpcUaUserTokenPolicy"
+                },
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "Constants",
+            "lineNumber": 28,
+            "namespace": true,
+            "qualifiedClassName": "Constants"
+        },
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Foreign",
+                    "value": "QOpcUaApplicationDescription"
+                },
+                {
+                    "name": "QML.ForeignIsNamespace",
+                    "value": "true"
+                },
+                {
+                    "name": "QML.Element",
+                    "value": "ApplicationDescription"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "QOpcUaApplicationDescriptionForeign",
+            "lineNumber": 37,
+            "namespace": true,
+            "qualifiedClassName": "QOpcUaApplicationDescriptionForeign"
+        },
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Foreign",
+                    "value": "QOpcUaUserTokenPolicy"
+                },
+                {
+                    "name": "QML.ForeignIsNamespace",
+                    "value": "true"
+                },
+                {
+                    "name": "QML.Element",
+                    "value": "UserTokenPolicy"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "QOpcUaUserTokenPolicyForeign",
+            "lineNumber": 45,
+            "namespace": true,
+            "qualifiedClassName": "QOpcUaUserTokenPolicyForeign"
+        }
+    ],
+    "inputFile": "opcuaforeign_p.h",
+    "outputRevision": 69
+}

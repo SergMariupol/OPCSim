@@ -1,0 +1,45 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"examples/opcua/waterpump/simulationserver/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 111,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"examples/opcua/waterpump/simulationserver/simulationserver.exe"
+			],
+			"targetId" : "simulationserver::@6c7029cac7d24e3453b8",
+			"targetIndex" : 93,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "examples/opcua/waterpump/simulationserver",
+		"source" : "examples/opcua/waterpump/simulationserver"
+	}
+}

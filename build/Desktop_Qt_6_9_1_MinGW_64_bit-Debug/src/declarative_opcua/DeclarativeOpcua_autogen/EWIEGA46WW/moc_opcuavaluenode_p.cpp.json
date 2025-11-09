@@ -1,0 +1,260 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "ValueNode"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "OpcUaValueNode",
+            "lineNumber": 25,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "value",
+                    "notify": "valueChanged",
+                    "read": "value",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "write": "setValue"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "valueType",
+                    "read": "valueType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::Types",
+                    "user": false,
+                    "write": "setValueType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "serverTimestamp",
+                    "read": "serverTimestamp",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QDateTime",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "sourceTimestamp",
+                    "read": "sourceTimestamp",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QDateTime",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "monitored",
+                    "notify": "monitoredChanged",
+                    "read": "monitored",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setMonitored"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "publishingInterval",
+                    "notify": "publishingIntervalChanged",
+                    "read": "publishingInterval",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setPublishingInterval"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "filter",
+                    "notify": "filterChanged",
+                    "read": "filter",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaDataChangeFilter*",
+                    "user": false,
+                    "write": "setFilter"
+                }
+            ],
+            "qualifiedClassName": "OpcUaValueNode",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "valueChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "monitored",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "monitoredChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "publishingInterval",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "publishingIntervalChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "dataChangeOccurred",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "filterChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "setValue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "monitored",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "setMonitored",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "publishingInterval",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "setPublishingInterval",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "valueType",
+                            "type": "QOpcUa::Types"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "setValueType",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "absolutePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "setupNode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 10,
+                    "name": "updateSubscription",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 11,
+                    "isConst": true,
+                    "name": "updateFilters",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "OpcUaNode"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuavaluenode_p.h",
+    "outputRevision": 69
+}

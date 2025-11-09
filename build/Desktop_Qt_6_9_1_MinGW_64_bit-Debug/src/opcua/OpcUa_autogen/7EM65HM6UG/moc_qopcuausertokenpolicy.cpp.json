@@ -1,0 +1,25 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaUserTokenPolicy",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "TokenType",
+                    "values": [
+                        "Anonymous",
+                        "Username",
+                        "Certificate",
+                        "IssuedToken"
+                    ]
+                }
+            ],
+            "gadget": true,
+            "lineNumber": 15,
+            "qualifiedClassName": "QOpcUaUserTokenPolicy"
+        }
+    ],
+    "inputFile": "qopcuausertokenpolicy.h",
+    "outputRevision": 69
+}

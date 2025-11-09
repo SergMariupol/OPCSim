@@ -1,0 +1,116 @@
+{
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"qt_internal_add_linker_version_script",
+			"qt_internal_target_sync_headers",
+			"qt_finalize_module"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtFlagHandlingHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtSyncQtHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtModuleHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtScopeFinalizerHelpers.cmake:24:EVAL",
+			"src/declarative_opcua/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 4
+			},
+			{
+				"file" : 4,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1137,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 45,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 141,
+				"parent" : 4
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "OpcUa_sync_headers::@0668d5ccba69686c51e9"
+		}
+	],
+	"id" : "DeclarativeOpcua_version_script::@a9e0a6d91fd30b0c785b",
+	"name" : "DeclarativeOpcua_version_script",
+	"paths" : 
+	{
+		"build" : "src/declarative_opcua",
+		"source" : "src/declarative_opcua"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/DeclarativeOpcua_version_script",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/DeclarativeOpcua_version_script.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua.version.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcua_syncqt_timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

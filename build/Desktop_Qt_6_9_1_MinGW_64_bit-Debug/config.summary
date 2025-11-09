@@ -1,0 +1,8 @@
+
+Qt Opcua:
+  Open62541 .............................. yes
+  Support for namespace 0 NodeId names ... yes
+  Internal code generator ................ no
+  Open62541 security support ............. no
+  Support for global discovery server .... no
+  Data type code generator ............... yes

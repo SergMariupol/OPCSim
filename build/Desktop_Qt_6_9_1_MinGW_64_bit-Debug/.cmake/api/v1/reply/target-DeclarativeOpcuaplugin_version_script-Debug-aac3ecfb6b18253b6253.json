@@ -1,0 +1,97 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"qt_internal_add_linker_version_script",
+			"qt_internal_add_plugin",
+			"qt_internal_add_qml_module"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtFlagHandlingHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPluginHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Qml/Qt6QmlBuildInternals.cmake",
+			"src/declarative_opcua/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 224,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 444,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 141,
+				"parent" : 3
+			}
+		]
+	},
+	"id" : "DeclarativeOpcuaplugin_version_script::@a9e0a6d91fd30b0c785b",
+	"name" : "DeclarativeOpcuaplugin_version_script",
+	"paths" : 
+	{
+		"build" : "src/declarative_opcua",
+		"source" : "src/declarative_opcua"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/DeclarativeOpcuaplugin_version_script",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/DeclarativeOpcuaplugin_version_script.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/DeclarativeOpcuaplugin.version.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

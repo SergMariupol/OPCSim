@@ -1,0 +1,42 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"examples/opcua/waterpump/waterpump-qmlcpp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "OpcUa::@0668d5ccba69686c51e9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "waterpump-qmlcpp_qmlimportscan::@91227b3af77be9624d9f"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "waterpump-qmlcpp_autogen_timestamp_deps::@91227b3af77be9624d9f",
+	"isGeneratorProvided" : true,
+	"name" : "waterpump-qmlcpp_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "examples/opcua/waterpump/waterpump-qmlcpp",
+		"source" : "examples/opcua/waterpump/waterpump-qmlcpp"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

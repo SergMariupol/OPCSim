@@ -1,0 +1,118 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaApplicationDescription",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "ApplicationType",
+                    "values": [
+                        "Server",
+                        "Client",
+                        "ClientAndServer",
+                        "DiscoveryServer"
+                    ]
+                }
+            ],
+            "gadget": true,
+            "lineNumber": 15,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "applicationUri",
+                    "read": "applicationUri",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "productUri",
+                    "read": "productUri",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "applicationName",
+                    "read": "applicationName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaLocalizedText",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "applicationType",
+                    "read": "applicationType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaApplicationDescription::ApplicationType",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "gatewayServerUri",
+                    "read": "gatewayServerUri",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "discoveryProfileUri",
+                    "read": "discoveryProfileUri",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "discoveryUrls",
+                    "read": "discoveryUrls",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QList<QString>",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "QOpcUaApplicationDescription"
+        }
+    ],
+    "inputFile": "qopcuaapplicationdescription.h",
+    "outputRevision": 69
+}

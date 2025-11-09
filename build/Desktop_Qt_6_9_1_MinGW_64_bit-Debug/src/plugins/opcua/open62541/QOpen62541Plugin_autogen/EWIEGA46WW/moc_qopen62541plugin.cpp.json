@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "QOpen62541Plugin",
+            "interfaces": [
+                [
+                    {
+                        "className": "QOpcUaPlugin",
+                        "id": "\"org.qt-project.qt.opcua.providerfactory/1.0\""
+                    }
+                ]
+            ],
+            "lineNumber": 11,
+            "object": true,
+            "qualifiedClassName": "QOpen62541Plugin",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QOpcUaPlugin"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopen62541plugin.h",
+    "outputRevision": 69
+}

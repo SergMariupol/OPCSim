@@ -1,0 +1,188 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"qt_install",
+			"qt_internal_add_plugin",
+			"qt_enable_separate_debug_info",
+			"qt_internal_export_additional_targets_file_handler",
+			"qt_internal_export_additional_targets_file_finalizer"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtInstallHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPluginHelpers.cmake",
+			"src/plugins/opcua/open62541/CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtSeparateDebugInfo.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtTargetHelpers.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtScopeFinalizerHelpers.cmake:24:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 408,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 419,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 4
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 428,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 482,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 334,
+				"parent" : 8
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 9
+			},
+			{
+				"file" : 2,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 1,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 875,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 4,
+				"line" : 1166,
+				"parent" : 13
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 14
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 3,
+			"component" : "Devel",
+			"destination" : "lib/cmake/Qt6OpcUa",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginConfig.cmake",
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginConfigVersion.cmake",
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginConfigVersionImpl.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "plugins/opcua",
+			"paths" : 
+			[
+				"plugins/opcua/open62541_backend.dll"
+			],
+			"targetId" : "QOpen62541Plugin::@d968a6e61de4eb252b8b",
+			"targetIndex" : 23,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Qt6OpcUa",
+			"exportName" : "Qt6QOpen62541PluginTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "QOpen62541Plugin::@d968a6e61de4eb252b8b",
+					"index" : 23
+				}
+			],
+			"paths" : 
+			[
+				"src/plugins/opcua/open62541/CMakeFiles/Export/a62b892d1848085576fd2321b08bf888/Qt6QOpen62541PluginTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 10,
+			"component" : "Unspecified",
+			"destination" : "plugins/opcua",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/plugins/opcua/open62541_backend.debug"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 15,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Qt6OpcUa",
+			"paths" : 
+			[
+				"build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginAdditionalTargetInfo.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src/plugins/opcua/open62541",
+		"source" : "src/plugins/opcua/open62541"
+	}
+}

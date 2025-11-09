@@ -1,0 +1,99 @@
+{
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"qt6_add_plugin",
+			"qt_internal_add_plugin",
+			"add_dependencies",
+			"qt_internal_add_qml_module"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPluginHelpers.cmake",
+			"src/plugins/opcua/open62541/CMakeLists.txt",
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Qml/Qt6QmlBuildInternals.cmake",
+			"src/declarative_opcua/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 95,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2663,
+				"parent" : 2
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 4,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 224,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 95,
+				"parent" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 2666,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 2666,
+				"parent" : 2
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 8,
+			"id" : "DeclarativeOpcuaplugin::@a9e0a6d91fd30b0c785b"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "QOpen62541Plugin::@d968a6e61de4eb252b8b"
+		}
+	],
+	"id" : "qt_internal_plugins::@d968a6e61de4eb252b8b",
+	"name" : "qt_internal_plugins",
+	"paths" : 
+	{
+		"build" : "src/plugins/opcua/open62541",
+		"source" : "src/plugins/opcua/open62541"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

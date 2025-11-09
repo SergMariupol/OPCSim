@@ -1,0 +1,108 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "FilterElement"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaFilterElement",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "FilterOperator",
+                    "type": "quint32",
+                    "values": [
+                        "Equals",
+                        "IsNull",
+                        "GreaterThan",
+                        "LessThan",
+                        "GreaterThanOrEqual",
+                        "LessThanOrEqual",
+                        "Like",
+                        "Not",
+                        "Between",
+                        "InList",
+                        "And",
+                        "Or",
+                        "Cast",
+                        "InView",
+                        "OfType",
+                        "RelatedTo",
+                        "BitwiseAnd",
+                        "BitwiseOr"
+                    ]
+                }
+            ],
+            "lineNumber": 29,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "operator",
+                    "read": "operatorType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "FilterOperator",
+                    "user": false,
+                    "write": "setOperatorType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "firstOperand",
+                    "read": "firstOperand",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaOperandBase*",
+                    "user": false,
+                    "write": "setFirstOperand"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "secondOperand",
+                    "read": "secondOperand",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaOperandBase*",
+                    "user": false,
+                    "write": "setSecondOperand"
+                }
+            ],
+            "qualifiedClassName": "OpcUaFilterElement",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "dataChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuafilterelement_p.h",
+    "outputRevision": 69
+}

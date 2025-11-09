@@ -1,0 +1,66 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "NodeIdType"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                },
+                {
+                    "name": "QML.Creatable",
+                    "value": "false"
+                },
+                {
+                    "name": "QML.UncreatableReason",
+                    "value": "The type 'NodeIdType' is not creatable. Use 'NodeId' or 'RelativeNodeId' instead."
+                }
+            ],
+            "className": "OpcUaNodeIdType",
+            "lineNumber": 25,
+            "object": true,
+            "qualifiedClassName": "OpcUaNodeIdType",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "nodeNamespaceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "identifierChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "nodeChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuanodeidtype_p.h",
+    "outputRevision": 69
+}

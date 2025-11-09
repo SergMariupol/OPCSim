@@ -1,0 +1,174 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaHistoryReadResponseImpl",
+            "lineNumber": 28,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "data",
+                            "type": "QList<QOpcUaHistoryData>"
+                        },
+                        {
+                            "name": "continuationPoints",
+                            "type": "QList<QByteArray>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        },
+                        {
+                            "name": "responseHandle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "handleDataAvailable",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "data",
+                            "type": "QList<QOpcUaHistoryEvent>"
+                        },
+                        {
+                            "name": "continuationPoints",
+                            "type": "QList<QByteArray>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        },
+                        {
+                            "name": "responseHandle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "handleEventsAvailable",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "requestHandle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "handleRequestError",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "QOpcUaHistoryReadResponseImpl",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "request",
+                            "type": "QOpcUaHistoryReadRawRequest"
+                        },
+                        {
+                            "name": "continuationPoints",
+                            "type": "QList<QByteArray>"
+                        },
+                        {
+                            "name": "releaseContinuationPoints",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "handle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "historyReadRawRequested",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "request",
+                            "type": "QOpcUaHistoryReadEventRequest"
+                        },
+                        {
+                            "name": "continuationPoints",
+                            "type": "QList<QByteArray>"
+                        },
+                        {
+                            "name": "releaseContinuationPoints",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "handle",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "historyReadEventsRequested",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaHistoryData>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "readHistoryDataFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaHistoryEvent>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "readHistoryEventsFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "state",
+                            "type": "QOpcUaHistoryReadResponse::State"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "stateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuahistoryreadresponseimpl_p.h",
+    "outputRevision": 69
+}

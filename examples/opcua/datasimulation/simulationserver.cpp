@@ -21,7 +21,7 @@ DataSimulationServer::DataSimulationServer(QObject *parent)
 {
     UA_NodeId_init(&m_folderNode);
 
-    m_iterateTimer.setInterval(0);
+    m_iterateTimer.setInterval(5);
     m_iterateTimer.setSingleShot(false);
     m_updateTimer.setInterval(kUpdateIntervalMs);
     m_updateTimer.setSingleShot(false);
@@ -52,7 +52,7 @@ bool DataSimulationServer::init()
         return false;
 
     UA_ServerConfig *config = UA_Server_getConfig(m_server);
-    UA_StatusCode status = UA_ServerConfig_setMinimal(config, 4840, nullptr);
+    UA_StatusCode status = UA_ServerConfig_setMinimal(config, 4850, nullptr);
     if (status != UA_STATUSCODE_GOOD)
         return false;
 
@@ -90,7 +90,7 @@ bool DataSimulationServer::setupAddressSpace()
         m_currentValues[i] = initialValue;
 
         UA_VariableAttributes attr = UA_VariableAttributes_default;
-        UA_Variant_setScalar(&attr.value, &m_currentValues[i], &UA_TYPES[UA_TYPES_DOUBLE]);
+        UA_Variant_setScalarCopy(&attr.value, &m_currentValues[i], &UA_TYPES[UA_TYPES_DOUBLE]);
         const QByteArray displayName = QByteArray("Value ") + QByteArray::number(i + 1);
         attr.displayName = UA_LOCALIZEDTEXT_ALLOC("en-US", displayName.constData());
         attr.dataType = UA_TYPES[UA_TYPES_DOUBLE].typeId;
@@ -152,16 +152,33 @@ void DataSimulationServer::updateSimulation()
 
     ++m_stepCounter;
 
-    for (int i = 0; i < m_valueNodes.size(); ++i) {
-        const double noise = QRandomGenerator::global()->generateDouble() * 0.05;
-        const double signal = std::sin((m_stepCounter * kFrequencyBase) + (i * 0.05));
-        m_currentValues[i] = signal + noise;
 
-        UA_Variant value;
-        UA_Variant_init(&value);
-        UA_Variant_setScalar(&value, &m_currentValues[i], &UA_TYPES[UA_TYPES_DOUBLE]);
-        UA_Server_writeValue(m_server, m_valueNodes[i], value);
-        UA_Variant_clear(&value);
+
+    for (int i = 0; i < m_valueNodes.size(); ++i) {
+        const double noise   = QRandomGenerator::global()->generateDouble() * 0.05;
+        const double signal  = std::sin((m_stepCounter * kFrequencyBase) + (i * 0.05));
+        m_currentValues[i]   = signal + noise;
+
+        UA_DataValue dv;
+        UA_DataValue_init(&dv);
+
+        // Значение — копией внутрь dv.value (никаких висячих указателей)
+        UA_Variant_setScalarCopy(&dv.value, &m_currentValues[i], &UA_TYPES[UA_TYPES_DOUBLE]);
+
+        // Ваш источник времени (UTC)
+        dv.hasSourceTimestamp = true;
+        dv.sourceTimestamp    = UA_DateTime_now();
+
+        // Опционально — зафиксировать и ServerTimestamp тем же значением:
+        // dv.hasServerTimestamp = true;
+        // dv.serverTimestamp    = now;
+
+        const UA_StatusCode st = UA_Server_writeDataValue(m_server, m_valueNodes[i], dv);
+        if (st != UA_STATUSCODE_GOOD) {
+            qCWarning(lcDataSimulation) << "write failed for node" << i << "status:" << st;
+        }
+
+        UA_DataValue_clear(&dv);
     }
 }
 

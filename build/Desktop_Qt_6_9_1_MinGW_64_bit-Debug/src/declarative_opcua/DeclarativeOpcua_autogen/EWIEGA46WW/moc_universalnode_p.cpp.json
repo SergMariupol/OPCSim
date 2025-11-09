@@ -1,0 +1,65 @@
+{
+    "classes": [
+        {
+            "className": "UniversalNode",
+            "lineNumber": 31,
+            "object": true,
+            "qualifiedClassName": "UniversalNode",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "namespaceNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "quint16"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "namespaceIndexChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "nodeIdentifierChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "nodeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "namespaceChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "universalnode_p.h",
+    "outputRevision": 69
+}

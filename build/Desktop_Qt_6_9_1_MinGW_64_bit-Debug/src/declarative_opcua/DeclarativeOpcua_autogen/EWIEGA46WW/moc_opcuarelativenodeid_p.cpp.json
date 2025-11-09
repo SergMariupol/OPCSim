@@ -1,0 +1,92 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "RelativeNodeId"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "OpcUaRelativeNodeId",
+            "lineNumber": 29,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "startNode",
+                    "notify": "startNodeChanged",
+                    "read": "startNode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaNodeIdType*",
+                    "user": false,
+                    "write": "setStartNode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "path",
+                    "read": "paths",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QQmlListProperty<OpcUaRelativeNodePath>",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "OpcUaRelativeNodeId",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "startNode",
+                            "type": "OpcUaNodeIdType*"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "startNodeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "pathChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "startNode",
+                            "type": "OpcUaNodeIdType*"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "setStartNode",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "OpcUaNodeIdType"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuarelativenodeid_p.h",
+    "outputRevision": 69
+}

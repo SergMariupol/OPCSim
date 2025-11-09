@@ -1,0 +1,65 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaAuthenticationInformation",
+            "gadget": true,
+            "lineNumber": 16,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "setAnonymousAuthentication",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "username",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "password",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "setUsernameAuthentication",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "setCertificateAuthentication",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "certificatePath",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "privateKeyPath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "setCertificateAuthentication",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "isConst": true,
+                    "name": "authenticationType",
+                    "returnType": "QOpcUaUserTokenPolicy::TokenType"
+                }
+            ],
+            "qualifiedClassName": "QOpcUaAuthenticationInformation"
+        }
+    ],
+    "inputFile": "qopcuaauthenticationinformation.h",
+    "outputRevision": 69
+}

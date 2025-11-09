@@ -1,0 +1,42 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"src/plugins/opcua/open62541/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "OpcUa::@0668d5ccba69686c51e9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "OpcUa_sync_headers::@0668d5ccba69686c51e9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "QOpen62541Plugin_version_script::@d968a6e61de4eb252b8b"
+		}
+	],
+	"id" : "QOpen62541Plugin_autogen_timestamp_deps::@d968a6e61de4eb252b8b",
+	"isGeneratorProvided" : true,
+	"name" : "QOpen62541Plugin_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "src/plugins/opcua/open62541",
+		"source" : "src/plugins/opcua/open62541"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

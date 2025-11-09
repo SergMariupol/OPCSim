@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="Pump.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/Pump.qml</file>
+    <file alias="ServerControl.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/ServerControl.qml</file>
+    <file alias="Tank.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/Tank.qml</file>
+    <file alias="Tank1Unit.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/Tank1Unit.qml</file>
+    <file alias="Tank2Unit.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/Tank2Unit.qml</file>
+    <file alias="TankSimulation.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/TankSimulation.qml</file>
+    <file alias="ValueDisplay.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/ValueDisplay.qml</file>
+    <file alias="main.qml">D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qmlcpp/main.qml</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,1290 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"qt_internal_show_extra_ide_sources",
+			"qt_build_repo_end",
+			"qt_build_repo"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtBuildRepoHelpers.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 571,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 399,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 495,
+				"parent" : 3
+			}
+		]
+	},
+	"id" : "qtopcua_cmake_files::@6890427a1f51a3e7e1df",
+	"name" : "qtopcua_cmake_files",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0,
+				136
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\.qt",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\.qt\\deploy_qml_imports",
+			"sourceIndexes" : 
+			[
+				3,
+				4
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\.qtc\\package-manager",
+			"sourceIndexes" : 
+			[
+				5,
+				6,
+				7,
+				8
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\CMakeFiles\\3.30.5",
+			"sourceIndexes" : 
+			[
+				9,
+				10,
+				11,
+				12
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\CMakeFiles\\Export\\0c1616f72c66605043720c99514da301",
+			"sourceIndexes" : 
+			[
+				13,
+				14
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\CMakeFiles",
+			"sourceIndexes" : 
+			[
+				15
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+			"sourceIndexes" : 
+			[
+				16,
+				17,
+				107
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\config.tests\\binary_for_strip_built",
+			"sourceIndexes" : 
+			[
+				18
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples",
+			"sourceIndexes" : 
+			[
+				19,
+				20
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua",
+			"sourceIndexes" : 
+			[
+				21,
+				22
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\datasimulation",
+			"sourceIndexes" : 
+			[
+				23,
+				24
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\opcuaviewer",
+			"sourceIndexes" : 
+			[
+				25,
+				26
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\waterpump",
+			"sourceIndexes" : 
+			[
+				27,
+				28
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\waterpump\\simulationserver",
+			"sourceIndexes" : 
+			[
+				29,
+				30
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\waterpump\\waterpump-qml\\.qt\\qml_imports",
+			"sourceIndexes" : 
+			[
+				31
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\waterpump\\waterpump-qml",
+			"sourceIndexes" : 
+			[
+				32,
+				33
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\waterpump\\waterpump-qmlcpp\\.qt\\qml_imports",
+			"sourceIndexes" : 
+			[
+				34
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\examples\\opcua\\waterpump\\waterpump-qmlcpp",
+			"sourceIndexes" : 
+			[
+				35,
+				36
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6BuildInternals\\StandaloneTests",
+			"sourceIndexes" : 
+			[
+				37
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6DeclarativeOpcua",
+			"sourceIndexes" : 
+			[
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6DeclarativeOpcuaPrivate",
+			"sourceIndexes" : 
+			[
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6OpcUa",
+			"sourceIndexes" : 
+			[
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6OpcUaPrivate",
+			"sourceIndexes" : 
+			[
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6OpcUaTools",
+			"sourceIndexes" : 
+			[
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\lib\\cmake\\Qt6Qml\\QmlPlugins",
+			"sourceIndexes" : 
+			[
+				84,
+				85,
+				86,
+				87,
+				88
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\qt_sbom",
+			"sourceIndexes" : 
+			[
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src",
+			"sourceIndexes" : 
+			[
+				108,
+				109
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\declarative_opcua\\CMakeFiles\\Export\\919b03c8d6f2d4c957d5d0eea1a285ee",
+			"sourceIndexes" : 
+			[
+				110
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\declarative_opcua\\CMakeFiles\\Export\\93397afbf95e9a086b2a8dcec610b7e1",
+			"sourceIndexes" : 
+			[
+				111,
+				112
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\declarative_opcua\\CMakeFiles\\Export\\a1553df5751c39c799cb845445fde701",
+			"sourceIndexes" : 
+			[
+				113,
+				114
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\declarative_opcua",
+			"sourceIndexes" : 
+			[
+				115,
+				117
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\declarative_opcua\\Debug",
+			"sourceIndexes" : 
+			[
+				116
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\opcua\\CMakeFiles\\Export\\a62b892d1848085576fd2321b08bf888",
+			"sourceIndexes" : 
+			[
+				118,
+				119
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\opcua\\CMakeFiles\\Export\\df3c417e2998d7b34b9193b95f1545ea",
+			"sourceIndexes" : 
+			[
+				120
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\opcua",
+			"sourceIndexes" : 
+			[
+				121,
+				123
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\opcua\\Debug",
+			"sourceIndexes" : 
+			[
+				122
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\plugins",
+			"sourceIndexes" : 
+			[
+				124,
+				125
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\plugins\\opcua",
+			"sourceIndexes" : 
+			[
+				126,
+				127
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\plugins\\opcua\\open62541\\CMakeFiles\\Export\\a62b892d1848085576fd2321b08bf888",
+			"sourceIndexes" : 
+			[
+				128,
+				129
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\src\\plugins\\opcua\\open62541",
+			"sourceIndexes" : 
+			[
+				130,
+				131
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\tools",
+			"sourceIndexes" : 
+			[
+				132,
+				133
+			]
+		},
+		{
+			"name" : "build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\tools\\datatypecodegenerator",
+			"sourceIndexes" : 
+			[
+				134,
+				135
+			]
+		},
+		{
+			"name" : "examples\\opcua\\datasimulation\\build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\.qt",
+			"sourceIndexes" : 
+			[
+				137,
+				138
+			]
+		},
+		{
+			"name" : "examples\\opcua\\datasimulation\\build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\.qtc\\package-manager",
+			"sourceIndexes" : 
+			[
+				139,
+				140,
+				141,
+				142
+			]
+		},
+		{
+			"name" : "examples\\opcua\\datasimulation\\build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\CMakeFiles\\3.30.5",
+			"sourceIndexes" : 
+			[
+				143,
+				144,
+				145,
+				146
+			]
+		},
+		{
+			"name" : "examples\\opcua\\datasimulation\\build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug\\CMakeFiles",
+			"sourceIndexes" : 
+			[
+				147
+			]
+		},
+		{
+			"name" : "examples\\opcua\\datasimulation\\build\\Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+			"sourceIndexes" : 
+			[
+				148,
+				149
+			]
+		},
+		{
+			"name" : "src\\opcua",
+			"sourceIndexes" : 
+			[
+				150,
+				151
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"path" : ".cmake.conf",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qt/QtDeploySupport.cmake",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qt/QtDeployTargets.cmake",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qt/deploy_qml_imports/waterpump_qml.cmake",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qt/deploy_qml_imports/waterpump_qmlcpp.cmake",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/conan.cmake",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/conan_provider.cmake",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/maintenance_tool_provider.cmake",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/Export/0c1616f72c66605043720c99514da301/Qt6OpcUaToolsTargets-debug.cmake",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/Export/0c1616f72c66605043720c99514da301/Qt6OpcUaToolsTargets.cmake",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/clean_additional.cmake",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CTestTestfile.cmake",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cmake_install.cmake",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/config.tests/binary_for_strip_built/cmake_install.cmake",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/CTestTestfile.cmake",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/cmake_install.cmake",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/CTestTestfile.cmake",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/cmake_install.cmake",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/datasimulation/CTestTestfile.cmake",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/datasimulation/cmake_install.cmake",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/CTestTestfile.cmake",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/opcuaviewer/cmake_install.cmake",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/CTestTestfile.cmake",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/cmake_install.cmake",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/simulationserver/CTestTestfile.cmake",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/simulationserver/cmake_install.cmake",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qml/.qt/qml_imports/waterpump-qml_conf.cmake",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qml/CTestTestfile.cmake",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qml/cmake_install.cmake",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qmlcpp/.qt/qml_imports/waterpump-qmlcpp_conf.cmake",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qmlcpp/CTestTestfile.cmake",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qmlcpp/cmake_install.cmake",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6BuildInternals/StandaloneTests/QtOpcUaTestsConfig.cmake",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaConfig.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaConfigVersion.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaDependencies.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaTargets.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaVersionlessAliasTargets.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcua/Qt6DeclarativeOpcuaVersionlessTargets.cmake",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateConfig.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateConfigVersion.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateDependencies.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateTargets.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateVersionlessAliasTargets.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6DeclarativeOpcuaPrivate/Qt6DeclarativeOpcuaPrivateVersionlessTargets.cmake",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaConfig.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaConfigVersion.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaDependencies.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaMacros.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaPlugins.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaTargets.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaVersionlessAliasTargets.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6OpcUaVersionlessTargets.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginConfig.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginConfigVersion.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUa/Qt6QOpen62541PluginTargets.cmake",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateConfig.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateConfigVersion.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateDependencies.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateTargets.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateVersionlessAliasTargets.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaPrivate/Qt6OpcUaPrivateVersionlessTargets.cmake",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsConfig.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsConfigVersion.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsDependencies.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsTargets.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6OpcUaTools/Qt6OpcUaToolsVersionlessTargets.cmake",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6Qml/QmlPlugins/Qt6DeclarativeOpcuapluginAdditionalTargetInfo.cmake",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6Qml/QmlPlugins/Qt6DeclarativeOpcuapluginConfig.cmake",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6Qml/QmlPlugins/Qt6DeclarativeOpcuapluginConfigVersion.cmake",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6Qml/QmlPlugins/Qt6DeclarativeOpcuapluginConfigVersionImpl.cmake",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/lib/cmake/Qt6Qml/QmlPlugins/Qt6DeclarativeOpcuapluginTargets.cmake",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/DocumentRef-qtbase.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/DocumentRef-qtdeclarative.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-LicenseRef-Qt-Commercial-0.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-Package-qtopcua-qt-3rdparty-sources-QOpen62541Plugin-Attribution-open62541.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-Package-qtopcua-qt-module-DeclarativeOpcua.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-Package-qtopcua-qt-module-OpcUa.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-Package-qtopcua-qt-plugin-DeclarativeOpcuaplugin.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-Package-qtopcua-qt-plugin-QOpen62541Plugin.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-Package-qtopcua-qt-tool-qopcuaxmldatatypes2cpp.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-module-DeclarativeOpcua-ImportLibrary.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-module-DeclarativeOpcua.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-module-OpcUa-ImportLibrary.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-module-OpcUa.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-plugin-DeclarativeOpcuaplugin.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-plugin-QOpen62541Plugin.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/SPDXRef-PackagedFile-qt-tool-qopcuaxmldatatypes2cpp.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/append_document_to_staging.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qt_sbom/assemble_sbom.cmake",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qtcsettings.cmake",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/CTestTestfile.cmake",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/cmake_install.cmake",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/Export/919b03c8d6f2d4c957d5d0eea1a285ee/Qt6DeclarativeOpcuaPrivateTargets.cmake",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/Export/93397afbf95e9a086b2a8dcec610b7e1/Qt6DeclarativeOpcuaTargets-debug.cmake",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/Export/93397afbf95e9a086b2a8dcec610b7e1/Qt6DeclarativeOpcuaTargets.cmake",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/Export/a1553df5751c39c799cb845445fde701/Qt6DeclarativeOpcuapluginTargets-debug.cmake",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CMakeFiles/Export/a1553df5751c39c799cb845445fde701/Qt6DeclarativeOpcuapluginTargets.cmake",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/CTestTestfile.cmake",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/Debug/qt_lib_declarativeopcua_private.cmake",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/declarative_opcua/cmake_install.cmake",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua/CMakeFiles/Export/a62b892d1848085576fd2321b08bf888/Qt6OpcUaTargets-debug.cmake",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua/CMakeFiles/Export/a62b892d1848085576fd2321b08bf888/Qt6OpcUaTargets.cmake",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua/CMakeFiles/Export/df3c417e2998d7b34b9193b95f1545ea/Qt6OpcUaPrivateTargets.cmake",
+			"sourceGroupIndex" : 34
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua/CTestTestfile.cmake",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua/Debug/qt_lib_opcua_private.cmake",
+			"sourceGroupIndex" : 36
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua/cmake_install.cmake",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/CTestTestfile.cmake",
+			"sourceGroupIndex" : 37
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/cmake_install.cmake",
+			"sourceGroupIndex" : 37
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/CTestTestfile.cmake",
+			"sourceGroupIndex" : 38
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/cmake_install.cmake",
+			"sourceGroupIndex" : 38
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/CMakeFiles/Export/a62b892d1848085576fd2321b08bf888/Qt6QOpen62541PluginTargets-debug.cmake",
+			"sourceGroupIndex" : 39
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/CMakeFiles/Export/a62b892d1848085576fd2321b08bf888/Qt6QOpen62541PluginTargets.cmake",
+			"sourceGroupIndex" : 39
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/CTestTestfile.cmake",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/cmake_install.cmake",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/tools/CTestTestfile.cmake",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/tools/cmake_install.cmake",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/tools/datatypecodegenerator/CTestTestfile.cmake",
+			"sourceGroupIndex" : 42
+		},
+		{
+			"backtrace" : 4,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/tools/datatypecodegenerator/cmake_install.cmake",
+			"sourceGroupIndex" : 42
+		},
+		{
+			"backtrace" : 4,
+			"path" : "configure.cmake",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qt/QtDeploySupport.cmake",
+			"sourceGroupIndex" : 43
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qt/QtDeployTargets.cmake",
+			"sourceGroupIndex" : 43
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+			"sourceGroupIndex" : 44
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/conan.cmake",
+			"sourceGroupIndex" : 44
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/conan_provider.cmake",
+			"sourceGroupIndex" : 44
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/maintenance_tool_provider.cmake",
+			"sourceGroupIndex" : 44
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake",
+			"sourceGroupIndex" : 45
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake",
+			"sourceGroupIndex" : 45
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake",
+			"sourceGroupIndex" : 45
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake",
+			"sourceGroupIndex" : 45
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/clean_additional.cmake",
+			"sourceGroupIndex" : 46
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cmake_install.cmake",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"backtrace" : 4,
+			"path" : "examples/opcua/datasimulation/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qtcsettings.cmake",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"backtrace" : 4,
+			"path" : "src/opcua/Qt6OpcUaMacros.cmake",
+			"sourceGroupIndex" : 48
+		},
+		{
+			"backtrace" : 4,
+			"path" : "src/opcua/configure.cmake",
+			"sourceGroupIndex" : 48
+		}
+	],
+	"type" : "UTILITY"
+}

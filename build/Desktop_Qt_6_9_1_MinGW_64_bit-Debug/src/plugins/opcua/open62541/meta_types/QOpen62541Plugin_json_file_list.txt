@@ -1,0 +1,4 @@
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/include/../EWIEGA46WW/moc_qopen62541backend.cpp.json
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/include/../EWIEGA46WW/moc_qopen62541client.cpp.json
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/include/../EWIEGA46WW/moc_qopen62541plugin.cpp.json
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/include/../EWIEGA46WW/moc_qopen62541subscription.cpp.json

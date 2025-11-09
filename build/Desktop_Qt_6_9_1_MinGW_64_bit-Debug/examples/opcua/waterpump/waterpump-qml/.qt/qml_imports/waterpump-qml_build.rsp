@@ -1,0 +1,13 @@
+-rootPath
+D:/QT/qtopcua/examples/opcua/waterpump/waterpump-qml
+-cmake-output
+-output-file
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qml/.qt/qml_imports/waterpump-qml_build.cmake
+-importPath
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qml
+-importPath
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/qml
+-importPath
+C:/Qt/6.9.1/mingw_64/qml
+-qrcFiles
+D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/examples/opcua/waterpump/waterpump-qml/.qt/rcc/qml.qrc

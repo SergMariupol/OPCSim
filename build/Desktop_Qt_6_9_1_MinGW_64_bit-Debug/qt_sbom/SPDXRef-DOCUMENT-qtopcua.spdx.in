@@ -1,0 +1,40 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: qtopcua-6.9.1
+DocumentNamespace: https://qt.io/spdxdocs/qtopcua-f86f857+codex/create-opc-server-for-simulating-100-values+dirty
+Creator: Organization: TheQtCompany
+Creator: Tool: Qt Build System
+CreatorComment: <text>This SPDX document was created from CMake 3.30.5, using the qt
+build system from https://code.qt.io/cgit/qt/qtbase.git/tree/cmake/QtPublicSbomHelpers.cmake</text>
+Created: 2025-11-08T12:52:37Z${QT_SBOM_EXTERNAL_DOC_REFS}
+
+PackageName: GNU
+SPDXID: SPDXRef-compiler
+PackageVersion: 13.1.0
+PackageDownloadLocation: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+PackageSupplier: Organization: Anonymous
+FilesAnalyzed: false
+PackageSummary: <text>The compiler as identified by CMake, running on Windows (AMD64)</text>
+PrimaryPackagePurpose: APPLICATION
+Relationship: SPDXRef-compiler BUILD_DEPENDENCY_OF SPDXRef-Package-qtopcua
+RelationshipComment: <text>SPDXRef-Package-qtopcua is built by compiler GNU version 13.1.0</text>
+
+PackageName: qtopcua
+SPDXID: SPDXRef-Package-qtopcua
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:qt:qt:6.9.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:generic/TheQtCompany/qtopcua@f86f857+codex/create-opc-server-for-simulating-100-values+dirty
+PackageVersion: f86f857+codex/create-opc-server-for-simulating-100-values+dirty
+PackageSupplier: Organization: TheQtCompany
+PackageDownloadLocation: git://code.qt.io/qt/qtopcua.git@f86f8572102fc4fd0aaccd296d69c0248e2a66ac
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: Copyright (C) The Qt Company Ltd. and other contributors.
+PackageHomePage: https://qt.io
+PackageComment: <text>Built by CMake 3.30.5 with Debug configuration for Windows (AMD64)</text>
+PackageVerificationCode: ${QT_SBOM_VERIFICATION_CODE}
+BuiltDate: 2025-11-08T12:52:37Z
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-qtopcua

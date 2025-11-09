@@ -1,0 +1,104 @@
+{
+    "classes": [
+        {
+            "className": "OpcUaReadItem",
+            "gadget": true,
+            "lineNumber": 28,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "attribute",
+                    "read": "attribute",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::NodeAttribute",
+                    "user": false,
+                    "write": "setAttribute"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "indexRange",
+                    "read": "indexRange",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setIndexRange"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "nodeId",
+                    "read": "nodeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setNodeId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "ns",
+                    "read": "namespaceIdentifier",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "write": "setNamespaceIdentifier"
+                }
+            ],
+            "qualifiedClassName": "OpcUaReadItem"
+        },
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "ReadItem"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaReadItemFactory",
+            "lineNumber": 58,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "create",
+                    "returnType": "OpcUaReadItem"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "OpcUaReadItemFactory",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuareaditem_p.h",
+    "outputRevision": 69
+}

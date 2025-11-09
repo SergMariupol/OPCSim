@@ -1,0 +1,49 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaProvider",
+            "lineNumber": 19,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "backend",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "backendProperties",
+                            "type": "QVariantMap"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "createClient",
+                    "returnType": "QOpcUaClient*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "backend",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "isCloned": true,
+                    "name": "createClient",
+                    "returnType": "QOpcUaClient*"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "QOpcUaProvider",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuaprovider.h",
+    "outputRevision": 69
+}

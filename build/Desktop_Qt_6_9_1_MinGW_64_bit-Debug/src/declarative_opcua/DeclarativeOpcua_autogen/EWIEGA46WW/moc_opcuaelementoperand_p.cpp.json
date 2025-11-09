@@ -1,0 +1,56 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "ElementOperand"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1293"
+                }
+            ],
+            "className": "OpcUaElementOperand",
+            "lineNumber": 26,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "index",
+                    "read": "index",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "quint32",
+                    "user": false,
+                    "write": "setIndex"
+                }
+            ],
+            "qualifiedClassName": "OpcUaElementOperand",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "dataChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "OpcUaOperandBase"
+                },
+                {
+                    "access": "private",
+                    "name": "QOpcUaElementOperand"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuaelementoperand_p.h",
+    "outputRevision": 69
+}

@@ -1,0 +1,357 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "Connection"
+                },
+                {
+                    "name": "QML.AddedInVersion",
+                    "value": "1292"
+                }
+            ],
+            "className": "OpcUaConnection",
+            "lineNumber": 33,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QJSValue"
+                        }
+                    ],
+                    "index": 17,
+                    "name": "readNodeAttributes",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QJSValue"
+                        }
+                    ],
+                    "index": 18,
+                    "name": "writeNodeAttributes",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "availableBackends",
+                    "notify": "availableBackendsChanged",
+                    "read": "availableBackends",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "connected",
+                    "notify": "connectedChanged",
+                    "read": "connected",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "backend",
+                    "notify": "backendChanged",
+                    "read": "backend",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setBackend"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "defaultConnection",
+                    "notify": "defaultConnectionChanged",
+                    "read": "defaultConnection",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDefaultConnection"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "namespaces",
+                    "notify": "namespacesChanged",
+                    "read": "namespaces",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "authenticationInformation",
+                    "read": "authenticationInformation",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaAuthenticationInformation",
+                    "user": false,
+                    "write": "setAuthenticationInformation"
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "supportedSecurityPolicies",
+                    "read": "supportedSecurityPolicies",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "supportedUserTokenTypes",
+                    "read": "supportedUserTokenTypes",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QJSValue",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "currentEndpoint",
+                    "read": "currentEndpoint",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaEndpointDescription",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "connection",
+                    "notify": "connectionChanged",
+                    "read": "connection",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUaClient*",
+                    "user": false,
+                    "write": "setConnection"
+                }
+            ],
+            "qualifiedClassName": "OpcUaConnection",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "availableBackendsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "connectedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "backendChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "defaultConnectionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "namespacesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "readNodeAttributesFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "writeNodeAttributesFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "name": "connectionChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "endpointDescription",
+                            "type": "QOpcUaEndpointDescription"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "connectToEndpoint",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "name": "disconnectFromEndpoint",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "defaultConnection",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "setDefaultConnection",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "isCloned": true,
+                    "name": "setDefaultConnection",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "authenticationInformation",
+                            "type": "QOpcUaAuthenticationInformation"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "setAuthenticationInformation",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "client",
+                            "type": "QOpcUaClient*"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "setConnection",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "state",
+                            "type": "QOpcUaClient::ClientState"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "clientStateHandler",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaReadResult>"
+                        }
+                    ],
+                    "index": 15,
+                    "name": "handleReadNodeAttributesFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaWriteResult>"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "handleWriteNodeAttributesFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opcuaconnection_p.h",
+    "outputRevision": 69
+}

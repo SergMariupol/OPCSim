@@ -1,0 +1,79 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaHistoryReadResponse",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "State",
+                    "type": "quint32",
+                    "values": [
+                        "Unknown",
+                        "Reading",
+                        "Finished",
+                        "MoreDataAvailable",
+                        "Error"
+                    ]
+                }
+            ],
+            "lineNumber": 21,
+            "object": true,
+            "qualifiedClassName": "QOpcUaHistoryReadResponse",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaHistoryData>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "readHistoryDataFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QList<QOpcUaHistoryEvent>"
+                        },
+                        {
+                            "name": "serviceResult",
+                            "type": "QOpcUa::UaStatusCode"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "readHistoryEventsFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "state",
+                            "type": "State"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "stateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuahistoryreadresponse.h",
+    "outputRevision": 69
+}

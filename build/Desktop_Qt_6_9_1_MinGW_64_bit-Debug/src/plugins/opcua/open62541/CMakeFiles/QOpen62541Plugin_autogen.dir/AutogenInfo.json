@@ -1,0 +1,215 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QT/qtopcua/src/plugins/opcua/open62541",
+	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/QT/qtopcua/src/plugins/opcua/open62541/CMakeLists.txt",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPluginConfig.cmake.in",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/QT/qtopcua",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "QOpen62541Plugin_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/QT/qtopcua/src/3rdparty/open62541/open62541.h",
+			"Mu",
+			"ARAJS52KXN/moc_open62541.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541backend.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541backend.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541client.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541client.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541node.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541node.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541plugin.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541plugin.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541subscription.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541subscription.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541utils.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541utils.cpp",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541valueconverter.h",
+			"Mu",
+			"EWIEGA46WW/moc_qopen62541valueconverter.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"NOMINMAX",
+		"QOpen62541Plugin_EXPORTS",
+		"QT_CORE_LIB",
+		"QT_DEPRECATED_WARNINGS",
+		"QT_EXPLICIT_QFILE_CONSTRUCTION_FROM_PATH",
+		"QT_LEAN_HEADERS=1",
+		"QT_NETWORK_LIB",
+		"QT_NO_AS_CONST=1",
+		"QT_NO_CONTEXTLESS_CONNECT=1",
+		"QT_NO_EXCEPTIONS",
+		"QT_NO_FOREACH",
+		"QT_NO_FOREACH=1",
+		"QT_NO_JAVA_STYLE_ITERATORS",
+		"QT_NO_NARROWING_CONVERSIONS_IN_CONNECT",
+		"QT_NO_QASCONST",
+		"QT_NO_QEXCHANGE",
+		"QT_NO_QSNPRINTF",
+		"QT_NO_STD_FORMAT_SUPPORT",
+		"QT_OPCUA_LIB",
+		"QT_PLUGIN",
+		"QT_USE_QSTRINGBUILDER",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_GLIBCXX_ASSERTIONS",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/QT/qtopcua/src/plugins/opcua/open62541",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include",
+		"D:/QT/qtopcua/src/3rdparty/open62541",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtOpcUa",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/opcua",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtOpcUa/6.9.1",
+		"D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/include/QtOpcUa/6.9.1/QtOpcUa",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore",
+		"C:/Qt/6.9.1/mingw_64/include",
+		"C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore/6.9.1",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore/6.9.1/QtCore",
+		"C:/Qt/6.9.1/mingw_64/include/QtNetwork",
+		"C:/Qt/6.9.1/mingw_64/include/QtNetwork/6.9.1",
+		"C:/Qt/6.9.1/mingw_64/include/QtNetwork/6.9.1/QtNetwork",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/QOpen62541Plugin_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/CMakeFiles/QOpen62541Plugin_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Qt/6.9.1/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "D:/QT/qtopcua/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/src/plugins/opcua/open62541/CMakeFiles/QOpen62541Plugin_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "D:/QT/qtopcua/src/3rdparty/open62541/open62541.c", "Mu", null ],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541backend.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541client.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541node.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541plugin.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541subscription.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541utils.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/QT/qtopcua/src/plugins/opcua/open62541/qopen62541valueconverter.cpp",
+			"Mu",
+			null
+		]
+	],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

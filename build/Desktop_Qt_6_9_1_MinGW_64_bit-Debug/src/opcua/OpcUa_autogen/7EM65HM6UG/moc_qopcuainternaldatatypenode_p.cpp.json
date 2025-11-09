@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "QOpcUaInternalDataTypeNode",
+            "lineNumber": 24,
+            "object": true,
+            "qualifiedClassName": "QOpcUaInternalDataTypeNode",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "initializeFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qopcuainternaldatatypenode_p.h",
+    "outputRevision": 69
+}

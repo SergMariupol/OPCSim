@@ -1,0 +1,79 @@
+{
+    "classes": [
+        {
+            "className": "OpcUaWriteResult",
+            "gadget": true,
+            "lineNumber": 29,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "attribute",
+                    "read": "attribute",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QOpcUa::NodeAttribute",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "indexRange",
+                    "read": "indexRange",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "nodeId",
+                    "read": "nodeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "namespaceName",
+                    "read": "namespaceName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "status",
+                    "read": "status",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "OpcUaStatus",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "OpcUaWriteResult"
+        }
+    ],
+    "inputFile": "opcuawriteresult_p.h",
+    "outputRevision": 69
+}
