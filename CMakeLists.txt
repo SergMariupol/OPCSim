@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-# Minimal datasimulation-only build
-project(datasimulation LANGUAGES C CXX)
+# Minimal opcsimulation-only build
+project(opcsimulation LANGUAGES C CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -14,7 +14,7 @@ set(OPEN62541_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/open62541")
 set(OPEN62541_C "${OPEN62541_ROOT}/open62541.c")
 set(OPEN62541_H "${OPEN62541_ROOT}/open62541.h")
 
-add_executable(datasimulation
+add_executable(opcsimulation
     ${DATA_SIMULATION_ROOT}/main.cpp
     ${DATA_SIMULATION_ROOT}/controlwindow.cpp
     ${DATA_SIMULATION_ROOT}/controlwindow.h
@@ -24,13 +24,13 @@ add_executable(datasimulation
     ${OPEN62541_H}
 )
 
-set_target_properties(datasimulation PROPERTIES
-    OUTPUT_NAME datasimulationserver
+set_target_properties(opcsimulation PROPERTIES
+    OUTPUT_NAME opcsimulationserver
     WIN32_EXECUTABLE FALSE
     MACOSX_BUNDLE TRUE
 )
 
-target_include_directories(datasimulation PRIVATE
+target_include_directories(opcsimulation PRIVATE
     ${DATA_SIMULATION_ROOT}
     ${OPEN62541_ROOT}
 )
@@ -49,16 +49,16 @@ elseif(WIN32 AND MSVC)
 endif()
 
 if(WIN32)
-    target_link_libraries(datasimulation PRIVATE iphlpapi)
+    target_link_libraries(opcsimulation PRIVATE iphlpapi)
 endif()
 
-target_link_libraries(datasimulation PRIVATE
+target_link_libraries(opcsimulation PRIVATE
     Qt6::Core
     Qt6::Widgets
     Qt6::OpcUa
 )
 
-install(TARGETS datasimulation
+install(TARGETS opcsimulation
     RUNTIME DESTINATION bin
     BUNDLE  DESTINATION bin
     LIBRARY DESTINATION bin
