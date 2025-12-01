@@ -1,7 +1,0 @@
-TEMPLATE = subdirs
-
-QT_FOR_CONFIG += opcua-private core-private
-
-qtConfig(open62541) {
-    SUBDIRS += datasimulation
-}
