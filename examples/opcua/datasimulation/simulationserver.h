@@ -24,7 +24,8 @@ class DataSimulationServer : public QObject
 public:
     enum class SimulationType {
         Sine,
-        Peaks
+        Peaks,
+        Manual
     };
     Q_ENUM(SimulationType)
 
@@ -37,6 +38,7 @@ public:
         double peakBase = 0.1;
         double peakHeight = 1.0;
         double peakWidthRatio = 0.1;
+        double manualValue = 0.0;
     };
 
     explicit DataSimulationServer(QObject *parent = nullptr);
@@ -49,6 +51,7 @@ public:
     int valueCount() const;
     QString displayName(int index) const;
     SimulationType simulationType(int index) const;
+    double currentValue(int index) const;
 
 signals:
     void runningChanged(bool running);
@@ -59,9 +62,11 @@ public slots:
     void updateSimulation();
     void shutdown();
     void setSimulationType(int index, SimulationType type);
+    void setManualValue(int index, double value);
 
 private:
     bool setupAddressSpace();
+    void writeValue(int index, double value);
 
     UA_Server *m_server = nullptr;
     QAtomicInt m_running{false};

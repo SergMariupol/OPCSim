@@ -177,46 +177,30 @@ void DataSimulationServer::updateSimulation()
     for (int i = 0; i < m_valueNodes.size(); ++i) {
         const SimulationConfig &config = m_simulationConfigs.at(i);
 
-        const double noise = (QRandomGenerator::global()->generateDouble() - 0.5)
-                * 2.0 * config.noiseAmplitude;
-
         double signal = 0.0;
+        double noise = 0.0;
         switch (config.type) {
         case SimulationType::Sine:
             signal = config.amplitude
                     * std::sin((m_stepCounter * config.frequency) + (i * 0.05));
+            noise = (QRandomGenerator::global()->generateDouble() - 0.5)
+                    * 2.0 * config.noiseAmplitude;
             break;
         case SimulationType::Peaks: {
             const double interval = std::max(1, config.peakInterval);
             const double position = std::fmod((m_stepCounter + i), interval) / interval;
             const double width = std::clamp(config.peakWidthRatio, 0.01, 0.5);
             signal = position < width ? config.peakHeight : config.peakBase;
+            noise = (QRandomGenerator::global()->generateDouble() - 0.5)
+                    * 2.0 * config.noiseAmplitude;
             break;
         }
+        case SimulationType::Manual:
+            signal = config.manualValue;
+            break;
         }
 
-        m_currentValues[i] = signal + noise;
-
-        UA_DataValue dv;
-        UA_DataValue_init(&dv);
-
-        // Значение — копией внутрь dv.value (никаких висячих указателей)
-        UA_Variant_setScalarCopy(&dv.value, &m_currentValues[i], &UA_TYPES[UA_TYPES_DOUBLE]);
-
-        // Ваш источник времени (UTC)
-        dv.hasSourceTimestamp = true;
-        dv.sourceTimestamp    = UA_DateTime_now();
-
-        // Опционально — зафиксировать и ServerTimestamp тем же значением:
-        // dv.hasServerTimestamp = true;
-        // dv.serverTimestamp    = now;
-
-        const UA_StatusCode st = UA_Server_writeDataValue(m_server, m_valueNodes[i], dv);
-        if (st != UA_STATUSCODE_GOOD) {
-            qCWarning(lcDataSimulation) << "write failed for node" << i << "status:" << st;
-        }
-
-        UA_DataValue_clear(&dv);
+        writeValue(i, signal + noise);
     }
 }
 
@@ -255,6 +239,13 @@ DataSimulationServer::SimulationType DataSimulationServer::simulationType(int in
     return m_simulationConfigs.at(index).type;
 }
 
+double DataSimulationServer::currentValue(int index) const
+{
+    if (index < 0 || index >= m_currentValues.size())
+        return 0.0;
+    return m_currentValues.at(index);
+}
+
 void DataSimulationServer::setSimulationType(int index, SimulationType type)
 {
     if (index < 0 || index >= m_simulationConfigs.size())
@@ -274,7 +265,46 @@ void DataSimulationServer::setSimulationType(int index, SimulationType type)
         config.peakBase = 0.05;
         config.peakWidthRatio = 0.08;
         config.noiseAmplitude = 0.02;
+    } else if (type == SimulationType::Manual) {
+        config.manualValue = m_currentValues.value(index, 0.0);
+        config.noiseAmplitude = 0.0;
     }
+}
+
+void DataSimulationServer::setManualValue(int index, double value)
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return;
+
+    SimulationConfig &config = m_simulationConfigs[index];
+    config.manualValue = value;
+    writeValue(index, value);
+}
+
+void DataSimulationServer::writeValue(int index, double value)
+{
+    if (index < 0 || index >= m_valueNodes.size())
+        return;
+
+    m_currentValues[index] = value;
+
+    if (!m_running || !m_server)
+        return;
+
+    UA_DataValue dv;
+    UA_DataValue_init(&dv);
+
+    UA_Variant_setScalarCopy(&dv.value, &m_currentValues[index], &UA_TYPES[UA_TYPES_DOUBLE]);
+
+    dv.hasSourceTimestamp = true;
+    dv.sourceTimestamp    = UA_DateTime_now();
+
+    const UA_StatusCode st = UA_Server_writeDataValue(m_server, m_valueNodes[index], dv);
+    if (st != UA_STATUSCODE_GOOD) {
+        qCWarning(lcDataSimulation) << "write failed for node" << index << "status:" << st;
+    }
+
+    UA_DataValue_clear(&dv);
 }
 
 QT_END_NAMESPACE
