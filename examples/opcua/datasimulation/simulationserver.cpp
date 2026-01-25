@@ -3,6 +3,7 @@
 #include <QtCore/QByteArray>
 #include <QtCore/QLoggingCategory>
 #include <QtCore/QRandomGenerator>
+#include <QtCore/QSettings>
 
 #include <algorithm>
 #include <cmath>
@@ -33,6 +34,7 @@ DataSimulationServer::DataSimulationServer(QObject *parent)
 
 DataSimulationServer::~DataSimulationServer()
 {
+    saveSettings();
     shutdown();
 
     for (UA_NodeId &nodeId : m_valueNodes)
@@ -59,7 +61,11 @@ bool DataSimulationServer::init()
 
     config->tcpReuseAddr = true;
 
-    return setupAddressSpace();
+    if (!setupAddressSpace())
+        return false;
+
+    loadSettings();
+    return true;
 }
 
 bool DataSimulationServer::setupAddressSpace()
@@ -279,6 +285,51 @@ void DataSimulationServer::setManualValue(int index, double value)
     SimulationConfig &config = m_simulationConfigs[index];
     config.manualValue = value;
     writeValue(index, value);
+}
+
+void DataSimulationServer::loadSettings()
+{
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("datasimulation"));
+
+    const int count = m_simulationConfigs.size();
+    for (int i = 0; i < count; ++i) {
+        settings.beginGroup(QStringLiteral("value%1").arg(i));
+        const int typeValue = settings.value(QStringLiteral("type"),
+                                             static_cast<int>(m_simulationConfigs[i].type)).toInt();
+        const double manualValue = settings.value(QStringLiteral("manualValue"),
+                                                  m_simulationConfigs[i].manualValue).toDouble();
+        settings.endGroup();
+
+        SimulationType type = SimulationType::Sine;
+        if (typeValue >= static_cast<int>(SimulationType::Sine)
+                && typeValue <= static_cast<int>(SimulationType::Manual)) {
+            type = static_cast<SimulationType>(typeValue);
+        }
+
+        setSimulationType(i, type);
+        if (type == SimulationType::Manual)
+            setManualValue(i, manualValue);
+    }
+
+    settings.endGroup();
+}
+
+void DataSimulationServer::saveSettings() const
+{
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("datasimulation"));
+    settings.setValue(QStringLiteral("valueCount"), m_simulationConfigs.size());
+
+    for (int i = 0; i < m_simulationConfigs.size(); ++i) {
+        settings.beginGroup(QStringLiteral("value%1").arg(i));
+        settings.setValue(QStringLiteral("type"), static_cast<int>(m_simulationConfigs[i].type));
+        settings.setValue(QStringLiteral("manualValue"), m_simulationConfigs[i].manualValue);
+        settings.endGroup();
+    }
+
+    settings.endGroup();
+    settings.sync();
 }
 
 void DataSimulationServer::writeValue(int index, double value)

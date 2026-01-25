@@ -1,8 +1,9 @@
 #include "controlwindow.h"
 #include "simulationserver.h"
 
-#include <QtWidgets/QApplication>
+#include <QtCore/QCoreApplication>
 #include <QtCore/QDebug>
+#include <QtWidgets/QApplication>
 
 #include <csignal>
 
@@ -13,6 +14,8 @@ int main(int argc, char **argv)
 #endif
 
     QApplication app(argc, argv);
+    QCoreApplication::setOrganizationName(QStringLiteral("QtOpcUaExamples"));
+    QCoreApplication::setApplicationName(QStringLiteral("DataSimulation"));
 
     DataSimulationServer server;
     if (!server.init()) {
