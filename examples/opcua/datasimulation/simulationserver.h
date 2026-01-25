@@ -66,6 +66,8 @@ public slots:
 
 private:
     bool setupAddressSpace();
+    void loadSettings();
+    void saveSettings() const;
     void writeValue(int index, double value);
 
     UA_Server *m_server = nullptr;
