@@ -11,6 +11,7 @@ class QTableWidget;
 class QPushButton;
 class QCloseEvent;
 class QLabel;
+class QDoubleSpinBox;
 class DataSimulationServer;
 
 class ControlWindow : public QWidget
@@ -32,6 +33,7 @@ private:
     void populateTable();
     void setupConnections();
     void handleTypeChange(int row, int comboIndex);
+    void updateValueEditor(int row);
     void updateStatusIndicator(ServerState state, const QString &message = QString());
 
     DataSimulationServer *m_server = nullptr;

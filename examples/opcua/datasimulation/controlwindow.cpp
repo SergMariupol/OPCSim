@@ -7,6 +7,7 @@
 #include <QtGui/QCloseEvent>
 #include <QtWidgets/QAbstractItemView>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -25,6 +26,8 @@ QString simulationTypeToString(DataSimulationServer::SimulationType type)
         return QObject::tr("Синусоида");
     case DataSimulationServer::SimulationType::Peaks:
         return QObject::tr("Пики");
+    case DataSimulationServer::SimulationType::Manual:
+        return QObject::tr("Вручную");
     }
     return QObject::tr("Неизвестно");
 }
@@ -47,9 +50,11 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     layout->addLayout(statusLayout);
 
     m_table = new QTableWidget(this);
-    m_table->setColumnCount(2);
-    m_table->setHorizontalHeaderLabels({tr("Тег"), tr("Тип симуляции")});
+    m_table->setColumnCount(3);
+    m_table->setHorizontalHeaderLabels({tr("Тег"), tr("Тип симуляции"), tr("Значение")});
     m_table->horizontalHeader()->setStretchLastSection(true);
+    m_table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     m_table->verticalHeader()->setVisible(false);
     m_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_table->setSelectionMode(QAbstractItemView::NoSelection);
@@ -98,6 +103,8 @@ void ControlWindow::populateTable()
                        QVariant::fromValue(int(DataSimulationServer::SimulationType::Sine)));
         combo->addItem(simulationTypeToString(DataSimulationServer::SimulationType::Peaks),
                        QVariant::fromValue(int(DataSimulationServer::SimulationType::Peaks)));
+        combo->addItem(simulationTypeToString(DataSimulationServer::SimulationType::Manual),
+                       QVariant::fromValue(int(DataSimulationServer::SimulationType::Manual)));
 
         const auto currentType = m_server->simulationType(row);
         const int currentIndex = combo->findData(int(currentType));
@@ -108,6 +115,30 @@ void ControlWindow::populateTable()
         });
 
         m_table->setCellWidget(row, 1, combo);
+
+        auto *spinBox = new QDoubleSpinBox(m_table);
+        spinBox->setDecimals(6);
+        spinBox->setRange(-1000000.0, 1000000.0);
+        spinBox->setValue(m_server->currentValue(row));
+
+        connect(spinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), this, [this, row](double value) {
+            auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, 1));
+            if (combo) {
+                const auto currentType =
+                        static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                if (currentType != DataSimulationServer::SimulationType::Manual) {
+                    const int manualIndex =
+                            combo->findData(int(DataSimulationServer::SimulationType::Manual));
+                    if (manualIndex >= 0)
+                        combo->setCurrentIndex(manualIndex);
+                }
+            }
+            if (m_server)
+                m_server->setManualValue(row, value);
+        });
+
+        m_table->setCellWidget(row, 2, spinBox);
+        updateValueEditor(row);
     }
 
     m_table->resizeColumnsToContents();
@@ -153,6 +184,19 @@ void ControlWindow::handleTypeChange(int row, int comboIndex)
 
     const auto type = static_cast<DataSimulationServer::SimulationType>(data.toInt());
     m_server->setSimulationType(row, type);
+    updateValueEditor(row);
+}
+
+void ControlWindow::updateValueEditor(int row)
+{
+    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, 1));
+    auto *spinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, 2));
+    if (!combo || !spinBox)
+        return;
+
+    const auto type = static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+    if (type == DataSimulationServer::SimulationType::Manual)
+        spinBox->setValue(m_server ? m_server->currentValue(row) : spinBox->value());
 }
 
 void ControlWindow::updateStatusIndicator(ControlWindow::ServerState state, const QString &message)
