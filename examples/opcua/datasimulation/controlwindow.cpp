@@ -3,6 +3,7 @@
 #include "simulationserver.h"
 
 #include <QtCore/QCoreApplication>
+#include <QtCore/QSignalBlocker>
 #include <QtCore/QVariant>
 #include <QtGui/QCloseEvent>
 #include <QtWidgets/QAbstractItemView>
@@ -19,6 +20,14 @@
 QT_BEGIN_NAMESPACE
 
 namespace {
+enum ColumnIndex {
+    TagColumn = 0,
+    TypeColumn = 1,
+    MinColumn = 2,
+    MaxColumn = 3,
+    PeriodColumn = 4
+};
+
 QString simulationTypeToString(DataSimulationServer::SimulationType type)
 {
     switch (type) {
@@ -50,11 +59,14 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     layout->addLayout(statusLayout);
 
     m_table = new QTableWidget(this);
-    m_table->setColumnCount(3);
-    m_table->setHorizontalHeaderLabels({tr("Тег"), tr("Тип симуляции"), tr("Значение")});
+    m_table->setColumnCount(5);
+    m_table->setHorizontalHeaderLabels(
+            {tr("Тег"), tr("Тип симуляции"), tr("Минимум"), tr("Максимум"), tr("Период/значение")});
     m_table->horizontalHeader()->setStretchLastSection(true);
-    m_table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-    m_table->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(TagColumn, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(MinColumn, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(MaxColumn, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(PeriodColumn, QHeaderView::ResizeToContents);
     m_table->verticalHeader()->setVisible(false);
     m_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_table->setSelectionMode(QAbstractItemView::NoSelection);
@@ -96,7 +108,7 @@ void ControlWindow::populateTable()
 
     for (int row = 0; row < m_server->valueCount(); ++row) {
         auto *item = new QTableWidgetItem(m_server->displayName(row));
-        m_table->setItem(row, 0, item);
+        m_table->setItem(row, TagColumn, item);
 
         auto *combo = new QComboBox(m_table);
         combo->addItem(simulationTypeToString(DataSimulationServer::SimulationType::Sine),
@@ -114,30 +126,67 @@ void ControlWindow::populateTable()
             handleTypeChange(row, index);
         });
 
-        m_table->setCellWidget(row, 1, combo);
+        m_table->setCellWidget(row, TypeColumn, combo);
 
-        auto *spinBox = new QDoubleSpinBox(m_table);
-        spinBox->setDecimals(6);
-        spinBox->setRange(-1000000.0, 1000000.0);
-        spinBox->setValue(m_server->currentValue(row));
+        auto *minSpinBox = new QDoubleSpinBox(m_table);
+        minSpinBox->setDecimals(6);
+        minSpinBox->setRange(-1000000.0, 1000000.0);
 
-        connect(spinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), this, [this, row](double value) {
-            auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, 1));
-            if (combo) {
-                const auto currentType =
-                        static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
-                if (currentType != DataSimulationServer::SimulationType::Manual) {
-                    const int manualIndex =
-                            combo->findData(int(DataSimulationServer::SimulationType::Manual));
-                    if (manualIndex >= 0)
-                        combo->setCurrentIndex(manualIndex);
-                }
-            }
-            if (m_server)
-                m_server->setManualValue(row, value);
-        });
+        connect(minSpinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), this,
+                [this, row](double value) {
+                    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
+                    if (!combo || !m_server)
+                        return;
+                    const auto currentType =
+                            static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                    if (currentType == DataSimulationServer::SimulationType::Sine)
+                        m_server->setSineMinimum(row, value);
+                    else if (currentType == DataSimulationServer::SimulationType::Peaks)
+                        m_server->setPeakMinimum(row, value);
+                });
 
-        m_table->setCellWidget(row, 2, spinBox);
+        m_table->setCellWidget(row, MinColumn, minSpinBox);
+
+        auto *maxSpinBox = new QDoubleSpinBox(m_table);
+        maxSpinBox->setDecimals(6);
+        maxSpinBox->setRange(-1000000.0, 1000000.0);
+
+        connect(maxSpinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), this,
+                [this, row](double value) {
+                    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
+                    if (!combo || !m_server)
+                        return;
+                    const auto currentType =
+                            static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                    if (currentType == DataSimulationServer::SimulationType::Sine)
+                        m_server->setSineMaximum(row, value);
+                    else if (currentType == DataSimulationServer::SimulationType::Peaks)
+                        m_server->setPeakMaximum(row, value);
+                });
+
+        m_table->setCellWidget(row, MaxColumn, maxSpinBox);
+
+        auto *periodSpinBox = new QDoubleSpinBox(m_table);
+        periodSpinBox->setDecimals(6);
+        periodSpinBox->setRange(1.0, 1000000.0);
+
+        connect(periodSpinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), this,
+                [this, row](double value) {
+                    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
+                    if (!combo || !m_server)
+                        return;
+                    const auto currentType =
+                            static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                    if (currentType == DataSimulationServer::SimulationType::Manual) {
+                        m_server->setManualValue(row, value);
+                    } else if (currentType == DataSimulationServer::SimulationType::Sine) {
+                        m_server->setSinePeriod(row, value);
+                    } else if (currentType == DataSimulationServer::SimulationType::Peaks) {
+                        m_server->setPeakPeriod(row, value);
+                    }
+                });
+
+        m_table->setCellWidget(row, PeriodColumn, periodSpinBox);
         updateValueEditor(row);
     }
 
@@ -174,7 +223,7 @@ void ControlWindow::handleTypeChange(int row, int comboIndex)
     if (!m_server)
         return;
 
-    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, 1));
+    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
     if (!combo)
         return;
 
@@ -189,14 +238,38 @@ void ControlWindow::handleTypeChange(int row, int comboIndex)
 
 void ControlWindow::updateValueEditor(int row)
 {
-    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, 1));
-    auto *spinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, 2));
-    if (!combo || !spinBox)
+    auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
+    auto *minSpinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, MinColumn));
+    auto *maxSpinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, MaxColumn));
+    auto *periodSpinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, PeriodColumn));
+    if (!combo || !minSpinBox || !maxSpinBox || !periodSpinBox)
         return;
 
     const auto type = static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
-    if (type == DataSimulationServer::SimulationType::Manual)
-        spinBox->setValue(m_server ? m_server->currentValue(row) : spinBox->value());
+    const bool isManual = type == DataSimulationServer::SimulationType::Manual;
+
+    minSpinBox->setEnabled(!isManual);
+    maxSpinBox->setEnabled(!isManual);
+
+    QSignalBlocker minBlocker(minSpinBox);
+    QSignalBlocker maxBlocker(maxSpinBox);
+    QSignalBlocker periodBlocker(periodSpinBox);
+
+    if (isManual) {
+        periodSpinBox->setRange(-1000000.0, 1000000.0);
+        periodSpinBox->setValue(m_server ? m_server->currentValue(row) : periodSpinBox->value());
+    } else {
+        periodSpinBox->setRange(1.0, 1000000.0);
+        if (type == DataSimulationServer::SimulationType::Sine) {
+            minSpinBox->setValue(m_server ? m_server->sineMinimum(row) : minSpinBox->value());
+            maxSpinBox->setValue(m_server ? m_server->sineMaximum(row) : maxSpinBox->value());
+            periodSpinBox->setValue(m_server ? m_server->sinePeriod(row) : periodSpinBox->value());
+        } else if (type == DataSimulationServer::SimulationType::Peaks) {
+            minSpinBox->setValue(m_server ? m_server->peakMinimum(row) : minSpinBox->value());
+            maxSpinBox->setValue(m_server ? m_server->peakMaximum(row) : maxSpinBox->value());
+            periodSpinBox->setValue(m_server ? m_server->peakPeriod(row) : periodSpinBox->value());
+        }
+    }
 }
 
 void ControlWindow::updateStatusIndicator(ControlWindow::ServerState state, const QString &message)
