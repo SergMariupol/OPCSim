@@ -1,6 +1,7 @@
 #include "simulationserver.h"
 
 #include <QtCore/QByteArray>
+#include <QtCore/QCoreApplication>
 #include <QtCore/QLoggingCategory>
 #include <QtCore/QRandomGenerator>
 #include <QtCore/QSettings>
@@ -18,6 +19,11 @@ constexpr int kUpdateIntervalMs = 100;
 constexpr double kMinPeriod = 1.0;
 constexpr double kMaxPeriod = 1000000.0;
 constexpr double kPi = 3.14159265358979323846;
+
+QString settingsFilePath()
+{
+    return QCoreApplication::applicationDirPath() + QStringLiteral("/datasimulation.ini");
+}
 }
 
 DataSimulationServer::DataSimulationServer(QObject *parent)
@@ -389,7 +395,7 @@ void DataSimulationServer::setPeakPeriod(int index, double value)
 
 void DataSimulationServer::loadSettings()
 {
-    QSettings settings;
+    QSettings settings(settingsFilePath(), QSettings::IniFormat);
     settings.beginGroup(QStringLiteral("datasimulation"));
 
     const int count = m_simulationConfigs.size();
@@ -437,7 +443,7 @@ void DataSimulationServer::loadSettings()
 
 void DataSimulationServer::saveSettings() const
 {
-    QSettings settings;
+    QSettings settings(settingsFilePath(), QSettings::IniFormat);
     settings.beginGroup(QStringLiteral("datasimulation"));
     settings.setValue(QStringLiteral("valueCount"), m_simulationConfigs.size());
 
