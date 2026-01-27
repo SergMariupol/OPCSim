@@ -31,12 +31,13 @@ public:
 
     struct SimulationConfig {
         SimulationType type = SimulationType::Sine;
-        double amplitude = 1.0;
-        double frequency = 0.1;
+        double sineMin = -1.0;
+        double sineMax = 1.0;
+        double sinePeriod = 60.0;
         double noiseAmplitude = 0.05;
-        int peakInterval = 60;
-        double peakBase = 0.1;
-        double peakHeight = 1.0;
+        double peakPeriod = 60.0;
+        double peakMin = 0.1;
+        double peakMax = 1.0;
         double peakWidthRatio = 0.1;
         double manualValue = 0.0;
     };
@@ -52,6 +53,12 @@ public:
     QString displayName(int index) const;
     SimulationType simulationType(int index) const;
     double currentValue(int index) const;
+    double sineMinimum(int index) const;
+    double sineMaximum(int index) const;
+    double sinePeriod(int index) const;
+    double peakMinimum(int index) const;
+    double peakMaximum(int index) const;
+    double peakPeriod(int index) const;
 
 signals:
     void runningChanged(bool running);
@@ -63,6 +70,12 @@ public slots:
     void shutdown();
     void setSimulationType(int index, SimulationType type);
     void setManualValue(int index, double value);
+    void setSineMinimum(int index, double value);
+    void setSineMaximum(int index, double value);
+    void setSinePeriod(int index, double value);
+    void setPeakMinimum(int index, double value);
+    void setPeakMaximum(int index, double value);
+    void setPeakPeriod(int index, double value);
 
 private:
     bool setupAddressSpace();
