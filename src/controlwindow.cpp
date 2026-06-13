@@ -50,7 +50,8 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     , m_server(server)
 {
     setWindowTitle(tr("Управление симуляцией OPC"));
-    resize(820, 480);
+    resize(1180, 560);
+    setMinimumWidth(1080);
 
     auto *layout = new QVBoxLayout(this);
     auto *statusLayout = new QHBoxLayout();
