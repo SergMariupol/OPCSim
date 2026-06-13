@@ -59,10 +59,13 @@ public:
     double peakMinimum(int index) const;
     double peakMaximum(int index) const;
     double peakPeriod(int index) const;
+    double minimumValue(int index) const;
+    double defaultPeriod(int index) const;
 
 signals:
     void runningChanged(bool running);
     void errorOccurred(const QString &message);
+    void valueChanged(int index, double value);
 
 public slots:
     void processServerEvents();
@@ -76,17 +79,21 @@ public slots:
     void setPeakMinimum(int index, double value);
     void setPeakMaximum(int index, double value);
     void setPeakPeriod(int index, double value);
+    void resetValueToMinimum(int index);
+    void resetPeriod(int index);
 
 private:
     bool setupAddressSpace();
     void loadSettings();
     void saveSettings() const;
+    void scheduleSettingsSave();
     void writeValue(int index, double value);
 
     UA_Server *m_server = nullptr;
     QAtomicInt m_running{false};
     QTimer m_iterateTimer;
     QTimer m_updateTimer;
+    QTimer m_settingsSaveTimer;
     QVector<UA_NodeId> m_valueNodes;
     QVector<double> m_currentValues;
     QVector<SimulationConfig> m_simulationConfigs;

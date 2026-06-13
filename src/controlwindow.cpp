@@ -5,6 +5,7 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QSignalBlocker>
 #include <QtCore/QVariant>
+#include <QtCore/QLocale>
 #include <QtGui/QCloseEvent>
 #include <QtWidgets/QAbstractItemView>
 #include <QtWidgets/QComboBox>
@@ -25,7 +26,9 @@ enum ColumnIndex {
     TypeColumn = 1,
     MinColumn = 2,
     MaxColumn = 3,
-    PeriodColumn = 4
+    PeriodColumn = 4,
+    CurrentValueColumn = 5,
+    ResetColumn = 6
 };
 
 QString simulationTypeToString(DataSimulationServer::SimulationType type)
@@ -47,7 +50,8 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     , m_server(server)
 {
     setWindowTitle(tr("Управление симуляцией OPC"));
-    resize(640, 480);
+    resize(1180, 560);
+    setMinimumWidth(1080);
 
     auto *layout = new QVBoxLayout(this);
     auto *statusLayout = new QHBoxLayout();
@@ -59,14 +63,16 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     layout->addLayout(statusLayout);
 
     m_table = new QTableWidget(this);
-    m_table->setColumnCount(5);
-    m_table->setHorizontalHeaderLabels(
-            {tr("Тег"), tr("Тип симуляции"), tr("Минимум"), tr("Максимум"), tr("Период/значение")});
+    m_table->setColumnCount(7);
+    m_table->setHorizontalHeaderLabels({tr("Тег"), tr("Тип симуляции"), tr("Минимум"), tr("Максимум"),
+                                        tr("Период, сек/значение"), tr("Текущее значение"), tr("Сброс")});
     m_table->horizontalHeader()->setStretchLastSection(true);
     m_table->horizontalHeader()->setSectionResizeMode(TagColumn, QHeaderView::ResizeToContents);
     m_table->horizontalHeader()->setSectionResizeMode(MinColumn, QHeaderView::ResizeToContents);
     m_table->horizontalHeader()->setSectionResizeMode(MaxColumn, QHeaderView::ResizeToContents);
     m_table->horizontalHeader()->setSectionResizeMode(PeriodColumn, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(CurrentValueColumn, QHeaderView::ResizeToContents);
+    m_table->horizontalHeader()->setSectionResizeMode(ResetColumn, QHeaderView::ResizeToContents);
     m_table->verticalHeader()->setVisible(false);
     m_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_table->setSelectionMode(QAbstractItemView::NoSelection);
@@ -187,6 +193,33 @@ void ControlWindow::populateTable()
                 });
 
         m_table->setCellWidget(row, PeriodColumn, periodSpinBox);
+
+        auto *currentValueItem = new QTableWidgetItem(QLocale().toString(m_server->currentValue(row), 'f', 1));
+        currentValueItem->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        m_table->setItem(row, CurrentValueColumn, currentValueItem);
+
+        auto *resetWidget = new QWidget(m_table);
+        auto *resetLayout = new QHBoxLayout(resetWidget);
+        resetLayout->setContentsMargins(0, 0, 0, 0);
+        auto *resetValueButton = new QPushButton(tr("Мин"), resetWidget);
+        resetValueButton->setToolTip(tr("Сбросить текущее значение к минимуму"));
+        auto *resetPeriodButton = new QPushButton(tr("Период"), resetWidget);
+        resetPeriodButton->setToolTip(tr("Сбросить период к значению по умолчанию"));
+        resetLayout->addWidget(resetValueButton);
+        resetLayout->addWidget(resetPeriodButton);
+        m_table->setCellWidget(row, ResetColumn, resetWidget);
+
+        connect(resetValueButton, &QPushButton::clicked, this, [this, row]() {
+            if (m_server)
+                m_server->resetValueToMinimum(row);
+            updateValueEditor(row);
+        });
+        connect(resetPeriodButton, &QPushButton::clicked, this, [this, row]() {
+            if (m_server)
+                m_server->resetPeriod(row);
+            updateValueEditor(row);
+        });
+
         updateValueEditor(row);
     }
 
@@ -215,6 +248,11 @@ void ControlWindow::setupConnections()
         } else {
             updateStatusIndicator(ServerState::Error, message);
         }
+    });
+    connect(m_server, &DataSimulationServer::valueChanged, this, [this](int row, double value) {
+        auto *item = m_table ? m_table->item(row, CurrentValueColumn) : nullptr;
+        if (item)
+            item->setText(QLocale().toString(value, 'f', 1));
     });
 }
 

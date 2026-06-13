@@ -2,8 +2,8 @@
 
 #include <QtCore/QByteArray>
 #include <QtCore/QCoreApplication>
+#include <QtCore/QDir>
 #include <QtCore/QLoggingCategory>
-#include <QtCore/QRandomGenerator>
 #include <QtCore/QSettings>
 
 #include <algorithm>
@@ -20,9 +20,35 @@ constexpr double kMinPeriod = 1.0;
 constexpr double kMaxPeriod = 1000000.0;
 constexpr double kPi = 3.14159265358979323846;
 
+double defaultSinePeriod(int index)
+{
+    return 60.0 + (index % 6) * 5.0;
+}
+
+double defaultPeakPeriod(int index)
+{
+    return 60.0 + (index % 10) * 5.0;
+}
+
+QString settingsDirectoryPath()
+{
+    const QDir applicationDir(QCoreApplication::applicationDirPath());
+    if (applicationDir.dirName().compare(QStringLiteral("build"), Qt::CaseInsensitive) == 0)
+        return applicationDir.absolutePath();
+
+    QDir currentDir(QDir::currentPath());
+    if (currentDir.dirName().compare(QStringLiteral("build"), Qt::CaseInsensitive) == 0)
+        return currentDir.absolutePath();
+
+    if (currentDir.exists(QStringLiteral("build")) || currentDir.mkdir(QStringLiteral("build")))
+        return currentDir.absoluteFilePath(QStringLiteral("build"));
+
+    return applicationDir.absolutePath();
+}
+
 QString settingsFilePath()
 {
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/datasimulation.ini");
+    return QDir(settingsDirectoryPath()).absoluteFilePath(QStringLiteral("datasimulation.ini"));
 }
 }
 
@@ -35,13 +61,17 @@ DataSimulationServer::DataSimulationServer(QObject *parent)
     m_iterateTimer.setSingleShot(false);
     m_updateTimer.setInterval(kUpdateIntervalMs);
     m_updateTimer.setSingleShot(false);
+    m_settingsSaveTimer.setInterval(250);
+    m_settingsSaveTimer.setSingleShot(true);
 
     connect(&m_iterateTimer, &QTimer::timeout, this, &DataSimulationServer::processServerEvents);
     connect(&m_updateTimer, &QTimer::timeout, this, &DataSimulationServer::updateSimulation);
+    connect(&m_settingsSaveTimer, &QTimer::timeout, this, &DataSimulationServer::saveSettings);
 }
 
 DataSimulationServer::~DataSimulationServer()
 {
+    m_settingsSaveTimer.stop();
     saveSettings();
     shutdown();
 
@@ -106,8 +136,8 @@ bool DataSimulationServer::setupAddressSpace()
         SimulationConfig &config = m_simulationConfigs[i];
         config.sineMin = -1.0;
         config.sineMax = 1.0;
-        config.sinePeriod = 60.0 + (i % 6) * 5.0;
-        config.peakPeriod = 60.0 + (i % 10) * 5.0;
+        config.sinePeriod = defaultSinePeriod(i);
+        config.peakPeriod = defaultPeakPeriod(i);
         config.peakMax = 1.0 + (i % 5) * 0.1;
         config.peakMin = 0.1;
         config.peakWidthRatio = 0.08;
@@ -117,8 +147,7 @@ bool DataSimulationServer::setupAddressSpace()
 
         const double amplitude = (config.sineMax - config.sineMin) / 2.0;
         const double center = (config.sineMax + config.sineMin) / 2.0;
-        const double phase = ((i + 1) / std::max(kMinPeriod, config.sinePeriod)) * 2.0 * kPi;
-        const double initialValue = center + amplitude * std::sin(phase);
+        const double initialValue = center - amplitude;
         m_currentValues[i] = initialValue;
 
         UA_VariableAttributes attr = UA_VariableAttributes_default;
@@ -206,21 +235,19 @@ void DataSimulationServer::updateSimulation()
             const double amplitude = (maxValue - minValue) / 2.0;
             const double center = (maxValue + minValue) / 2.0;
             const double period = std::clamp(config.sinePeriod, kMinPeriod, kMaxPeriod);
-            const double phase = ((m_stepCounter + i) / period) * 2.0 * kPi;
-            signal = center + amplitude * std::sin(phase);
-            noise = (QRandomGenerator::global()->generateDouble() - 0.5)
-                    * 2.0 * config.noiseAmplitude;
+            const double elapsedSeconds = (m_stepCounter * kUpdateIntervalMs) / 1000.0;
+            const double phase = (elapsedSeconds / period) * 2.0 * kPi;
+            signal = center - amplitude * std::cos(phase);
             }
             break;
         case SimulationType::Peaks: {
             const double period = std::clamp(config.peakPeriod, kMinPeriod, kMaxPeriod);
-            const double position = std::fmod((m_stepCounter + i), period) / period;
+            const double elapsedSeconds = (m_stepCounter * kUpdateIntervalMs) / 1000.0;
+            const double position = std::fmod(elapsedSeconds, period) / period;
             const double width = std::clamp(config.peakWidthRatio, 0.01, 0.5);
             const double minValue = std::min(config.peakMin, config.peakMax);
             const double maxValue = std::max(config.peakMin, config.peakMax);
             signal = position < width ? maxValue : minValue;
-            noise = (QRandomGenerator::global()->generateDouble() - 0.5)
-                    * 2.0 * config.noiseAmplitude;
             break;
         }
         case SimulationType::Manual:
@@ -316,6 +343,30 @@ double DataSimulationServer::peakPeriod(int index) const
     return m_simulationConfigs.at(index).peakPeriod;
 }
 
+double DataSimulationServer::minimumValue(int index) const
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return 0.0;
+
+    const SimulationConfig &config = m_simulationConfigs.at(index);
+    if (config.type == SimulationType::Peaks)
+        return std::min(config.peakMin, config.peakMax);
+    if (config.type == SimulationType::Manual)
+        return config.manualValue;
+    return std::min(config.sineMin, config.sineMax);
+}
+
+double DataSimulationServer::defaultPeriod(int index) const
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return 60.0;
+
+    const SimulationConfig &config = m_simulationConfigs.at(index);
+    if (config.type == SimulationType::Peaks)
+        return defaultPeakPeriod(index);
+    return defaultSinePeriod(index);
+}
+
 void DataSimulationServer::setSimulationType(int index, SimulationType type)
 {
     if (index < 0 || index >= m_simulationConfigs.size())
@@ -333,6 +384,8 @@ void DataSimulationServer::setSimulationType(int index, SimulationType type)
         config.manualValue = m_currentValues.value(index, 0.0);
         config.noiseAmplitude = 0.0;
     }
+
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setManualValue(int index, double value)
@@ -343,6 +396,7 @@ void DataSimulationServer::setManualValue(int index, double value)
     SimulationConfig &config = m_simulationConfigs[index];
     config.manualValue = value;
     writeValue(index, value);
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSineMinimum(int index, double value)
@@ -351,6 +405,7 @@ void DataSimulationServer::setSineMinimum(int index, double value)
         return;
 
     m_simulationConfigs[index].sineMin = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSineMaximum(int index, double value)
@@ -359,6 +414,7 @@ void DataSimulationServer::setSineMaximum(int index, double value)
         return;
 
     m_simulationConfigs[index].sineMax = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSinePeriod(int index, double value)
@@ -367,6 +423,7 @@ void DataSimulationServer::setSinePeriod(int index, double value)
         return;
 
     m_simulationConfigs[index].sinePeriod = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakMinimum(int index, double value)
@@ -375,6 +432,7 @@ void DataSimulationServer::setPeakMinimum(int index, double value)
         return;
 
     m_simulationConfigs[index].peakMin = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakMaximum(int index, double value)
@@ -383,6 +441,7 @@ void DataSimulationServer::setPeakMaximum(int index, double value)
         return;
 
     m_simulationConfigs[index].peakMax = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakPeriod(int index, double value)
@@ -391,6 +450,34 @@ void DataSimulationServer::setPeakPeriod(int index, double value)
         return;
 
     m_simulationConfigs[index].peakPeriod = value;
+    scheduleSettingsSave();
+}
+
+void DataSimulationServer::resetValueToMinimum(int index)
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return;
+
+    const double value = minimumValue(index);
+    if (m_simulationConfigs[index].type == SimulationType::Manual) {
+        m_simulationConfigs[index].manualValue = value;
+        scheduleSettingsSave();
+    }
+    writeValue(index, value);
+}
+
+void DataSimulationServer::resetPeriod(int index)
+{
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return;
+
+    SimulationConfig &config = m_simulationConfigs[index];
+    if (config.type == SimulationType::Peaks) {
+        config.peakPeriod = defaultPeakPeriod(index);
+    } else if (config.type == SimulationType::Sine) {
+        config.sinePeriod = defaultSinePeriod(index);
+    }
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::loadSettings()
@@ -441,6 +528,13 @@ void DataSimulationServer::loadSettings()
     settings.endGroup();
 }
 
+void DataSimulationServer::scheduleSettingsSave()
+{
+    if (m_settingsSaveTimer.isActive())
+        m_settingsSaveTimer.stop();
+    m_settingsSaveTimer.start();
+}
+
 void DataSimulationServer::saveSettings() const
 {
     QSettings settings(settingsFilePath(), QSettings::IniFormat);
@@ -469,7 +563,9 @@ void DataSimulationServer::writeValue(int index, double value)
     if (index < 0 || index >= m_valueNodes.size())
         return;
 
-    m_currentValues[index] = value;
+    const double roundedValue = std::round(value * 10.0) / 10.0;
+    m_currentValues[index] = roundedValue;
+    emit valueChanged(index, roundedValue);
 
     if (!m_running || !m_server)
         return;
