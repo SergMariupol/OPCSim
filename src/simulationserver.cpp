@@ -4,7 +4,6 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
 #include <QtCore/QLoggingCategory>
-#include <QtCore/QRandomGenerator>
 #include <QtCore/QSettings>
 
 #include <algorithm>
@@ -239,8 +238,6 @@ void DataSimulationServer::updateSimulation()
             const double elapsedSeconds = (m_stepCounter * kUpdateIntervalMs) / 1000.0;
             const double phase = (elapsedSeconds / period) * 2.0 * kPi;
             signal = center - amplitude * std::cos(phase);
-            noise = (QRandomGenerator::global()->generateDouble() - 0.5)
-                    * 2.0 * config.noiseAmplitude;
             }
             break;
         case SimulationType::Peaks: {
@@ -251,8 +248,6 @@ void DataSimulationServer::updateSimulation()
             const double minValue = std::min(config.peakMin, config.peakMax);
             const double maxValue = std::max(config.peakMin, config.peakMax);
             signal = position < width ? maxValue : minValue;
-            noise = (QRandomGenerator::global()->generateDouble() - 0.5)
-                    * 2.0 * config.noiseAmplitude;
             break;
         }
         case SimulationType::Manual:
