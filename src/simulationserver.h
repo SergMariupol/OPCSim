@@ -81,12 +81,14 @@ private:
     bool setupAddressSpace();
     void loadSettings();
     void saveSettings() const;
+    void scheduleSettingsSave();
     void writeValue(int index, double value);
 
     UA_Server *m_server = nullptr;
     QAtomicInt m_running{false};
     QTimer m_iterateTimer;
     QTimer m_updateTimer;
+    QTimer m_settingsSaveTimer;
     QVector<UA_NodeId> m_valueNodes;
     QVector<double> m_currentValues;
     QVector<SimulationConfig> m_simulationConfigs;

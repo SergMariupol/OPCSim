@@ -2,6 +2,7 @@
 
 #include <QtCore/QByteArray>
 #include <QtCore/QCoreApplication>
+#include <QtCore/QDir>
 #include <QtCore/QLoggingCategory>
 #include <QtCore/QRandomGenerator>
 #include <QtCore/QSettings>
@@ -20,9 +21,25 @@ constexpr double kMinPeriod = 1.0;
 constexpr double kMaxPeriod = 1000000.0;
 constexpr double kPi = 3.14159265358979323846;
 
+QString settingsDirectoryPath()
+{
+    const QDir applicationDir(QCoreApplication::applicationDirPath());
+    if (applicationDir.dirName().compare(QStringLiteral("build"), Qt::CaseInsensitive) == 0)
+        return applicationDir.absolutePath();
+
+    QDir currentDir(QDir::currentPath());
+    if (currentDir.dirName().compare(QStringLiteral("build"), Qt::CaseInsensitive) == 0)
+        return currentDir.absolutePath();
+
+    if (currentDir.exists(QStringLiteral("build")) || currentDir.mkdir(QStringLiteral("build")))
+        return currentDir.absoluteFilePath(QStringLiteral("build"));
+
+    return applicationDir.absolutePath();
+}
+
 QString settingsFilePath()
 {
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/datasimulation.ini");
+    return QDir(settingsDirectoryPath()).absoluteFilePath(QStringLiteral("datasimulation.ini"));
 }
 }
 
@@ -35,13 +52,17 @@ DataSimulationServer::DataSimulationServer(QObject *parent)
     m_iterateTimer.setSingleShot(false);
     m_updateTimer.setInterval(kUpdateIntervalMs);
     m_updateTimer.setSingleShot(false);
+    m_settingsSaveTimer.setInterval(250);
+    m_settingsSaveTimer.setSingleShot(true);
 
     connect(&m_iterateTimer, &QTimer::timeout, this, &DataSimulationServer::processServerEvents);
     connect(&m_updateTimer, &QTimer::timeout, this, &DataSimulationServer::updateSimulation);
+    connect(&m_settingsSaveTimer, &QTimer::timeout, this, &DataSimulationServer::saveSettings);
 }
 
 DataSimulationServer::~DataSimulationServer()
 {
+    m_settingsSaveTimer.stop();
     saveSettings();
     shutdown();
 
@@ -333,6 +354,8 @@ void DataSimulationServer::setSimulationType(int index, SimulationType type)
         config.manualValue = m_currentValues.value(index, 0.0);
         config.noiseAmplitude = 0.0;
     }
+
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setManualValue(int index, double value)
@@ -343,6 +366,7 @@ void DataSimulationServer::setManualValue(int index, double value)
     SimulationConfig &config = m_simulationConfigs[index];
     config.manualValue = value;
     writeValue(index, value);
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSineMinimum(int index, double value)
@@ -351,6 +375,7 @@ void DataSimulationServer::setSineMinimum(int index, double value)
         return;
 
     m_simulationConfigs[index].sineMin = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSineMaximum(int index, double value)
@@ -359,6 +384,7 @@ void DataSimulationServer::setSineMaximum(int index, double value)
         return;
 
     m_simulationConfigs[index].sineMax = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSinePeriod(int index, double value)
@@ -367,6 +393,7 @@ void DataSimulationServer::setSinePeriod(int index, double value)
         return;
 
     m_simulationConfigs[index].sinePeriod = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakMinimum(int index, double value)
@@ -375,6 +402,7 @@ void DataSimulationServer::setPeakMinimum(int index, double value)
         return;
 
     m_simulationConfigs[index].peakMin = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakMaximum(int index, double value)
@@ -383,6 +411,7 @@ void DataSimulationServer::setPeakMaximum(int index, double value)
         return;
 
     m_simulationConfigs[index].peakMax = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakPeriod(int index, double value)
@@ -391,6 +420,7 @@ void DataSimulationServer::setPeakPeriod(int index, double value)
         return;
 
     m_simulationConfigs[index].peakPeriod = value;
+    scheduleSettingsSave();
 }
 
 void DataSimulationServer::loadSettings()
@@ -439,6 +469,13 @@ void DataSimulationServer::loadSettings()
     }
 
     settings.endGroup();
+}
+
+void DataSimulationServer::scheduleSettingsSave()
+{
+    if (m_settingsSaveTimer.isActive())
+        m_settingsSaveTimer.stop();
+    m_settingsSaveTimer.start();
 }
 
 void DataSimulationServer::saveSettings() const
