@@ -568,8 +568,9 @@ void DataSimulationServer::writeValue(int index, double value)
     if (index < 0 || index >= m_valueNodes.size())
         return;
 
-    m_currentValues[index] = value;
-    emit valueChanged(index, value);
+    const double roundedValue = std::round(value * 10.0) / 10.0;
+    m_currentValues[index] = roundedValue;
+    emit valueChanged(index, roundedValue);
 
     if (!m_running || !m_server)
         return;
