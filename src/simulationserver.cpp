@@ -19,6 +19,7 @@ constexpr int kUpdateIntervalMs = 100;
 constexpr double kMinPeriod = 1.0;
 constexpr double kMaxPeriod = 1000000.0;
 constexpr double kPi = 3.14159265358979323846;
+constexpr double kValueRoundingFactor = 1000.0; // три знака после запятой
 
 double defaultSinePeriod(int index)
 {
@@ -563,7 +564,7 @@ void DataSimulationServer::writeValue(int index, double value)
     if (index < 0 || index >= m_valueNodes.size())
         return;
 
-    const double roundedValue = std::round(value * 10.0) / 10.0;
+    const double roundedValue = std::round(value * kValueRoundingFactor) / kValueRoundingFactor;
     m_currentValues[index] = roundedValue;
     emit valueChanged(index, roundedValue);
 

@@ -31,6 +31,8 @@ enum ColumnIndex {
     ResetColumn = 6
 };
 
+constexpr int kValueDecimals = 3;
+
 QString simulationTypeToString(DataSimulationServer::SimulationType type)
 {
     switch (type) {
@@ -194,7 +196,8 @@ void ControlWindow::populateTable()
 
         m_table->setCellWidget(row, PeriodColumn, periodSpinBox);
 
-        auto *currentValueItem = new QTableWidgetItem(QLocale().toString(m_server->currentValue(row), 'f', 1));
+        auto *currentValueItem =
+                new QTableWidgetItem(QLocale().toString(m_server->currentValue(row), 'f', kValueDecimals));
         currentValueItem->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         m_table->setItem(row, CurrentValueColumn, currentValueItem);
 
@@ -252,7 +255,7 @@ void ControlWindow::setupConnections()
     connect(m_server, &DataSimulationServer::valueChanged, this, [this](int row, double value) {
         auto *item = m_table ? m_table->item(row, CurrentValueColumn) : nullptr;
         if (item)
-            item->setText(QLocale().toString(value, 'f', 1));
+            item->setText(QLocale().toString(value, 'f', kValueDecimals));
     });
 }
 
