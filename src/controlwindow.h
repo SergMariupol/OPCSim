@@ -2,6 +2,7 @@
 #define CONTROLWINDOW_H
 
 #include <QtCore/QString>
+#include <QtCore/QTimer>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,8 +36,10 @@ private:
     void handleTypeChange(int row, int comboIndex);
     void updateValueEditor(int row);
     void updateStatusIndicator(ServerState state, const QString &message = QString());
+    void refreshCurrentValues();
 
     DataSimulationServer *m_server = nullptr;
+    QTimer m_valueRefreshTimer;
     QTableWidget *m_table = nullptr;
     QPushButton *m_startButton = nullptr;
     QPushButton *m_stopButton = nullptr;

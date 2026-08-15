@@ -58,6 +58,12 @@ DataSimulationServer::DataSimulationServer(QObject *parent)
 {
     UA_NodeId_init(&m_folderNode);
 
+    // Таймеры должны стать потомками объекта, иначе moveToThread() оставит их
+    // в исходном потоке и start() из потока сервера завершится ошибкой.
+    m_iterateTimer.setParent(this);
+    m_updateTimer.setParent(this);
+    m_settingsSaveTimer.setParent(this);
+
     m_iterateTimer.setInterval(5);
     m_iterateTimer.setSingleShot(false);
     m_updateTimer.setInterval(kUpdateIntervalMs);
@@ -224,7 +230,11 @@ void DataSimulationServer::updateSimulation()
     ++m_stepCounter;
 
     for (int i = 0; i < m_valueNodes.size(); ++i) {
-        const SimulationConfig &config = m_simulationConfigs.at(i);
+        SimulationConfig config;
+        {
+            QMutexLocker locker(&m_dataMutex);
+            config = m_simulationConfigs.at(i);
+        }
 
         double signal = 0.0;
         double noise = 0.0;
@@ -290,6 +300,7 @@ QString DataSimulationServer::displayName(int index) const
 
 DataSimulationServer::SimulationType DataSimulationServer::simulationType(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return SimulationType::Sine;
     return m_simulationConfigs.at(index).type;
@@ -297,13 +308,21 @@ DataSimulationServer::SimulationType DataSimulationServer::simulationType(int in
 
 double DataSimulationServer::currentValue(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_currentValues.size())
         return 0.0;
     return m_currentValues.at(index);
 }
 
+QVector<double> DataSimulationServer::currentValues() const
+{
+    QMutexLocker locker(&m_dataMutex);
+    return m_currentValues;
+}
+
 double DataSimulationServer::sineMinimum(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return -1.0;
     return m_simulationConfigs.at(index).sineMin;
@@ -311,6 +330,7 @@ double DataSimulationServer::sineMinimum(int index) const
 
 double DataSimulationServer::sineMaximum(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 1.0;
     return m_simulationConfigs.at(index).sineMax;
@@ -318,6 +338,7 @@ double DataSimulationServer::sineMaximum(int index) const
 
 double DataSimulationServer::sinePeriod(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 60.0;
     return m_simulationConfigs.at(index).sinePeriod;
@@ -325,6 +346,7 @@ double DataSimulationServer::sinePeriod(int index) const
 
 double DataSimulationServer::peakMinimum(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 0.0;
     return m_simulationConfigs.at(index).peakMin;
@@ -332,6 +354,7 @@ double DataSimulationServer::peakMinimum(int index) const
 
 double DataSimulationServer::peakMaximum(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 1.0;
     return m_simulationConfigs.at(index).peakMax;
@@ -339,6 +362,7 @@ double DataSimulationServer::peakMaximum(int index) const
 
 double DataSimulationServer::peakPeriod(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 60.0;
     return m_simulationConfigs.at(index).peakPeriod;
@@ -346,6 +370,7 @@ double DataSimulationServer::peakPeriod(int index) const
 
 double DataSimulationServer::minimumValue(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 0.0;
 
@@ -359,6 +384,7 @@ double DataSimulationServer::minimumValue(int index) const
 
 double DataSimulationServer::defaultPeriod(int index) const
 {
+    QMutexLocker locker(&m_dataMutex);
     if (index < 0 || index >= m_simulationConfigs.size())
         return 60.0;
 
@@ -370,20 +396,23 @@ double DataSimulationServer::defaultPeriod(int index) const
 
 void DataSimulationServer::setSimulationType(int index, SimulationType type)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    SimulationConfig &config = m_simulationConfigs[index];
-    config.type = type;
+        SimulationConfig &config = m_simulationConfigs[index];
+        config.type = type;
 
-    if (type == SimulationType::Sine) {
-        config.noiseAmplitude = 0.05;
-    } else if (type == SimulationType::Peaks) {
-        config.peakWidthRatio = 0.08;
-        config.noiseAmplitude = 0.02;
-    } else if (type == SimulationType::Manual) {
-        config.manualValue = m_currentValues.value(index, 0.0);
-        config.noiseAmplitude = 0.0;
+        if (type == SimulationType::Sine) {
+            config.noiseAmplitude = 0.05;
+        } else if (type == SimulationType::Peaks) {
+            config.peakWidthRatio = 0.08;
+            config.noiseAmplitude = 0.02;
+        } else if (type == SimulationType::Manual) {
+            config.manualValue = m_currentValues.value(index, 0.0);
+            config.noiseAmplitude = 0.0;
+        }
     }
 
     scheduleSettingsSave();
@@ -391,93 +420,130 @@ void DataSimulationServer::setSimulationType(int index, SimulationType type)
 
 void DataSimulationServer::setManualValue(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    SimulationConfig &config = m_simulationConfigs[index];
-    config.manualValue = value;
+        m_simulationConfigs[index].manualValue = value;
+    }
+
     writeValue(index, value);
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSineMinimum(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    m_simulationConfigs[index].sineMin = value;
+        m_simulationConfigs[index].sineMin = value;
+    }
+
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSineMaximum(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    m_simulationConfigs[index].sineMax = value;
+        m_simulationConfigs[index].sineMax = value;
+    }
+
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::setSinePeriod(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    m_simulationConfigs[index].sinePeriod = value;
+        m_simulationConfigs[index].sinePeriod = value;
+    }
+
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakMinimum(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    m_simulationConfigs[index].peakMin = value;
+        m_simulationConfigs[index].peakMin = value;
+    }
+
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakMaximum(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    m_simulationConfigs[index].peakMax = value;
+        m_simulationConfigs[index].peakMax = value;
+    }
+
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::setPeakPeriod(int index, double value)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    m_simulationConfigs[index].peakPeriod = value;
+        m_simulationConfigs[index].peakPeriod = value;
+    }
+
     scheduleSettingsSave();
 }
 
 void DataSimulationServer::resetValueToMinimum(int index)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
-
     const double value = minimumValue(index);
-    if (m_simulationConfigs[index].type == SimulationType::Manual) {
-        m_simulationConfigs[index].manualValue = value;
-        scheduleSettingsSave();
+    bool isManual = false;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
+
+        isManual = m_simulationConfigs[index].type == SimulationType::Manual;
+        if (isManual)
+            m_simulationConfigs[index].manualValue = value;
     }
+
+    if (isManual)
+        scheduleSettingsSave();
     writeValue(index, value);
 }
 
 void DataSimulationServer::resetPeriod(int index)
 {
-    if (index < 0 || index >= m_simulationConfigs.size())
-        return;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
 
-    SimulationConfig &config = m_simulationConfigs[index];
-    if (config.type == SimulationType::Peaks) {
-        config.peakPeriod = defaultPeakPeriod(index);
-    } else if (config.type == SimulationType::Sine) {
-        config.sinePeriod = defaultSinePeriod(index);
+        SimulationConfig &config = m_simulationConfigs[index];
+        if (config.type == SimulationType::Peaks) {
+            config.peakPeriod = defaultPeakPeriod(index);
+        } else if (config.type == SimulationType::Sine) {
+            config.sinePeriod = defaultSinePeriod(index);
+        }
     }
+
     scheduleSettingsSave();
 }
 
@@ -488,23 +554,29 @@ void DataSimulationServer::loadSettings()
 
     const int count = m_simulationConfigs.size();
     for (int i = 0; i < count; ++i) {
+        SimulationConfig defaults;
+        {
+            QMutexLocker locker(&m_dataMutex);
+            defaults = m_simulationConfigs.at(i);
+        }
+
         settings.beginGroup(QStringLiteral("value%1").arg(i));
         const int typeValue = settings.value(QStringLiteral("type"),
-                                             static_cast<int>(m_simulationConfigs[i].type)).toInt();
+                                             static_cast<int>(defaults.type)).toInt();
         const double manualValue = settings.value(QStringLiteral("manualValue"),
-                                                  m_simulationConfigs[i].manualValue).toDouble();
+                                                  defaults.manualValue).toDouble();
         const double sineMin = settings.value(QStringLiteral("sineMin"),
-                                              m_simulationConfigs[i].sineMin).toDouble();
+                                              defaults.sineMin).toDouble();
         const double sineMax = settings.value(QStringLiteral("sineMax"),
-                                              m_simulationConfigs[i].sineMax).toDouble();
+                                              defaults.sineMax).toDouble();
         const double sinePeriod = settings.value(QStringLiteral("sinePeriod"),
-                                                 m_simulationConfigs[i].sinePeriod).toDouble();
+                                                 defaults.sinePeriod).toDouble();
         const double peakMin = settings.value(QStringLiteral("peakMin"),
-                                              m_simulationConfigs[i].peakMin).toDouble();
+                                              defaults.peakMin).toDouble();
         const double peakMax = settings.value(QStringLiteral("peakMax"),
-                                              m_simulationConfigs[i].peakMax).toDouble();
+                                              defaults.peakMax).toDouble();
         const double peakPeriod = settings.value(QStringLiteral("peakPeriod"),
-                                                 m_simulationConfigs[i].peakPeriod).toDouble();
+                                                 defaults.peakPeriod).toDouble();
         settings.endGroup();
 
         SimulationType type = SimulationType::Sine;
@@ -514,14 +586,17 @@ void DataSimulationServer::loadSettings()
         }
 
         setSimulationType(i, type);
-        SimulationConfig &config = m_simulationConfigs[i];
-        config.manualValue = manualValue;
-        config.sineMin = sineMin;
-        config.sineMax = sineMax;
-        config.sinePeriod = sinePeriod;
-        config.peakMin = peakMin;
-        config.peakMax = peakMax;
-        config.peakPeriod = peakPeriod;
+        {
+            QMutexLocker locker(&m_dataMutex);
+            SimulationConfig &config = m_simulationConfigs[i];
+            config.manualValue = manualValue;
+            config.sineMin = sineMin;
+            config.sineMax = sineMax;
+            config.sinePeriod = sinePeriod;
+            config.peakMin = peakMin;
+            config.peakMax = peakMax;
+            config.peakPeriod = peakPeriod;
+        }
         if (type == SimulationType::Manual)
             setManualValue(i, manualValue);
     }
@@ -538,20 +613,27 @@ void DataSimulationServer::scheduleSettingsSave()
 
 void DataSimulationServer::saveSettings() const
 {
+    // Снимок под мьютексом, чтобы не держать блокировку на время записи файла.
+    QVector<SimulationConfig> configs;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        configs = m_simulationConfigs;
+    }
+
     QSettings settings(settingsFilePath(), QSettings::IniFormat);
     settings.beginGroup(QStringLiteral("datasimulation"));
-    settings.setValue(QStringLiteral("valueCount"), m_simulationConfigs.size());
+    settings.setValue(QStringLiteral("valueCount"), configs.size());
 
-    for (int i = 0; i < m_simulationConfigs.size(); ++i) {
+    for (int i = 0; i < configs.size(); ++i) {
         settings.beginGroup(QStringLiteral("value%1").arg(i));
-        settings.setValue(QStringLiteral("type"), static_cast<int>(m_simulationConfigs[i].type));
-        settings.setValue(QStringLiteral("manualValue"), m_simulationConfigs[i].manualValue);
-        settings.setValue(QStringLiteral("sineMin"), m_simulationConfigs[i].sineMin);
-        settings.setValue(QStringLiteral("sineMax"), m_simulationConfigs[i].sineMax);
-        settings.setValue(QStringLiteral("sinePeriod"), m_simulationConfigs[i].sinePeriod);
-        settings.setValue(QStringLiteral("peakMin"), m_simulationConfigs[i].peakMin);
-        settings.setValue(QStringLiteral("peakMax"), m_simulationConfigs[i].peakMax);
-        settings.setValue(QStringLiteral("peakPeriod"), m_simulationConfigs[i].peakPeriod);
+        settings.setValue(QStringLiteral("type"), static_cast<int>(configs[i].type));
+        settings.setValue(QStringLiteral("manualValue"), configs[i].manualValue);
+        settings.setValue(QStringLiteral("sineMin"), configs[i].sineMin);
+        settings.setValue(QStringLiteral("sineMax"), configs[i].sineMax);
+        settings.setValue(QStringLiteral("sinePeriod"), configs[i].sinePeriod);
+        settings.setValue(QStringLiteral("peakMin"), configs[i].peakMin);
+        settings.setValue(QStringLiteral("peakMax"), configs[i].peakMax);
+        settings.setValue(QStringLiteral("peakPeriod"), configs[i].peakPeriod);
         settings.endGroup();
     }
 
@@ -565,7 +647,10 @@ void DataSimulationServer::writeValue(int index, double value)
         return;
 
     const double roundedValue = std::round(value * kValueRoundingFactor) / kValueRoundingFactor;
-    m_currentValues[index] = roundedValue;
+    {
+        QMutexLocker locker(&m_dataMutex);
+        m_currentValues[index] = roundedValue;
+    }
     emit valueChanged(index, roundedValue);
 
     if (!m_running || !m_server)
@@ -574,7 +659,7 @@ void DataSimulationServer::writeValue(int index, double value)
     UA_DataValue dv;
     UA_DataValue_init(&dv);
 
-    UA_Variant_setScalarCopy(&dv.value, &m_currentValues[index], &UA_TYPES[UA_TYPES_DOUBLE]);
+    UA_Variant_setScalarCopy(&dv.value, &roundedValue, &UA_TYPES[UA_TYPES_DOUBLE]);
 
     dv.hasSourceTimestamp = true;
     dv.sourceTimestamp    = UA_DateTime_now();
