@@ -10,6 +10,7 @@
 #endif
 
 #include <QtCore/QAtomicInt>
+#include <QtCore/QMutex>
 #include <QtCore/QObject>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
@@ -18,6 +19,9 @@
 
 QT_BEGIN_NAMESPACE
 
+// Объект живёт в отдельном потоке: open62541 собран с UA_MULTITHREADING 0,
+// поэтому все вызовы UA_Server_* и все таймеры должны оставаться в этом потоке.
+// Слоты вызывайте через очередь соединений, геттеры потокобезопасны.
 class DataSimulationServer : public QObject
 {
     Q_OBJECT
@@ -53,6 +57,7 @@ public:
     QString displayName(int index) const;
     SimulationType simulationType(int index) const;
     double currentValue(int index) const;
+    QVector<double> currentValues() const;
     double sineMinimum(int index) const;
     double sineMaximum(int index) const;
     double sinePeriod(int index) const;
@@ -91,6 +96,8 @@ private:
 
     UA_Server *m_server = nullptr;
     QAtomicInt m_running{false};
+    // Защищает m_currentValues и m_simulationConfigs: их читает поток GUI.
+    mutable QMutex m_dataMutex;
     QTimer m_iterateTimer;
     QTimer m_updateTimer;
     QTimer m_settingsSaveTimer;

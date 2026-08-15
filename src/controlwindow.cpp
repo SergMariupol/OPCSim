@@ -6,6 +6,7 @@
 #include <QtCore/QSignalBlocker>
 #include <QtCore/QVariant>
 #include <QtCore/QLocale>
+#include <QtCore/QVector>
 #include <QtGui/QCloseEvent>
 #include <QtWidgets/QAbstractItemView>
 #include <QtWidgets/QComboBox>
@@ -17,6 +18,9 @@
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTableWidgetItem>
 #include <QtWidgets/QVBoxLayout>
+
+#include <algorithm>
+#include <utility>
 
 QT_BEGIN_NAMESPACE
 
@@ -30,6 +34,24 @@ enum ColumnIndex {
     CurrentValueColumn = 5,
     ResetColumn = 6
 };
+
+constexpr int kValueDecimals = 3;
+constexpr int kValueRefreshIntervalMs = 250;
+
+// Сервер живёт в отдельном потоке, поэтому его слоты нельзя дёргать напрямую:
+// они трогают open62541 и таймеры, привязанные к тому потоку.
+template <typename Func>
+void postToServer(DataSimulationServer *server, Func &&fn)
+{
+    QMetaObject::invokeMethod(server, std::forward<Func>(fn), Qt::QueuedConnection);
+}
+
+// Блокирующий вариант — там, где сразу после вызова нужно прочитать результат.
+template <typename Func>
+void callOnServer(DataSimulationServer *server, Func &&fn)
+{
+    QMetaObject::invokeMethod(server, std::forward<Func>(fn), Qt::BlockingQueuedConnection);
+}
 
 QString simulationTypeToString(DataSimulationServer::SimulationType type)
 {
@@ -71,7 +93,9 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
     m_table->horizontalHeader()->setSectionResizeMode(MinColumn, QHeaderView::ResizeToContents);
     m_table->horizontalHeader()->setSectionResizeMode(MaxColumn, QHeaderView::ResizeToContents);
     m_table->horizontalHeader()->setSectionResizeMode(PeriodColumn, QHeaderView::ResizeToContents);
-    m_table->horizontalHeader()->setSectionResizeMode(CurrentValueColumn, QHeaderView::ResizeToContents);
+    // Не ResizeToContents: колонка меняется постоянно, а этот режим пересчитывал
+    // бы ширину по всем строкам на каждое обновление значения.
+    m_table->horizontalHeader()->setSectionResizeMode(CurrentValueColumn, QHeaderView::Interactive);
     m_table->horizontalHeader()->setSectionResizeMode(ResetColumn, QHeaderView::ResizeToContents);
     m_table->verticalHeader()->setVisible(false);
     m_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -99,8 +123,11 @@ ControlWindow::ControlWindow(DataSimulationServer *server, QWidget *parent)
 
 void ControlWindow::closeEvent(QCloseEvent *event)
 {
-    if (m_server)
-        m_server->shutdown();
+    m_valueRefreshTimer.stop();
+    if (m_server) {
+        auto *server = m_server;
+        callOnServer(server, [server]() { server->shutdown(); });
+    }
     QWidget::closeEvent(event);
     QCoreApplication::quit();
 }
@@ -145,10 +172,11 @@ void ControlWindow::populateTable()
                         return;
                     const auto currentType =
                             static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                    auto *server = m_server;
                     if (currentType == DataSimulationServer::SimulationType::Sine)
-                        m_server->setSineMinimum(row, value);
+                        postToServer(server, [server, row, value]() { server->setSineMinimum(row, value); });
                     else if (currentType == DataSimulationServer::SimulationType::Peaks)
-                        m_server->setPeakMinimum(row, value);
+                        postToServer(server, [server, row, value]() { server->setPeakMinimum(row, value); });
                 });
 
         m_table->setCellWidget(row, MinColumn, minSpinBox);
@@ -164,10 +192,11 @@ void ControlWindow::populateTable()
                         return;
                     const auto currentType =
                             static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                    auto *server = m_server;
                     if (currentType == DataSimulationServer::SimulationType::Sine)
-                        m_server->setSineMaximum(row, value);
+                        postToServer(server, [server, row, value]() { server->setSineMaximum(row, value); });
                     else if (currentType == DataSimulationServer::SimulationType::Peaks)
-                        m_server->setPeakMaximum(row, value);
+                        postToServer(server, [server, row, value]() { server->setPeakMaximum(row, value); });
                 });
 
         m_table->setCellWidget(row, MaxColumn, maxSpinBox);
@@ -183,18 +212,20 @@ void ControlWindow::populateTable()
                         return;
                     const auto currentType =
                             static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+                    auto *server = m_server;
                     if (currentType == DataSimulationServer::SimulationType::Manual) {
-                        m_server->setManualValue(row, value);
+                        postToServer(server, [server, row, value]() { server->setManualValue(row, value); });
                     } else if (currentType == DataSimulationServer::SimulationType::Sine) {
-                        m_server->setSinePeriod(row, value);
+                        postToServer(server, [server, row, value]() { server->setSinePeriod(row, value); });
                     } else if (currentType == DataSimulationServer::SimulationType::Peaks) {
-                        m_server->setPeakPeriod(row, value);
+                        postToServer(server, [server, row, value]() { server->setPeakPeriod(row, value); });
                     }
                 });
 
         m_table->setCellWidget(row, PeriodColumn, periodSpinBox);
 
-        auto *currentValueItem = new QTableWidgetItem(QLocale().toString(m_server->currentValue(row), 'f', 1));
+        auto *currentValueItem =
+                new QTableWidgetItem(QLocale().toString(m_server->currentValue(row), 'f', kValueDecimals));
         currentValueItem->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         m_table->setItem(row, CurrentValueColumn, currentValueItem);
 
@@ -210,13 +241,18 @@ void ControlWindow::populateTable()
         m_table->setCellWidget(row, ResetColumn, resetWidget);
 
         connect(resetValueButton, &QPushButton::clicked, this, [this, row]() {
-            if (m_server)
-                m_server->resetValueToMinimum(row);
+            if (m_server) {
+                auto *server = m_server;
+                callOnServer(server, [server, row]() { server->resetValueToMinimum(row); });
+            }
             updateValueEditor(row);
+            refreshCurrentValues();
         });
         connect(resetPeriodButton, &QPushButton::clicked, this, [this, row]() {
-            if (m_server)
-                m_server->resetPeriod(row);
+            if (m_server) {
+                auto *server = m_server;
+                callOnServer(server, [server, row]() { server->resetPeriod(row); });
+            }
             updateValueEditor(row);
         });
 
@@ -233,9 +269,8 @@ void ControlWindow::setupConnections()
 
     connect(m_startButton, &QPushButton::clicked, m_server, &DataSimulationServer::launch);
     connect(m_stopButton, &QPushButton::clicked, m_server, &DataSimulationServer::shutdown);
+    // Останавливает сервер closeEvent(), close() его и вызывает.
     connect(m_closeButton, &QPushButton::clicked, this, [this]() {
-        if (m_server)
-            m_server->shutdown();
         close();
     });
 
@@ -249,11 +284,32 @@ void ControlWindow::setupConnections()
             updateStatusIndicator(ServerState::Error, message);
         }
     });
-    connect(m_server, &DataSimulationServer::valueChanged, this, [this](int row, double value) {
-        auto *item = m_table ? m_table->item(row, CurrentValueColumn) : nullptr;
-        if (item)
-            item->setText(QLocale().toString(value, 'f', 1));
-    });
+    // valueChanged() приходит до тысячи раз в секунду. Через границу потоков это
+    // столько же событий в очереди GUI, поэтому таблицу обновляем опросом снимка.
+    m_valueRefreshTimer.setInterval(kValueRefreshIntervalMs);
+    m_valueRefreshTimer.setSingleShot(false);
+    connect(&m_valueRefreshTimer, &QTimer::timeout, this, &ControlWindow::refreshCurrentValues);
+    m_valueRefreshTimer.start();
+}
+
+void ControlWindow::refreshCurrentValues()
+{
+    if (!m_server || !m_table)
+        return;
+
+    const QVector<double> values = m_server->currentValues();
+    const int rows = std::min(int(values.size()), m_table->rowCount());
+    const QLocale locale;
+
+    for (int row = 0; row < rows; ++row) {
+        auto *item = m_table->item(row, CurrentValueColumn);
+        if (!item)
+            continue;
+
+        const QString text = locale.toString(values.at(row), 'f', kValueDecimals);
+        if (item->text() != text)
+            item->setText(text);
+    }
 }
 
 void ControlWindow::handleTypeChange(int row, int comboIndex)
@@ -270,7 +326,8 @@ void ControlWindow::handleTypeChange(int row, int comboIndex)
         return;
 
     const auto type = static_cast<DataSimulationServer::SimulationType>(data.toInt());
-    m_server->setSimulationType(row, type);
+    auto *server = m_server;
+    callOnServer(server, [server, row, type]() { server->setSimulationType(row, type); });
     updateValueEditor(row);
 }
 
