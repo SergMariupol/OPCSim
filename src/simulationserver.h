@@ -29,7 +29,8 @@ public:
     enum class SimulationType {
         Sine,
         Peaks,
-        Manual
+        Manual,
+        Bool
     };
     Q_ENUM(SimulationType)
 
@@ -44,6 +45,7 @@ public:
         double peakMax = 1.0;
         double peakWidthRatio = 0.1;
         double manualValue = 0.0;
+        bool boolValue = false;
     };
 
     explicit DataSimulationServer(QObject *parent = nullptr);
@@ -64,6 +66,7 @@ public:
     double peakMinimum(int index) const;
     double peakMaximum(int index) const;
     double peakPeriod(int index) const;
+    bool boolValue(int index) const;
     double minimumValue(int index) const;
     double defaultPeriod(int index) const;
 
@@ -78,6 +81,7 @@ public slots:
     void shutdown();
     void setSimulationType(int index, SimulationType type);
     void setManualValue(int index, double value);
+    void setBoolValue(int index, bool value);
     void setSineMinimum(int index, double value);
     void setSineMaximum(int index, double value);
     void setSinePeriod(int index, double value);
@@ -93,6 +97,8 @@ private:
     void saveSettings() const;
     void scheduleSettingsSave();
     void writeValue(int index, double value);
+    void writeNodeValue(int index, double value, bool isBool);
+    void updateNodeDataType(int index, bool isBool);
 
     UA_Server *m_server = nullptr;
     QAtomicInt m_running{false};

@@ -264,6 +264,9 @@ void DataSimulationServer::updateSimulation()
         case SimulationType::Manual:
             signal = config.manualValue;
             break;
+        case SimulationType::Bool:
+            signal = config.boolValue ? 1.0 : 0.0;
+            break;
         }
 
         writeValue(i, signal + noise);
@@ -368,6 +371,14 @@ double DataSimulationServer::peakPeriod(int index) const
     return m_simulationConfigs.at(index).peakPeriod;
 }
 
+bool DataSimulationServer::boolValue(int index) const
+{
+    QMutexLocker locker(&m_dataMutex);
+    if (index < 0 || index >= m_simulationConfigs.size())
+        return false;
+    return m_simulationConfigs.at(index).boolValue;
+}
+
 double DataSimulationServer::minimumValue(int index) const
 {
     QMutexLocker locker(&m_dataMutex);
@@ -379,6 +390,8 @@ double DataSimulationServer::minimumValue(int index) const
         return std::min(config.peakMin, config.peakMax);
     if (config.type == SimulationType::Manual)
         return config.manualValue;
+    if (config.type == SimulationType::Bool)
+        return 0.0;
     return std::min(config.sineMin, config.sineMax);
 }
 
@@ -396,13 +409,17 @@ double DataSimulationServer::defaultPeriod(int index) const
 
 void DataSimulationServer::setSimulationType(int index, SimulationType type)
 {
+    bool wasBool = false;
+    bool boolValue = false;
     {
         QMutexLocker locker(&m_dataMutex);
         if (index < 0 || index >= m_simulationConfigs.size())
             return;
 
         SimulationConfig &config = m_simulationConfigs[index];
+        wasBool = config.type == SimulationType::Bool;
         config.type = type;
+        boolValue = config.boolValue;
 
         if (type == SimulationType::Sine) {
             config.noiseAmplitude = 0.05;
@@ -412,8 +429,18 @@ void DataSimulationServer::setSimulationType(int index, SimulationType type)
         } else if (type == SimulationType::Manual) {
             config.manualValue = m_currentValues.value(index, 0.0);
             config.noiseAmplitude = 0.0;
+        } else if (type == SimulationType::Bool) {
+            config.noiseAmplitude = 0.0;
+            // updateNodeDataType() запишет в узел именно это значение.
+            m_currentValues[index] = boolValue ? 1.0 : 0.0;
         }
     }
+
+    const bool isBool = type == SimulationType::Bool;
+    if (isBool != wasBool)
+        updateNodeDataType(index, isBool);
+    if (isBool)
+        writeValue(index, boolValue ? 1.0 : 0.0);
 
     scheduleSettingsSave();
 }
@@ -429,6 +456,20 @@ void DataSimulationServer::setManualValue(int index, double value)
     }
 
     writeValue(index, value);
+    scheduleSettingsSave();
+}
+
+void DataSimulationServer::setBoolValue(int index, bool value)
+{
+    {
+        QMutexLocker locker(&m_dataMutex);
+        if (index < 0 || index >= m_simulationConfigs.size())
+            return;
+
+        m_simulationConfigs[index].boolValue = value;
+    }
+
+    writeValue(index, value ? 1.0 : 0.0);
     scheduleSettingsSave();
 }
 
@@ -513,18 +554,23 @@ void DataSimulationServer::setPeakPeriod(int index, double value)
 void DataSimulationServer::resetValueToMinimum(int index)
 {
     const double value = minimumValue(index);
-    bool isManual = false;
+    bool isEditable = false;
     {
         QMutexLocker locker(&m_dataMutex);
         if (index < 0 || index >= m_simulationConfigs.size())
             return;
 
-        isManual = m_simulationConfigs[index].type == SimulationType::Manual;
-        if (isManual)
-            m_simulationConfigs[index].manualValue = value;
+        SimulationConfig &config = m_simulationConfigs[index];
+        if (config.type == SimulationType::Manual) {
+            config.manualValue = value;
+            isEditable = true;
+        } else if (config.type == SimulationType::Bool) {
+            config.boolValue = false;
+            isEditable = true;
+        }
     }
 
-    if (isManual)
+    if (isEditable)
         scheduleSettingsSave();
     writeValue(index, value);
 }
@@ -577,11 +623,13 @@ void DataSimulationServer::loadSettings()
                                               defaults.peakMax).toDouble();
         const double peakPeriod = settings.value(QStringLiteral("peakPeriod"),
                                                  defaults.peakPeriod).toDouble();
+        const bool boolValue = settings.value(QStringLiteral("boolValue"),
+                                              defaults.boolValue).toBool();
         settings.endGroup();
 
         SimulationType type = SimulationType::Sine;
         if (typeValue >= static_cast<int>(SimulationType::Sine)
-                && typeValue <= static_cast<int>(SimulationType::Manual)) {
+                && typeValue <= static_cast<int>(SimulationType::Bool)) {
             type = static_cast<SimulationType>(typeValue);
         }
 
@@ -599,6 +647,8 @@ void DataSimulationServer::loadSettings()
         }
         if (type == SimulationType::Manual)
             setManualValue(i, manualValue);
+        else if (type == SimulationType::Bool)
+            setBoolValue(i, boolValue);
     }
 
     settings.endGroup();
@@ -634,6 +684,7 @@ void DataSimulationServer::saveSettings() const
         settings.setValue(QStringLiteral("peakMin"), configs[i].peakMin);
         settings.setValue(QStringLiteral("peakMax"), configs[i].peakMax);
         settings.setValue(QStringLiteral("peakPeriod"), configs[i].peakPeriod);
+        settings.setValue(QStringLiteral("boolValue"), configs[i].boolValue);
         settings.endGroup();
     }
 
@@ -646,9 +697,13 @@ void DataSimulationServer::writeValue(int index, double value)
     if (index < 0 || index >= m_valueNodes.size())
         return;
 
-    const double roundedValue = std::round(value * kValueRoundingFactor) / kValueRoundingFactor;
+    bool isBool = false;
+    double roundedValue = 0.0;
     {
         QMutexLocker locker(&m_dataMutex);
+        isBool = m_simulationConfigs.at(index).type == SimulationType::Bool;
+        roundedValue = isBool ? (value != 0.0 ? 1.0 : 0.0)
+                              : std::round(value * kValueRoundingFactor) / kValueRoundingFactor;
         m_currentValues[index] = roundedValue;
     }
     emit valueChanged(index, roundedValue);
@@ -656,10 +711,21 @@ void DataSimulationServer::writeValue(int index, double value)
     if (!m_running || !m_server)
         return;
 
+    writeNodeValue(index, roundedValue, isBool);
+}
+
+void DataSimulationServer::writeNodeValue(int index, double value, bool isBool)
+{
     UA_DataValue dv;
     UA_DataValue_init(&dv);
 
-    UA_Variant_setScalarCopy(&dv.value, &roundedValue, &UA_TYPES[UA_TYPES_DOUBLE]);
+    if (isBool) {
+        const UA_Boolean boolValue = value != 0.0;
+        UA_Variant_setScalarCopy(&dv.value, &boolValue, &UA_TYPES[UA_TYPES_BOOLEAN]);
+    } else {
+        UA_Variant_setScalarCopy(&dv.value, &value, &UA_TYPES[UA_TYPES_DOUBLE]);
+    }
+    dv.hasValue = true;
 
     dv.hasSourceTimestamp = true;
     dv.sourceTimestamp    = UA_DateTime_now();
@@ -670,6 +736,29 @@ void DataSimulationServer::writeValue(int index, double value)
     }
 
     UA_DataValue_clear(&dv);
+}
+
+void DataSimulationServer::updateNodeDataType(int index, bool isBool)
+{
+    if (!m_server || index < 0 || index >= m_valueNodes.size())
+        return;
+
+    // open62541 не даёт сменить DataType, если текущее значение ему не подходит,
+    // и не даёт записать значение чужого типа. Поэтому сначала переводим узел
+    // в BaseDataType (принимает любое значение), пишем значение нового типа
+    // и только потом выставляем окончательный тип.
+    const UA_NodeId &nodeId = m_valueNodes[index];
+    UA_StatusCode st = UA_Server_writeDataType(m_server, nodeId,
+                                               UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATATYPE));
+    if (st == UA_STATUSCODE_GOOD) {
+        writeNodeValue(index, currentValue(index), isBool);
+        const UA_NodeId dataType = isBool ? UA_TYPES[UA_TYPES_BOOLEAN].typeId
+                                          : UA_TYPES[UA_TYPES_DOUBLE].typeId;
+        st = UA_Server_writeDataType(m_server, nodeId, dataType);
+    }
+    if (st != UA_STATUSCODE_GOOD) {
+        qCWarning(lcDataSimulation) << "data type change failed for node" << index << "status:" << st;
+    }
 }
 
 QT_END_NAMESPACE
