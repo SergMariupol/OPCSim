@@ -9,6 +9,7 @@
 #include <QtCore/QVector>
 #include <QtGui/QCloseEvent>
 #include <QtWidgets/QAbstractItemView>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHeaderView>
@@ -62,8 +63,22 @@ QString simulationTypeToString(DataSimulationServer::SimulationType type)
         return QObject::tr("Пики");
     case DataSimulationServer::SimulationType::Manual:
         return QObject::tr("Вручную");
+    case DataSimulationServer::SimulationType::Bool:
+        return QObject::tr("Логический");
     }
     return QObject::tr("Неизвестно");
+}
+
+QString formatValue(DataSimulationServer::SimulationType type, double value, const QLocale &locale)
+{
+    if (type == DataSimulationServer::SimulationType::Bool)
+        return value != 0.0 ? QObject::tr("Истина") : QObject::tr("Ложь");
+    return locale.toString(value, 'f', kValueDecimals);
+}
+
+DataSimulationServer::SimulationType comboType(const QComboBox *combo)
+{
+    return static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
 }
 }
 
@@ -150,6 +165,8 @@ void ControlWindow::populateTable()
                        QVariant::fromValue(int(DataSimulationServer::SimulationType::Peaks)));
         combo->addItem(simulationTypeToString(DataSimulationServer::SimulationType::Manual),
                        QVariant::fromValue(int(DataSimulationServer::SimulationType::Manual)));
+        combo->addItem(simulationTypeToString(DataSimulationServer::SimulationType::Bool),
+                       QVariant::fromValue(int(DataSimulationServer::SimulationType::Bool)));
 
         const auto currentType = m_server->simulationType(row);
         const int currentIndex = combo->findData(int(currentType));
@@ -201,7 +218,13 @@ void ControlWindow::populateTable()
 
         m_table->setCellWidget(row, MaxColumn, maxSpinBox);
 
-        auto *periodSpinBox = new QDoubleSpinBox(m_table);
+        // В колонке либо число (период или ручное значение), либо флажок для
+        // логического тега — видим один из них, см. updateValueEditor().
+        auto *valueWidget = new QWidget(m_table);
+        auto *valueLayout = new QHBoxLayout(valueWidget);
+        valueLayout->setContentsMargins(0, 0, 0, 0);
+
+        auto *periodSpinBox = new QDoubleSpinBox(valueWidget);
         periodSpinBox->setDecimals(6);
         periodSpinBox->setRange(1.0, 1000000.0);
 
@@ -222,10 +245,23 @@ void ControlWindow::populateTable()
                     }
                 });
 
-        m_table->setCellWidget(row, PeriodColumn, periodSpinBox);
+        auto *boolCheckBox = new QCheckBox(tr("Истина"), valueWidget);
+        boolCheckBox->setToolTip(tr("Значение логического тега"));
+        boolCheckBox->setVisible(false);
+
+        connect(boolCheckBox, &QCheckBox::toggled, this, [this, row](bool checked) {
+            if (!m_server)
+                return;
+            auto *server = m_server;
+            postToServer(server, [server, row, checked]() { server->setBoolValue(row, checked); });
+        });
+
+        valueLayout->addWidget(periodSpinBox);
+        valueLayout->addWidget(boolCheckBox);
+        m_table->setCellWidget(row, PeriodColumn, valueWidget);
 
         auto *currentValueItem =
-                new QTableWidgetItem(QLocale().toString(m_server->currentValue(row), 'f', kValueDecimals));
+                new QTableWidgetItem(formatValue(currentType, m_server->currentValue(row), QLocale()));
         currentValueItem->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         m_table->setItem(row, CurrentValueColumn, currentValueItem);
 
@@ -303,10 +339,11 @@ void ControlWindow::refreshCurrentValues()
 
     for (int row = 0; row < rows; ++row) {
         auto *item = m_table->item(row, CurrentValueColumn);
-        if (!item)
+        auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
+        if (!item || !combo)
             continue;
 
-        const QString text = locale.toString(values.at(row), 'f', kValueDecimals);
+        const QString text = formatValue(comboType(combo), values.at(row), locale);
         if (item->text() != text)
             item->setText(text);
     }
@@ -336,21 +373,29 @@ void ControlWindow::updateValueEditor(int row)
     auto *combo = qobject_cast<QComboBox *>(m_table->cellWidget(row, TypeColumn));
     auto *minSpinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, MinColumn));
     auto *maxSpinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, MaxColumn));
-    auto *periodSpinBox = qobject_cast<QDoubleSpinBox *>(m_table->cellWidget(row, PeriodColumn));
-    if (!combo || !minSpinBox || !maxSpinBox || !periodSpinBox)
+    auto *valueWidget = m_table->cellWidget(row, PeriodColumn);
+    auto *periodSpinBox = valueWidget ? valueWidget->findChild<QDoubleSpinBox *>() : nullptr;
+    auto *boolCheckBox = valueWidget ? valueWidget->findChild<QCheckBox *>() : nullptr;
+    if (!combo || !minSpinBox || !maxSpinBox || !periodSpinBox || !boolCheckBox)
         return;
 
-    const auto type = static_cast<DataSimulationServer::SimulationType>(combo->currentData().toInt());
+    const auto type = comboType(combo);
     const bool isManual = type == DataSimulationServer::SimulationType::Manual;
+    const bool isBool = type == DataSimulationServer::SimulationType::Bool;
 
-    minSpinBox->setEnabled(!isManual);
-    maxSpinBox->setEnabled(!isManual);
+    minSpinBox->setEnabled(!isManual && !isBool);
+    maxSpinBox->setEnabled(!isManual && !isBool);
+    periodSpinBox->setVisible(!isBool);
+    boolCheckBox->setVisible(isBool);
 
     QSignalBlocker minBlocker(minSpinBox);
     QSignalBlocker maxBlocker(maxSpinBox);
     QSignalBlocker periodBlocker(periodSpinBox);
+    QSignalBlocker boolBlocker(boolCheckBox);
 
-    if (isManual) {
+    if (isBool) {
+        boolCheckBox->setChecked(m_server ? m_server->boolValue(row) : boolCheckBox->isChecked());
+    } else if (isManual) {
         periodSpinBox->setRange(-1000000.0, 1000000.0);
         periodSpinBox->setValue(m_server ? m_server->currentValue(row) : periodSpinBox->value());
     } else {
